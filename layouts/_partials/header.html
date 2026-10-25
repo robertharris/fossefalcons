@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "images/logo-black.jpg" | relURL }}" alt="Fosse Falcons Girls Rugby logo" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true">☰</label>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        {{ $current := . }}
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

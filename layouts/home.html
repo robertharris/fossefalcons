@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <img src="{{ "images/logo-black.jpg" | relURL }}" alt="Fosse Falcons Girls Rugby" class="hero-logo">
+    <p class="tagline">{{ .Params.tagline }}</p>
+    <p><a class="btn" href="{{ "join/" | relURL }}">Join Us</a> <a class="btn btn-outline" href="{{ "training/" | relURL }}">Training</a></p>
+  </div>
+</section>
+<section class="container prose">
+  {{ .Content }}
+</section>
+<section class="container latest">
+  <h2>Latest news</h2>
+  {{ partial "news-list.html" (first 3 (where site.RegularPages "Section" "news")) }}
+  <p><a href="{{ "news/" | relURL }}">All news →</a></p>
+</section>
+{{ end }}

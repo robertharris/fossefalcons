@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ if .Date }}{{ if eq .Section "news" }}<p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}{{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

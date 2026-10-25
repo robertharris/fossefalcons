@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ partial "news-list.html" .Pages.ByDate.Reverse }}
+</div>
+{{ end }}

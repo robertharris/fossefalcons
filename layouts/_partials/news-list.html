@@ -1,0 +1,11 @@
+{{ if . }}
+<ul class="news-list">
+  {{ range . }}
+  <li>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary | plainify | truncate 200 }}</p>
+  </li>
+  {{ end }}
+</ul>
+{{ else }}<p>No news yet – check back soon.</p>{{ end }}
