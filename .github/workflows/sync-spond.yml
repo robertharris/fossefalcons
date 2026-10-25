@@ -1,0 +1,46 @@
+name: Sync Spond fixtures
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-spond
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      - name: Fetch from Spond
+        env:
+          SPOND_USERNAME: ${{ secrets.SPOND_USERNAME }}
+          SPOND_PASSWORD: ${{ secrets.SPOND_PASSWORD }}
+        run: python scripts/sync_spond.py
+      - name: Commit changes
+        run: |
+          # "updated" changes every run, so compare the content only
+          if git diff --quiet -I'"updated"' data/spond.json; then
+            echo "No changes"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/spond.json
+          git commit -m "chore: sync Spond fixtures and training"
+          git push
+          # pushes made with GITHUB_TOKEN don't trigger other workflows
+          gh workflow run hugo.yml --ref master
+        env:
+          GH_TOKEN: ${{ github.token }}

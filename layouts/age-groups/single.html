@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.school_years }}<p class="meta">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  {{ with .Params.coaches }}
+  <h2>Coaches</h2>
+  <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  {{ end }}
+  {{ with .Params.group }}
+    {{ partial "spond-events.html" . }}
+    <h2>News</h2>
+    {{ $news := where (where site.RegularPages "Section" "news") "Params.age_groups" "intersect" (slice .) }}
+    {{ partial "news-list.html" $news.ByDate.Reverse }}
+  {{ end }}
+</article>
+{{ end }}
