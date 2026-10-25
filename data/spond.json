@@ -1,8 +1,89 @@
 {
-  "updated": "",
+  "updated": "2026-10-25T18:21:22+00:00",
   "groups": {
-    "u12": { "fixture": null, "training": [] },
-    "u14": { "fixture": null, "training": [] },
-    "u16": { "fixture": null, "training": [] }
+    "u12": {
+      "fixture": {
+        "title": "Witney  \u2013 Fosse U12 2026-27",
+        "start": "2026-11-01T13:00:00+00:00",
+        "end": "2026-11-01T15:00:00+00:00",
+        "location": "Witney Rugby Football Club, Hailey Road, Witney",
+        "opponent": "Witney ",
+        "home": false
+      },
+      "training": [
+        {
+          "title": "Midweek training - Stratford",
+          "start": "2026-10-28T18:30:00+00:00",
+          "end": "2026-10-28T19:45:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Training",
+          "start": "2026-11-08T13:00:00+00:00",
+          "end": "2026-11-08T15:00:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "opponent": null,
+          "home": null
+        }
+      ]
+    },
+    "u14": {
+      "fixture": {
+        "title": "Fosse U14 2026-27 \u2013 ATL ",
+        "start": "2026-11-01T13:00:00+00:00",
+        "end": "2026-11-01T14:00:00+00:00",
+        "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
+        "opponent": "ATL ",
+        "home": true
+      },
+      "training": [
+        {
+          "title": "Midweek training - Stratford ",
+          "start": "2026-10-28T18:30:00+00:00",
+          "end": "2026-10-28T19:45:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Training ",
+          "start": "2026-11-08T13:00:00+00:00",
+          "end": "2026-11-08T15:00:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "opponent": null,
+          "home": null
+        }
+      ]
+    },
+    "u16": {
+      "fixture": {
+        "title": "Fosse U16  \u2013 Market Bosworth ",
+        "start": "2026-11-01T13:00:00+00:00",
+        "end": "2026-11-01T15:00:00+00:00",
+        "location": "Laurentian Sports Club, Fenley Field, Lime Tree Avenue, Bilton, Rugby",
+        "opponent": "Market Bosworth ",
+        "home": true
+      },
+      "training": [
+        {
+          "title": "Midweek training - Stratford ",
+          "start": "2026-10-28T18:30:00+00:00",
+          "end": "2026-10-28T19:45:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Sunday Morning Training",
+          "start": "2026-11-08T10:30:00+00:00",
+          "end": "2026-11-08T12:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": null,
+          "home": null
+        }
+      ]
+    }
   }
 }

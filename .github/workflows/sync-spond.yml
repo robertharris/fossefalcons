@@ -28,7 +28,26 @@ jobs:
         env:
           SPOND_USERNAME: ${{ secrets.SPOND_USERNAME }}
           SPOND_PASSWORD: ${{ secrets.SPOND_PASSWORD }}
-        run: python scripts/sync_spond.py
+        run: |
+          python scripts/sync_spond.py
+          echo "--- Spond summary ---"
+          python - <<'PY'
+import json
+from pathlib import Path
+p = Path('data/spond.json')
+obj = json.loads(p.read_text()) if p.exists() else {}
+for key, payload in obj.get('groups', {}).items():
+    fixture = payload.get('fixture')
+    training = payload.get('training') or []
+    if fixture:
+        print(f"{key}: next fixture = {fixture.get('start')} vs {fixture.get('opponent') or 'opponent'}")
+    else:
+        print(f"{key}: next fixture = none")
+    for i, event in enumerate(training, 1):
+        print(f"{key}: training {i} = {event.get('start')} {event.get('title') or 'Training'}")
+    if not training:
+        print(f"{key}: training = none")
+PY
       - name: Commit changes
         run: |
           # "updated" changes every run, so compare the content only
