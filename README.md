@@ -55,3 +55,12 @@ You can also run the workflow manually from **Actions → Deploy Hugo site to Gi
 
 - In **Settings → Pages**, set **Source** to **GitHub Actions**.
 - For the custom domain, set `www.fossefalcons.co.uk` under **Settings → Pages → Custom domain** and point a `CNAME` DNS record for `www` at `robertharris.github.io`. Enable **Enforce HTTPS** once the certificate is issued.
+
+## Spond sync
+
+`.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture + next 2 training sessions per age group), then triggers the deploy.
+
+- Add repo secrets `SPOND_USERNAME` and `SPOND_PASSWORD` (use a dedicated Spond account that is a member of the three groups).
+- Fixtures are Spond events marked as a match; training is any non-match event whose title contains "train".
+- Tag news posts for an age group with `age_groups: [u12]` (or `u14`, `u16`) in front matter.
+- Local run: `pip install -r scripts/requirements.txt && SPOND_USERNAME=… SPOND_PASSWORD=… python scripts/sync_spond.py`

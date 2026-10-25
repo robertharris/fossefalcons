@@ -1,0 +1,24 @@
+{{/* Expects the age group key, e.g. "u12" */}}
+{{ $d := index site.Data.spond.groups . | default dict }}
+{{ $fx := $d.fixture }}
+{{ $tr := $d.training | default slice }}
+<section class="spond-events">
+  <h2>Next fixture</h2>
+  {{ if $fx }}
+    {{ $t := time.AsTime $fx.start }}
+    <p><strong>{{ $t.Format "Monday 2 January 2006" }}</strong>, {{ $t.Format "3:04pm" }}<br>
+    {{ if $fx.title }}{{ $fx.title }}{{ end }}{{ if $fx.opponent }} v {{ $fx.opponent }}{{ end }}{{ if ne $fx.home nil }} ({{ if $fx.home }}home{{ else }}away{{ end }}){{ end }}
+    {{ with $fx.location }}<br>{{ . }}{{ end }}</p>
+  {{ else }}<p>No fixture scheduled yet.</p>{{ end }}
+
+  <h2>Upcoming training</h2>
+  {{ if $tr }}
+  <ul>
+    {{ range $tr }}
+    {{ $s := time.AsTime .start }}
+    <li><strong>{{ $s.Format "Monday 2 January" }}</strong>, {{ $s.Format "3:04pm" }}{{ if .end }}–{{ (time.AsTime .end).Format "3:04pm" }}{{ end }}{{ with .location }} – {{ . }}{{ end }}</li>
+    {{ end }}
+  </ul>
+  {{ else }}<p>No training scheduled yet.</p>{{ end }}
+  {{ with site.Data.spond.updated }}<p class="meta">Updated from Spond {{ (time.AsTime .).Format "2 Jan 15:04" }}</p>{{ end }}
+</section>

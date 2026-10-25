@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul>
+    {{ range .Pages.ByWeight }}
+    <li><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Params.school_years }}{{ with .Params.coaches }} · Coach{{ if gt (len .) 1 }}es{{ end }}: {{ delimit . ", " }}{{ end }}</p></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
