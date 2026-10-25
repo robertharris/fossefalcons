@@ -117,9 +117,13 @@ token. Keep the Page token restricted to the required read permissions.
 - Supported photos are downloaded into the article bundle rather than hotlinked
   using expiring Facebook URLs. Shared posts, videos and other unsupported
   attachment types are skipped; check the workflow output and import state.
+- Only posts explicitly reported by Meta as published, not hidden and public
+  (`EVERYONE`) are eligible. Missing visibility information fails closed.
 - `scripts/facebook-state.json` tracks source IDs, generated-file hashes and
   review warnings. Commit it with the articles and do not delete it to retry:
   it prevents duplicate imports and protects editorial changes.
+  State is bound to the Page ID and cutoff: changing either requires a deliberate
+  state migration while the workflow is paused, not simply deleting the file.
 - Source changes update previously generated articles only when their local
   bundles have not been edited. Otherwise the importer preserves the local
   version and flags the conflict for a human to reconcile. An unavailable

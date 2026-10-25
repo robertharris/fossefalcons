@@ -68,7 +68,7 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "news: import Facebook posts for review"
           fi
-          if test -z "$(git log origin/master..HEAD --oneline)"; then
+          if git diff --quiet origin/master HEAD; then
             echo "No Facebook changes to review"
             exit 0
           fi
