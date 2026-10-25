@@ -7,6 +7,9 @@ enableRobotsTXT = true
 [params]
   description = "Fosse Falcons – girls rugby union for all ages and abilities."
   email = "info@fossefalcons.co.uk"
+  instagram = "https://www.instagram.com/fosse_falcons_rugby/"
+  tiktok = "https://www.tiktok.com/@fosse_falcons_rugby"
+  facebook = "https://www.facebook.com/profile.php?id=61551078683239"
 
 [[menus.main]]
   name = "Home"

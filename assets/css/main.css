@@ -68,3 +68,7 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .site-footer::before { content:""; display:block; height:6px; background:var(--stripes); margin:-2rem 0 2rem; }
 .site-footer p { margin:.25rem 0; }
 .site-footer a { color:var(--sun); }
+.social-links { list-style:none; display:flex; justify-content:center; gap:1rem; margin:0 0 .75rem; padding:0; }
+.social-links a { display:inline-flex; padding:.35rem; opacity:.9; transition:opacity .15s, transform .15s; }
+.social-links a:hover, .social-links a:focus-visible { opacity:1; transform:translateY(-2px); }
+.social-links .icon { width:1.4rem; height:1.4rem; background:currentColor; -webkit-mask:var(--icon) center/contain no-repeat; mask:var(--icon) center/contain no-repeat; }

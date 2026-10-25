@@ -1,5 +1,12 @@
 <footer class="site-footer">
   <div class="container">
+    <ul class="social-links">
+      {{ range $name, $label := dict "instagram" "Instagram" "tiktok" "TikTok" "facebook" "Facebook" }}
+        {{ with index site.Params $name }}
+      <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $label }}" title="{{ $label }}"><span class="icon" style="--icon:url('{{ printf "icons/%s.svg" $name | relURL }}')"></span></a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
     <p>© {{ now.Year }} Fosse Falcons Girls Rugby</p>
     <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
   </div>
