@@ -1,4 +1,3 @@
-
 ---
 title: "U16 Win at Kenilworth Road"
 date: 2026-10-12
@@ -17,8 +16,7 @@ First try for Ella too!
 
 Players’ player: Skylar, who came back after a bang of heads with a bandage on and played brilliant heads-up rugby
 
-Proudly wearing the Leamington RFC kit 
+Proudly wearing the Leamington RFC kit 💙💛❤️
 
-💙💛❤️
 ![tamworth1](photo1.jpg)
 ![tamworth2](photo2.jpg)
