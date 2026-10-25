@@ -1,0 +1,6 @@
+{{- $url := .Get 0 -}}
+{{- $width := .Get 1 | default 500 -}}
+{{- $height := .Get 2 | default 518 -}}
+<div class="fb-embed">
+  <iframe src="https://www.facebook.com/plugins/post.php?href={{ $url | urlquery }}&show_text=true&width={{ $width }}" width="{{ $width }}" height="{{ $height }}" style="border:none;overflow:hidden;max-width:100%" scrolling="no" frameborder="0" allowfullscreen="true" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+</div>
