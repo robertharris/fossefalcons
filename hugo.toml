@@ -1,0 +1,34 @@
+baseURL = "https://www.fossefalcons.co.uk/"
+locale = "en-GB"
+disableKinds = ["taxonomy", "term"]
+title = "Fosse Falcons Girls Rugby"
+enableRobotsTXT = true
+
+[params]
+  description = "Fosse Falcons – girls rugby union for all ages and abilities."
+  email = "info@fossefalcons.co.uk"
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+[[menus.main]]
+  name = "Age Groups"
+  pageRef = "/age-groups"
+  weight = 2
+[[menus.main]]
+  name = "Training"
+  pageRef = "/training"
+  weight = 3
+[[menus.main]]
+  name = "News"
+  pageRef = "/news"
+  weight = 4
+[[menus.main]]
+  name = "About Us"
+  pageRef = "/about"
+  weight = 5
+[[menus.main]]
+  name = "Join Us"
+  pageRef = "/join"
+  weight = 6
