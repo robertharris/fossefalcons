@@ -29,5 +29,5 @@ Girls are registered to one of our clubs from across Warwickshire and play togth
 
 ## Documents
 
-See our [club documents](/documents/).
+See our [club documents]({{< relref "documents.md" >}}).
 

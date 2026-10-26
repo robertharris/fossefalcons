@@ -2,7 +2,7 @@
 title: "Meg"
 weight: 4
 age_group_id: u18
-photo: "/images/coaches/meg.jpeg"
+photo: "images/coaches/meg.jpeg"
 photo_alt: "Coach Meg about to pass a rugby ball"
 ---
 

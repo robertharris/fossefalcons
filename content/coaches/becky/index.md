@@ -2,7 +2,7 @@
 title: "Becky"
 weight: 5
 age_group_id: u18
-photo: "/images/coaches/becky.jpeg"
+photo: "images/coaches/becky.jpeg"
 photo_alt: "Coach Becky wearing a hat"
 ---
 
