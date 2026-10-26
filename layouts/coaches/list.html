@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="coach-profiles">
+    {{ range .Pages.ByWeight }}
+    <section class="coach-profile" aria-labelledby="coach-{{ .Title | urlize }}">
+      <a class="coach-photo" href="{{ .RelPermalink }}">
+        <img src="{{ .Params.photo | relURL }}" alt="{{ .Params.photo_alt }}" width="480" height="480" loading="lazy">
+      </a>
+      <h2 id="coach-{{ .Title | urlize }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ .Summary }}
+      <a href="{{ .RelPermalink }}">View {{ .Title }}'s profile</a>
+    </section>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

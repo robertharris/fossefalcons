@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-labelledby="title">
+  <title id="title">Coach photo placeholder</title>
+  <rect width="480" height="480" fill="#111"/>
+  <path d="M0 390h480v90H0z" fill="#0b7a3e"/>
+  <circle cx="240" cy="185" r="90" fill="#ffd200"/>
+  <path d="M85 390c12-83 75-125 155-125s143 42 155 125" fill="#1c3f9e"/>
+  <text x="240" y="445" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle">PHOTO TO BE ADDED</text>
+</svg>

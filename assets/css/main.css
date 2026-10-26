@@ -76,6 +76,18 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .sponsor-role { font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
 .sponsor-profile .sponsor-role { color:var(--blue); margin:1rem 0 .25rem; }
 .sponsor-profile h2 { margin-top:0; }
+.coach-profiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin:2rem 0; }
+.coach-profile { background:#fff; padding:1.25rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); }
+.coach-profile:nth-child(3n+2) { border-top-color:var(--sun); }
+.coach-profile:nth-child(3n) { border-top-color:var(--blue); }
+.coach-photo { display:block; }
+.coach-photo img, .coach-profile-photo { display:block; width:100%; aspect-ratio:1; object-fit:cover; border-radius:12px; }
+.coach-profile h2 { margin:.75rem 0 .5rem; }
+.coach-profile h2 a { color:var(--plum); text-decoration:none; }
+.coach-profile p { color:var(--mid); }
+.coach-profile-page .coach-profile-photo { max-width:480px; margin:1.5rem auto; }
+.age-group-coaches { padding-left:1.25rem; }
+.coach-role { display:inline-block; margin-left:.5rem; padding:.1rem .6rem; border-radius:999px; background:var(--sun); color:var(--plum-dark); font-size:.8rem; font-weight:800; }
 .footer-sponsors { margin-bottom:1rem; }
 .footer-sponsors h2 { color:#fff; font-size:1.25rem; margin:0 0 .75rem; }
 .footer-sponsor-list { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; max-width:520px; padding:0; margin:0 auto .5rem; }
