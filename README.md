@@ -8,9 +8,10 @@ Static site built with [Hugo](https://gohugo.io/) and hosted on GitHub Pages at 
 |------|---------|
 | `content/` | Page text (Markdown): `_index.md` (home), `about.md`, `age-groups/`, `training.md`, `join.md`, `sponsors.md`, `news/` |
 | `data/sponsors.yaml` | Sponsor details shared by the Sponsors page and footer |
+| `data/documents.yaml` | Titles, file paths and descriptions for the Documents page |
 | `layouts/` | HTML templates and partials (header, footer) |
 | `assets/css/main.css` | Site styles |
-| `static/` | Files copied as-is, e.g. `static/images/` |
+| `static/` | Files copied as-is, e.g. `static/images/` and `static/files/` |
 | `hugo.toml` | Site title, base URL, contact email and navigation menu |
 | `.github/workflows/hugo.yml` | Build and deploy workflow |
 
@@ -40,6 +41,14 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
   Or run `hugo new content news/match-report.md`.
 - **Add images:** put them in `static/images/` and reference them as `/images/your-file.jpg`.
+- **Add documents:** put each file in `static/files/`, then add its title, path, and description to `data/documents.yaml`. The Documents page is available at `/documents/`, and each title links directly to its file. For example:
+
+  ```yaml
+  - title: "Club registration form"
+    path: "files/club-registration-form.pdf"
+    description: "Registration form for new players."
+  ```
+
 - **Edit coach profiles:** update the profile bundles in `content/coaches/` and replace `static/images/coaches/profile-placeholder.svg` with approved coach photos. Change each profile's `photo` and `photo_alt` fields to match its image, replace its placeholder biography, and set `age_group_id` to the matching age-group `group` ID. Age-group coach lists are generated from these IDs; set `head_coach` to a listed coach's profile slug.
 - **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
 - **Change the menu or contact email:** edit `hugo.toml`.

@@ -1,5 +1,5 @@
 {{/* Expects the age group key, e.g. "u12" */}}
-{{ $d := index site.Data.spond.groups . | default dict }}
+{{ $d := index hugo.Data.spond.groups . | default dict }}
 {{ $fx := $d.fixture }}
 {{ $tr := $d.training | default slice }}
 <section class="spond-events">
@@ -20,5 +20,5 @@
     {{ end }}
   </ul>
   {{ else }}<p>No training scheduled yet.</p>{{ end }}
-  {{ with site.Data.spond.updated }}<p class="meta">Updated from Spond {{ (time.AsTime .).Format "2 Jan 15:04" }}</p>{{ end }}
+  {{ with hugo.Data.spond.updated }}<p class="meta">Updated from Spond {{ (time.AsTime .).Format "2 Jan 15:04" }}</p>{{ end }}
 </section>

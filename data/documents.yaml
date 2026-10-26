@@ -1,0 +1,13 @@
+# Add one entry per file stored in static/files/.
+# Paths are relative to static/, for example files/club-registration-form.pdf.
+- title: "Social Media and Photography Policy"
+  path: "files/Fosse_Falcons_Rugby_Social_Media_and_Photography_Policy.pdf"
+  description: "Fosse Falcons policy for social media and photography."
+
+- title: "Tour Code of Conduct"
+  path: "files/Fosse_Falcons_Tour_Code_of_Conduct.pdf"
+  description: "Code of conduct for participants on the Fosse Falcons tour."
+
+- title: "Tour Child Consent Form"
+  path: "files/Tour_Child_consent_form.pdf"
+  description: "Consent form for children attending the Fosse Falcons tour."
