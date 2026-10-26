@@ -40,6 +40,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
   Or run `hugo new content news/match-report.md`.
 - **Add images:** put them in `static/images/` and reference them as `/images/your-file.jpg`.
+- **Edit coach profiles:** update the profile bundles in `content/coaches/` and replace `static/images/coaches/profile-placeholder.svg` with approved coach photos. Change each profile's `photo` and `photo_alt` fields to match its image and replace its placeholder biography. Age-group front matter uses coach profile slugs in `coaches` and the matching slug in `head_coach`; every `head_coach` should also appear in that group's `coaches` list.
 - **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
 - **Change the menu or contact email:** edit `hugo.toml`.
 - **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).

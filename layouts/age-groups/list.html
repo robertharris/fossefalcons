@@ -4,8 +4,22 @@
   {{ .Content }}
   <ul>
     {{ range .Pages.ByWeight }}
+    {{ $ageGroup := . }}
     <li><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Params.school_years }}{{ with .Params.coaches }} · Coach{{ if gt (len .) 1 }}es{{ end }}: {{ delimit . ", " }}{{ end }}</p></li>
+      <p>{{ $ageGroup.Params.school_years }}</p>
+      {{ with $ageGroup.Params.coaches }}
+      <ul class="age-group-coaches">
+        {{ range $slug := . }}
+          {{ with site.GetPage (printf "/coaches/%s" $slug) }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ if eq $slug $ageGroup.Params.head_coach }}<span class="coach-role">Head coach</span>{{ end }}
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+    </li>
     {{ end }}
   </ul>
 </div>

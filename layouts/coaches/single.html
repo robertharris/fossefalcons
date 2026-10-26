@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article class="container prose coach-profile-page">
+  <h1>{{ .Title }}</h1>
+  <img class="coach-profile-photo" src="{{ .Params.photo | relURL }}" alt="{{ .Params.photo_alt }}" width="480" height="480">
+  {{ .Content }}
+  <p><a href="{{ "/coaches/" | relURL }}">Meet all our coaches</a></p>
+</article>
+{{ end }}
