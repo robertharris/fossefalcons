@@ -1,0 +1,11 @@
+- name: Jewson
+  headline: true
+  website: https://www.jewson.co.uk/
+  logo: images/sponsors/jewson.svg
+  description: Jewson is a builders' merchant supplying building materials, timber, tools and equipment to trade professionals and home improvers across the UK. We are proud to have Jewson as the headline sponsor of Fosse Falcons.
+
+- name: RPGL
+  headline: false
+  website: https://rpgl.co.uk/
+  logo: images/sponsors/rpgl.svg
+  description: RPGL (Regal Property Group Living) is a property development business focused on residential developments in Birmingham, including apartments for sale and build-to-rent homes. We are grateful to RPGL for supporting Fosse Falcons and girls rugby.

@@ -28,10 +28,14 @@ enableRobotsTXT = true
   pageRef = "/news"
   weight = 4
 [[menus.main]]
+  name = "Sponsors"
+  pageRef = "/sponsors"
+  weight = 5
+[[menus.main]]
   name = "About Us"
   pageRef = "/about"
-  weight = 5
+  weight = 6
 [[menus.main]]
   name = "Join Us"
   pageRef = "/join"
-  weight = 6
+  weight = 7

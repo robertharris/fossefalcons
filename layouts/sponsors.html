@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="sponsor-profiles">
+    {{ range hugo.Data.sponsors }}
+    <section class="sponsor-profile{{ if .headline }} sponsor-profile--headline{{ end }}" aria-labelledby="sponsor-{{ .name | urlize }}">
+      <a class="sponsor-logo" href="{{ .website }}">
+        <img src="{{ .logo | relURL }}" alt="{{ .name }} website" width="280" height="80" loading="lazy">
+      </a>
+      <p class="sponsor-role">{{ if .headline }}Headline sponsor{{ else }}Club sponsor{{ end }}</p>
+      <h2 id="sponsor-{{ .name | urlize }}">{{ .name }}</h2>
+      <p>{{ .description }}</p>
+      <a href="{{ .website }}">Visit {{ .name }}</a>
+    </section>
+    {{ end }}
+  </div>
+  <section aria-labelledby="sponsor-news">
+    <h2 id="sponsor-news">Sponsor news</h2>
+    {{ $news := where (where site.RegularPages "Section" "news") "Params.tags" "intersect" (slice "sponsor") }}
+    {{ if $news }}
+      {{ partial "news-list.html" $news.ByDate.Reverse }}
+    {{ else }}
+      <p>No sponsor news yet - check back soon.</p>
+    {{ end }}
+  </section>
+</article>
+{{ end }}
