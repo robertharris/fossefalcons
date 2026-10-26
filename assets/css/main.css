@@ -64,10 +64,25 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .news-list time { color:var(--blue); font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
 .news-list p { margin:0; color:var(--mid); }
 
-.site-footer { background:var(--plum-dark); color:#fff; text-align:center; padding:2rem 0; border-top:0; }
-.site-footer::before { content:""; display:block; height:6px; background:var(--stripes); margin:-2rem 0 2rem; }
+.site-footer { background:var(--plum-dark); color:#fff; text-align:center; padding:1.25rem 0; border-top:0; }
+.site-footer::before { content:""; display:block; height:6px; background:var(--stripes); margin:-1.25rem 0 1.25rem; }
 .site-footer p { margin:.25rem 0; }
 .site-footer a { color:var(--sun); }
+.sponsor-profiles { display:grid; gap:1.5rem; margin:2rem 0; }
+.sponsor-profile { background:#fff; padding:1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); }
+.sponsor-profile--headline { border-top-color:var(--sun); }
+.sponsor-logo { display:flex; align-items:center; justify-content:center; background:#fff; border-radius:12px; padding:1rem; }
+.sponsor-logo img { display:block; width:280px; max-width:100%; height:80px; object-fit:contain; }
+.sponsor-role { font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+.sponsor-profile .sponsor-role { color:var(--blue); margin:1rem 0 .25rem; }
+.sponsor-profile h2 { margin-top:0; }
+.footer-sponsors { margin-bottom:1rem; }
+.footer-sponsors h2 { color:#fff; font-size:1.25rem; margin:0 0 .75rem; }
+.footer-sponsor-list { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; max-width:520px; padding:0; margin:0 auto .5rem; }
+.footer-sponsor-list li { min-width:0; }
+.footer-sponsor-list .sponsor-logo { padding:.75rem; }
+.footer-sponsor-list .sponsor-logo img { width:200px; height:48px; }
+.footer-sponsor-list .sponsor-role { color:var(--sun); font-size:.75rem; margin-top:.25rem; }
 .social-links { list-style:none; display:flex; justify-content:center; gap:1rem; margin:0 0 .75rem; padding:0; }
 .social-links a { display:inline-flex; padding:.35rem; opacity:.9; transition:opacity .15s, transform .15s; }
 .social-links a:hover, .social-links a:focus-visible { opacity:1; transform:translateY(-2px); }

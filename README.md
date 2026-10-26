@@ -6,7 +6,8 @@ Static site built with [Hugo](https://gohugo.io/) and hosted on GitHub Pages at 
 
 | Path | Purpose |
 |------|---------|
-| `content/` | Page text (Markdown): `_index.md` (home), `about.md`, `age-groups.md`, `training.md`, `join.md`, `news/` |
+| `content/` | Page text (Markdown): `_index.md` (home), `about.md`, `age-groups/`, `training.md`, `join.md`, `sponsors.md`, `news/` |
+| `data/sponsors.yaml` | Sponsor details shared by the Sponsors page and footer |
 | `layouts/` | HTML templates and partials (header, footer) |
 | `assets/css/main.css` | Site styles |
 | `static/` | Files copied as-is, e.g. `static/images/` |
@@ -40,6 +41,8 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
   Or run `hugo new content news/match-report.md`.
 - **Add images:** put them in `static/images/` and reference them as `/images/your-file.jpg`.
 - **Change the menu or contact email:** edit `hugo.toml`.
+- **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).
+- **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can also have other tags and `age_groups`.
 
 ## Publishing
 

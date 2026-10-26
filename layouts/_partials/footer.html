@@ -1,5 +1,18 @@
 <footer class="site-footer">
   <div class="container">
+    <section class="footer-sponsors" aria-labelledby="footer-sponsors-title">
+      <h2 id="footer-sponsors-title">Sponsored by</h2>
+      <ul class="footer-sponsor-list">
+        {{ range hugo.Data.sponsors }}
+        <li>
+          <a class="sponsor-logo" href="{{ .website }}">
+            <img src="{{ .logo | relURL }}" alt="{{ .name }} website" width="200" height="48" loading="lazy">
+          </a>
+          <p class="sponsor-role">{{ if .headline }}Headline sponsor{{ else }}Club sponsor{{ end }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
     <ul class="social-links">
       {{ range $name, $label := dict "instagram" "Instagram" "tiktok" "TikTok" "facebook" "Facebook" }}
         {{ with index site.Params $name }}
@@ -7,7 +20,6 @@
         {{ end }}
       {{ end }}
     </ul>
-    <p>© {{ now.Year }} Fosse Falcons Girls Rugby</p>
     <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
   </div>
 </footer>
