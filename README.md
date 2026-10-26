@@ -40,6 +40,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
   Or run `hugo new content news/match-report.md`.
 - **Add images:** put them in `static/images/` and reference them as `/images/your-file.jpg`.
+- **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
 - **Change the menu or contact email:** edit `hugo.toml`.
 - **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).
 - **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can also have other tags and `age_groups`.
