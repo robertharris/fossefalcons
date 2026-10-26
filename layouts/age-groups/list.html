@@ -7,15 +7,14 @@
     {{ $ageGroup := . }}
     <li><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
       <p>{{ $ageGroup.Params.school_years }}</p>
-      {{ with $ageGroup.Params.coaches }}
+      {{ $coaches := where (where site.RegularPages "Section" "coaches") "Params.age_group_id" $ageGroup.Params.group }}
+      {{ with $coaches }}
       <ul class="age-group-coaches">
-        {{ range $slug := . }}
-          {{ with site.GetPage (printf "/coaches/%s" $slug) }}
+        {{ range .ByWeight }}
           <li>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{ if eq $slug $ageGroup.Params.head_coach }}<span class="coach-role">Head coach</span>{{ end }}
+            {{ if eq .File.ContentBaseName $ageGroup.Params.head_coach }}<span class="coach-role">Head coach</span>{{ end }}
           </li>
-          {{ end }}
         {{ end }}
       </ul>
       {{ end }}

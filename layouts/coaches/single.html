@@ -3,6 +3,9 @@
   <h1>{{ .Title }}</h1>
   <img class="coach-profile-photo" src="{{ .Params.photo | relURL }}" alt="{{ .Params.photo_alt }}" width="480" height="480">
   {{ .Content }}
+  {{ with site.GetPage (printf "/age-groups/%s" .Params.age_group_id) }}
+  <p>Coach for <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+  {{ end }}
   <p><a href="{{ "/coaches/" | relURL }}">Meet all our coaches</a></p>
 </article>
 {{ end }}

@@ -3,16 +3,15 @@
   <h1>{{ .Title }}</h1>
   {{ with .Params.school_years }}<p class="meta">{{ . }}</p>{{ end }}
   {{ .Content }}
-  {{ with .Params.coaches }}
+  {{ $coaches := where (where site.RegularPages "Section" "coaches") "Params.age_group_id" .Params.group }}
+  {{ with $coaches }}
   <h2>Coaches</h2>
   <ul class="age-group-coaches">
-    {{ range $slug := . }}
-      {{ with site.GetPage (printf "/coaches/%s" $slug) }}
+    {{ range .ByWeight }}
       <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ if eq $slug $.Params.head_coach }}<span class="coach-role">Head coach</span>{{ end }}
+        {{ if eq .File.ContentBaseName $.Params.head_coach }}<span class="coach-role">Head coach</span>{{ end }}
       </li>
-      {{ end }}
     {{ end }}
   </ul>
   {{ end }}
