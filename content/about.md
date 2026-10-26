@@ -21,11 +21,12 @@ Girls are registered to one of our clubs from across Warwickshire and play togth
 
 ## Contact
 
-| Enquiry | Contact | Email |
+| Enquiry |  Email | Contact
 | --- | --- | --- |
-| General enquiries |  | [info@fossefalcons.co.uk](mailto:info@fossefalcons.co.uk) |
-| Safeguarding lead | Liz | [safeguarding@fossefalcons.co.uk](mailto:safeguarding@fossefalcons.co.uk) |
-| Fixture enquiries | Becky | [fixtures@fossefalcons.co.uk](mailto:fixtures@fossefalcons.co.uk) |
+| General enquiries | [info@fossefalcons.co.uk](mailto:info@fossefalcons.co.uk) | | 
+| Safeguarding lead | [safeguarding@fossefalcons.co.uk](mailto:safeguarding@fossefalcons.co.uk) | Liz |
+| Fixture enquiries | [fixtures@fossefalcons.co.uk](mailto:fixtures@fossefalcons.co.uk) | Becky | 
+| Website enquiries | [admin@fossefalcons.co.uk](mailto:admin@fossefaclons.co.uk) | |
 
 ## Documents
 
