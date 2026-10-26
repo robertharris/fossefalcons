@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Document</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range hugo.Data.documents }}
+      <tr>
+        <td><a href="{{ .path | relURL }}">{{ .title }}</a></td>
+        <td>{{ .description }}</td>
+      </tr>
+      {{ else }}
+      <tr><td colspan="2">No documents are available yet.</td></tr>
+      {{ end }}
+    </tbody>
+  </table>
+</article>
+{{ end }}

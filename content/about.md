@@ -26,3 +26,8 @@ Girls are registered to one of our clubs from across Warwickshire and play togth
 | General enquiries |  | [info@fossefalcons.co.uk](mailto:info@fossefalcons.co.uk) |
 | Safeguarding lead | Liz | [safeguarding@fossefalcons.co.uk](mailto:safeguarding@fossefalcons.co.uk) |
 | Fixture enquiries | Becky | [fixtures@fossefalcons.co.uk](mailto:fixtures@fossefalcons.co.uk) |
+
+## Documents
+
+See our [club documents](/documents/).
+
