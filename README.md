@@ -75,6 +75,16 @@ You can also run the workflow manually from **Actions → Deploy Hugo site to Gi
 
 Hugo aliases preserve the original Google Sites URLs: `/home/` redirects to `/`, `/welcome/` to `/join/`, and `/contact/` to `/about/`. These are generated HTML pages with immediate meta-refresh redirects and canonical links, not HTTP 301 redirects. The aliases are defined in the destination pages' front matter and take effect when the Hugo site is deployed on the custom domain.
 
+## Optional Google Analytics
+
+Analytics is disabled by default. To enable it, set `params.googleAnalyticsID` in `hugo.toml` to the club's GA4 web stream measurement ID (`G-...`). The ID is public, not a secret. Analytics remains disabled in the development environment (`hugo server`); production builds show the opt-in prompt when an ID is configured.
+
+The consent integration loads no Google script until Accept is selected. Accept and Reject use equally prominent buttons. Both decisions are stored for 180 days in local storage, scoped to the measurement ID. Cookie settings in the footer reopens the controls; withdrawing consent disables collection, removes accessible `_ga` cookies and reloads the page. If preference storage fails, analytics fails closed and displays an explanation. With no ID configured, Cookie settings explains that analytics is disabled and does not collect a speculative consent choice.
+
+Before enabling, review the analytics-and-cookies page, the club's privacy obligations (including its young audience), Google's service terms and GA4 property retention settings. Disable Google Signals, advertising features and enhanced measurement in the GA4 stream; this integration is intended for basic page views only. Custom interaction tracking is not included. Other third-party embeds are not controlled by this consent mechanism.
+
+Run consent behaviour checks with `node --test scripts/analytics-consent.test.cjs`.
+
 ## Spond sync
 
 `.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture + next 2 training sessions per age group), then triggers the deploy.

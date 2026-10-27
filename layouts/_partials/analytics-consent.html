@@ -1,0 +1,27 @@
+{{ $id := site.Params.googleAnalyticsID | default "" }}
+{{ if and $id (not (findRE `^G-[A-Z0-9]+$` $id)) }}
+  {{ errorf "params.googleAnalyticsID must be empty or a GA4 measurement ID starting with G-" }}
+{{ end }}
+{{ $enabled := and hugo.IsProduction (ne $id "") }}
+<section id="analytics-consent" class="analytics-consent" role="region" aria-labelledby="analytics-consent-title" tabindex="-1" data-measurement-id="{{ if $enabled }}{{ $id }}{{ end }}" hidden>
+  <div class="container">
+    <h2 id="analytics-consent-title">Analytics cookies</h2>
+    {{ if $enabled }}
+    <p>May we use Google Analytics to understand how people use this site? If you accept, Google receives information about your visits and analytics cookies are stored on your device. Analytics stays off unless you accept. You can reject and still use the whole site.</p>
+    {{ else }}
+    <p>Google Analytics is currently disabled on this site. No Google Analytics scripts or cookies are used.</p>
+    {{ end }}
+    <p><a href="{{ "analytics-and-cookies/" | relURL }}">Read about analytics and cookies</a>. You can reopen these controls using Cookie settings in the footer.</p>
+    <p id="analytics-consent-status" role="status" aria-live="polite"></p>
+    <div class="consent-actions">
+      {{ if $enabled }}
+      <button type="button" class="consent-button" data-analytics-choice="accepted">Accept</button>
+      <button type="button" class="consent-button" data-analytics-choice="rejected">Reject</button>
+      {{ end }}
+      <button type="button" class="consent-close" data-analytics-close>Close</button>
+    </div>
+  </div>
+</section>
+{{ with resources.Get "js/analytics-consent.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}

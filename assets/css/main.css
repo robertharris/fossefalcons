@@ -68,6 +68,17 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .site-footer::before { content:""; display:block; height:6px; background:var(--stripes); margin:-1.25rem 0 1.25rem; }
 .site-footer p { margin:.25rem 0; }
 .site-footer a { color:var(--sun); }
+.site-footer .footer-cookie-links { font-size:.625rem; }
+.analytics-consent { position:fixed; bottom:0; left:0; right:0; z-index:20; max-height:80vh; overflow-y:auto; background:#fff; border-top:6px solid var(--blue); padding:1rem 0; box-shadow:var(--shadow); }
+.analytics-consent[hidden] { display:none; }
+.analytics-consent h2 { margin:0 0 .75rem; }
+.analytics-consent p { margin:.5rem 0; }
+.consent-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+.consent-button, .consent-close { font:inherit; font-weight:700; border:2px solid var(--blue); border-radius:999px; padding:.5rem 1.5rem; cursor:pointer; }
+.consent-button { background:var(--blue); color:#fff; }
+.consent-button:hover { background:var(--plum); border-color:var(--plum); }
+.consent-close { background:#fff; color:var(--ink); }
+.consent-button:focus-visible, .consent-close:focus-visible { outline:3px solid var(--pink); outline-offset:3px; }
 .sponsor-profiles { display:grid; gap:1.5rem; margin:2rem 0; }
 .sponsor-profile { background:#fff; padding:1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); }
 .sponsor-profile--headline { border-top-color:var(--sun); }
