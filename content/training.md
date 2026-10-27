@@ -1,5 +1,6 @@
 ---
 title: "Training"
+description: "Find out about Fosse Falcons girls rugby training across our Warwickshire clubs, Wednesday and Sunday sessions, what to bring and how we use Spond."
 ---
 
 ## When and where

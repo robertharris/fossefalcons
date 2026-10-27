@@ -1,6 +1,7 @@
 
 ---
 title: "U12 Play Sils Sirens"
+description: "Fosse Falcons U12s show how far their new team has come against Sils Sirens, with a spirited performance and plenty to celebrate for our girls."
 date: 2026-10-14
 age_groups: [u12]
 ---

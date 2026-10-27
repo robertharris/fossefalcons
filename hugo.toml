@@ -5,6 +5,7 @@ title = "Fosse Falcons Girls Rugby"
 enableRobotsTXT = true
 
 [params]
+  googleAnalyticsID = "" # Leave empty to disable analytics.
   description = "Fosse Falcons – girls rugby union for all ages and abilities."
   email = "info@fossefalcons.co.uk"
   instagram = "https://www.instagram.com/fosse_falcons_rugby/"

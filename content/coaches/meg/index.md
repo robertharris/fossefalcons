@@ -1,5 +1,6 @@
 ---
 title: "Meg"
+description: "Meet Meg, a Fosse Falcons U18 girls rugby coach whose energetic, supportive sessions help players build confidence, develop skills and enjoy teamwork."
 weight: 4
 age_group_id: u18
 photo: "images/coaches/meg.jpeg"
