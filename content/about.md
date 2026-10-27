@@ -16,10 +16,7 @@ Fosse Falcons is a girls rugby union team. We are run by volunteers who love the
 
 Girls are registered to one of our clubs from across Warwickshire and play togther as the Fosse Falcons. Our clubs are:
 
-- [Shipston RFC](https://www.shipstonrugbyclub.co.uk/) 
-- [Old Laurentians RFC](https://olsrugby.com/)
-- [Rugby Lions RFC](https://www.therugbyfootballclub.co.uk/)
-- [Stratford RFC](https://stratforduponavonrfc.rfu.club/)
+{{< clubs >}}
 
 ## Contact
 

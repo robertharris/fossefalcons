@@ -1,0 +1,12 @@
+- name: Shipston RFC
+  url: https://www.shipstonrugbyclub.co.uk/
+  logo: /images/clubs/shipston.jpg
+- name: Old Laurentians RFC
+  url: https://olsrugby.com/
+  logo: /images/clubs/old-laurentians.jpg
+- name: Rugby Lions RFC
+  url: https://www.therugbyfootballclub.co.uk/
+  logo: /images/clubs/rugby-lions.svg
+- name: Stratford RFC
+  url: https://stratforduponavonrfc.rfu.club/
+  logo: /images/clubs/stratford.jpg
