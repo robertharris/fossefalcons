@@ -27,6 +27,10 @@ Girls are registered to one of our clubs from across Warwickshire and play togth
 | Fixture enquiries | [fixtures@fossefalcons.co.uk](mailto:fixtures@fossefalcons.co.uk) | Becky | 
 | Website enquiries | [admin@fossefalcons.co.uk](mailto:admin@fossefaclons.co.uk) | |
 
+## Beyond the pitch
+
+Learn about our [charity and community work]({{< relref "community.md" >}}).
+
 ## Documents
 
 See our [club documents]({{< relref "documents.md" >}}).

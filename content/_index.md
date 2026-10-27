@@ -14,3 +14,5 @@ Established in 2021, we bring together girls from clubs across Warwickshire, cre
 Today, over 120 girls train and play with Fosse Falcons across the U12 to U18 age groups, all while remaining connected to the wider rugby community.
 
 New to rugby? No experience is needed! Come along to a session, meet the team and give it a try.
+
+We also give back to our community. Find out more about our [charity and community work]({{< relref "community.md" >}}).
