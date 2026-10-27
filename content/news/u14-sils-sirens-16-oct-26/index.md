@@ -1,5 +1,6 @@
 ---
 title: "U14 Draw with Sils Sirens"
+description: "Read about Fosse Falcons U14s' hard-fought 17-17 draw with Sils Sirens, featuring determined defence, three tries and strong teamwork."
 date: 2026-10-16
 age_groups: [u14]
 ---

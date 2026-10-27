@@ -1,5 +1,6 @@
 ---
 title: "Becky"
+description: "Meet Becky, a Fosse Falcons U18 girls rugby coach with over 20 years of rugby experience, helping players develop skills, confidence and teamwork."
 weight: 5
 age_group_id: u18
 photo: "images/coaches/becky.jpeg"

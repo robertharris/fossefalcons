@@ -1,5 +1,7 @@
 ---
 title: "About Us"
+description: "Learn about Fosse Falcons girls rugby in Warwickshire, our values and member clubs, and find contact details for enquiries, fixtures and safeguarding."
+aliases: ["/contact/"]
 ---
 
 Fosse Falcons is a girls rugby union team. We are run by volunteers who love the game and want every girl to have the chance to play.
@@ -31,4 +33,3 @@ Girls are registered to one of our clubs from across Warwickshire and play togth
 ## Documents
 
 See our [club documents]({{< relref "documents.md" >}}).
-

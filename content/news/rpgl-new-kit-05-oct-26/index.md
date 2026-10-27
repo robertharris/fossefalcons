@@ -1,6 +1,7 @@
 
 ---
 title: "New Kit Alert"
+description: "Fosse Falcons thank Warwickshire property developer RPGL for sponsoring new DRYBONES sub coats to help keep our girls rugby players warm."
 date: 2026-10-05
 tags: [sponsor]
 ---
