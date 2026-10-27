@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Params.heading | default .Title }}</h1>
+  {{ .Content }}
+  <section aria-labelledby="community-news">
+    <h2 id="community-news">Community news</h2>
+    {{ $news := where (where site.RegularPages "Section" "news") "Params.tags" "intersect" (slice "community") }}
+    {{ if $news }}
+      {{ partial "news-list.html" $news.ByDate.Reverse }}
+    {{ else }}
+      <p>No community news yet - check back soon.</p>
+    {{ end }}
+  </section>
+</article>
+{{ end }}
