@@ -11,6 +11,7 @@ body { margin:0; font-family:"Nunito","Trebuchet MS",system-ui,-apple-system,"Se
 a { color:var(--pink); font-weight:700; text-underline-offset:3px; }
 a:hover { color:var(--plum); }
 img { max-width:100%; height:auto; }
+.prose img[src$="/icons/facebook.svg"], .prose img[src$="/icons/instagram.svg"], .prose img[src$="/icons/tiktok.svg"], .prose img[src$="/icons/whatsapp.svg"] { display:inline-block; width:1.5rem; height:1.5rem; vertical-align:middle; }
 h1, h2, h3 { color:var(--plum); line-height:1.2; font-weight:800; }
 
 .site-header { background:var(--plum); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 12px rgba(0,0,0,.2); border-bottom:0; }
