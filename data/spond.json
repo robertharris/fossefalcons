@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T14:54:05+00:00",
+  "updated": "2026-10-28T20:49:50+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -12,18 +12,18 @@
       },
       "training": [
         {
-          "title": "Midweek training - Stratford",
-          "start": "2026-10-28T18:30:00+00:00",
-          "end": "2026-10-28T19:45:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
-          "opponent": null,
-          "home": null
-        },
-        {
           "title": "Midweek training - Leam",
           "start": "2026-11-04T18:30:00+00:00",
           "end": "2026-11-04T20:00:00+00:00",
           "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Training",
+          "start": "2026-11-08T13:00:00+00:00",
+          "end": "2026-11-08T15:00:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
           "opponent": null,
           "home": null
         }
@@ -40,18 +40,18 @@
       },
       "training": [
         {
-          "title": "Midweek training - Stratford ",
-          "start": "2026-10-28T18:30:00+00:00",
-          "end": "2026-10-28T19:45:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
-          "opponent": null,
-          "home": null
-        },
-        {
           "title": "Midweek training - Leam",
           "start": "2026-11-04T18:30:00+00:00",
           "end": "2026-11-04T20:00:00+00:00",
           "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Training ",
+          "start": "2026-11-08T13:00:00+00:00",
+          "end": "2026-11-08T15:00:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
           "opponent": null,
           "home": null
         }
@@ -68,18 +68,18 @@
       },
       "training": [
         {
-          "title": "Midweek training - Stratford ",
-          "start": "2026-10-28T18:30:00+00:00",
-          "end": "2026-10-28T19:45:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
-          "opponent": null,
-          "home": null
-        },
-        {
           "title": "Midweek training - Leam",
           "start": "2026-11-04T18:30:00+00:00",
           "end": "2026-11-04T20:00:00+00:00",
           "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Sunday Morning Training",
+          "start": "2026-11-08T10:30:00+00:00",
+          "end": "2026-11-08T12:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": null,
           "home": null
         }
