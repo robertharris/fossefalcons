@@ -1,0 +1,85 @@
+name: Review Facebook news
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-facebook
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: vars.FACEBOOK_IMPORT_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    env:
+      IMPORT_BRANCH: automation/facebook-news
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git ls-remote --heads origin "$IMPORT_BRANCH" > "$RUNNER_TEMP/facebook-branch"
+          if test -s "$RUNNER_TEMP/facebook-branch"; then
+            git fetch origin "$IMPORT_BRANCH"
+            git checkout -B "$IMPORT_BRANCH" FETCH_HEAD
+            git merge --no-edit origin/master
+          else
+            git checkout -b "$IMPORT_BRANCH"
+          fi
+      - name: Test importer
+        run: python -m unittest discover -s scripts -p 'test_sync_facebook.py'
+      - name: Import Page posts
+        env:
+          FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
+          FACEBOOK_API_VERSION: ${{ vars.FACEBOOK_API_VERSION }}
+          FACEBOOK_IMPORT_SINCE: ${{ vars.FACEBOOK_IMPORT_SINCE }}
+          FACEBOOK_IMPORT_MARKER: ${{ vars.FACEBOOK_IMPORT_MARKER || '#website' }}
+          FACEBOOK_IMPORT_ALL: ${{ vars.FACEBOOK_IMPORT_ALL }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: |
+          if test "$FACEBOOK_IMPORT_ALL" = "true"; then
+            export FACEBOOK_IMPORT_MARKER=""
+          fi
+          python scripts/sync_facebook.py
+      - name: Validate Hugo site
+        env:
+          HUGO_VERSION: 0.168.0
+        run: |
+          wget -q -O "$RUNNER_TEMP/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
+          hugo --gc --minify
+      - name: Propose changes for human review
+        run: |
+          git add content/news scripts/facebook-state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "news: import Facebook posts for review"
+          fi
+          if git diff --quiet origin/master HEAD; then
+            echo "No Facebook changes to review"
+            exit 0
+          fi
+          git push origin "HEAD:refs/heads/$IMPORT_BRANCH"
+          pr="$(gh pr list --base master --head "$IMPORT_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if test -z "$pr"; then
+            gh pr create --base master --head "$IMPORT_BRANCH" \
+              --title "Review Facebook news imports" \
+              --body "Automated Facebook import. A human must review and merge; nothing is published by this workflow.
+
+          Review article text, dates, age groups, photo rights and safeguarding consent. Inspect scripts/facebook-state.json for warnings about editorial conflicts or unavailable posts. Resolve warnings and reconcile edited articles before merging. Unsupported posts are not imported. Existing website articles are never automatically deleted.
+
+          Merging publishes through the existing Hugo workflow. Do not add credentials or personal information to this PR."
+          fi
