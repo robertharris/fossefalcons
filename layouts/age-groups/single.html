@@ -18,7 +18,7 @@
   {{ with .Params.group }}
     {{ partial "spond-events.html" . }}
     <h2>News</h2>
-    {{ $news := where (where site.RegularPages "Section" "news") "Params.age_groups" "intersect" (slice .) }}
+    {{ $news := where (where site.RegularPages "Section" "news") "Params.tags" "intersect" (slice .) }}
     {{ partial "news-list.html" $news.ByDate.Reverse }}
   {{ end }}
 </article>

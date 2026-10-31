@@ -2,7 +2,7 @@
 title: "U16 Win at Kenilworth Road"
 description: "Fosse Falcons U16s win 50-0 against Tamworth, Old Sils and Bournville at Kenilworth Road, with strong defence, first tries and a determined team effort."
 date: 2026-10-12
-age_groups: [u16]
+tags: [u16]
 ---
 
 ## FULL TIME at Kenilworth Road – U16s 

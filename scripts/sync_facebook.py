@@ -323,9 +323,9 @@ def render(post, url, image_names):
     groups = sorted(set(re.findall(r"(?i)(?<!\w)#(u12|u14|u16)\b", message.lower())))
     front = ("---\ntitle: " + json.dumps(title, ensure_ascii=False)
              + "\ndate: " + json.dumps(post["created_time"])
-             + "\nage_groups: " + json.dumps(groups) + "\n---\n\n")
+             + "\ntags: " + json.dumps(groups) + "\n---\n\n")
     body = "  \n".join(escape_text(line) for line in message.splitlines())
-    images = "\n\n".join("![Facebook photo %d](%s)" % (i + 1, name)
+    images = "\n".join("![Facebook photo %d](%s)" % (i + 1, name)
                          for i, name in enumerate(image_names))
     return (front + body + "\n\n" + images + "\n\n"
             + "[Originally published on Facebook](" + url + ").\n").encode("utf-8")
