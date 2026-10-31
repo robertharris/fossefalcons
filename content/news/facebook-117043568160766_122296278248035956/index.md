@@ -1,7 +1,7 @@
 ---
 title: "New kit alert!"
 date: "2026-10-05T16:39:30+0000"
-tags: []
+tags: ["sponsor"]
 ---
 
 New kit alert&#33;   

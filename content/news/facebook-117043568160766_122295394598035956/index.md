@@ -1,7 +1,7 @@
 ---
 title: "A new Fosse Falcons tradition begins 👔"
 date: "2026-09-29T14:30:21+0000"
-tags: []
+tags: ["u12", "u14", "u16"]
 ---
 
 A new Fosse Falcons tradition begins 👔  

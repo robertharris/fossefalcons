@@ -1,7 +1,7 @@
 ---
 title: "Full details to come tomorrow…but…the U16s were on fire today! 💥"
 date: "2026-09-20T17:55:10+0000"
-tags: []
+tags: ["u12"]
 ---
 
 Full details to come tomorrow…but…the U16s were on fire today&#33; 💥  

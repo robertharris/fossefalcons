@@ -1,7 +1,7 @@
 ---
 title: "A brilliant effort from our Fosse Falcons U12s on Sunday against Sils Sirens!"
 date: "2026-10-14T16:21:02+0000"
-tags: []
+tags: ["u12"]
 ---
 
 A brilliant effort from our Fosse Falcons U12s on Sunday against Sils Sirens&#33;  
