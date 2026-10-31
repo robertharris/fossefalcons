@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $news := where (where site.RegularPages "Section" "news") "Params.tags" "intersect" (slice "joinus") }}
+  {{ if $news }}
+  <section aria-labelledby="join-news">
+    <h2 id="join-news">Join us news</h2>
+    {{ partial "news-list.html" $news.ByDate.Reverse }}
+  </section>
+  {{ end }}
+</article>
+{{ end }}

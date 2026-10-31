@@ -321,15 +321,14 @@ def render(post, url, image_names):
     lines = [line.strip() for line in message.splitlines() if line.strip()]
     title = lines[0][:160] if lines else "Facebook update"
     lowered = message.lower()
-    groups = sorted(set(re.findall(r"(?<!\w)#(u12|u14|u16|u18)(?!\d)", lowered)))
-    tags = [t for t in ("community", "joinus")
-            if re.search(r"(?<!\w)#" + t + r"\b", lowered)]
+    tags = sorted(set(re.findall(r"(?<!\w)#(u12|u14|u16|u18)(?!\d)", lowered))
+                  | {t for t in ("community", "joinus")
+                     if re.search(r"(?<!\w)#" + t + r"\b", lowered)})
     front = ("---\ntitle: " + json.dumps(title, ensure_ascii=False)
              + "\ndate: " + json.dumps(post["created_time"])
-             + "\nage_groups: " + json.dumps(groups)
-             + ("\ntags: " + json.dumps(tags) if tags else "") + "\n---\n\n")
+             + "\ntags: " + json.dumps(tags) + "\n---\n\n")
     body = "  \n".join(escape_text(line) for line in message.splitlines())
-    images = "\n\n".join("![Facebook photo %d](%s)" % (i + 1, name)
+    images = "\n".join("![Facebook photo %d](%s)" % (i + 1, name)
                          for i, name in enumerate(image_names))
     return (front + body + "\n\n" + images + "\n\n"
             + "[Originally published on Facebook](" + url + ").\n").encode("utf-8")
