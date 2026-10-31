@@ -95,7 +95,7 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(self.run_sync(), [])
         text = (self.bundle() / "index.md").read_text()
         self.assertIn('date: "2026-06-01T12:34:56+0000"', text)
-        self.assertIn('age_groups: ["u12"]', text)
+        self.assertIn('tags: ["u12"]', text)
         self.assertIn("Originally published on Facebook", text)
         self.assertEqual(len(self.state()["posts"]), 1)
         before = self.snapshot()
@@ -149,7 +149,7 @@ class SyncTests(unittest.TestCase):
             self.assertNotIn(unsafe, body)
         self.assertIn("&#123;&#123;", body)
         self.assertIn('title: "A \\"title\\": value #website #u14"', text)
-        self.assertIn('age_groups: ["u14"]', text)
+        self.assertIn('tags: ["u14"]', text)
 
     def test_photo_bundle_and_signed_url_changes_do_not_redownload(self):
         self.feed = [post(attachments=[photo()])]

@@ -54,7 +54,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 - **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
 - **Change the menu or contact email:** edit `hugo.toml`.
 - **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).
-- **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can also have other tags and `age_groups`.
+- **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can have several tags, e.g. `tags: [sponsor, u12]`.
 
 ## Publishing
 
@@ -91,7 +91,7 @@ Run consent behaviour checks with `node --test scripts/analytics-consent.test.cj
 
 - Add repo secrets `SPOND_USERNAME` and `SPOND_PASSWORD` (use a dedicated Spond account that is a member of the three groups).
 - Fixtures are Spond events marked as a match; training is any non-match event whose title contains "train".
-- Tag news posts for an age group with `age_groups: [u12]` (or `u14`, `u16`) in front matter.
+- Tag news posts for an age group with `tags: [u12]` (or `u14`, `u16`) in front matter.
 - Local run: `pip install -r scripts/requirements.txt && SPOND_USERNAME=… SPOND_PASSWORD=… python scripts/sync_spond.py`
 
 ## Facebook news imports (approval required)
@@ -142,10 +142,17 @@ token. Keep the Page token restricted to the required read permissions.
 ### Review and content handling
 
 - Articles retain the Facebook date, text, source link and a simple first-line
-  title. Age-group markers `#u12`, `#u14` and `#u16` can associate news with teams.
+  title. Age-group markers `#u12`, `#u14` and `#u16` become `tags` (e.g.
+  `tags: ["u12"]`) that associate news with teams.
 - Supported photos are downloaded into the article bundle rather than hotlinked
   using expiring Facebook URLs. Shared posts, videos and other unsupported
   attachment types are skipped; check the workflow output and import state.
+- Photos are written as `![Facebook photo N](file)` lines on consecutive lines
+  (one paragraph, no blank lines between them). The site CSS
+  (`assets/css/main.css`) lays them out as a grid by count: 1 photo full width;
+  2 side by side; 3 as one wide photo above two; 4 or more in two columns, with
+  an odd final photo spanning full width. Keep the lines together and keep the
+  `Facebook photo` alt text when editing, or the grid layout won't apply.
 - Only posts explicitly reported by Meta as published, not hidden and public
   (`EVERYONE`) are eligible. Missing visibility information fails closed.
 - `scripts/facebook-state.json` tracks source IDs, generated-file hashes and

@@ -17,6 +17,8 @@ h1, h2, h3 { color:var(--plum); line-height:1.2; font-weight:800; }
 .site-header { background:var(--plum); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 12px rgba(0,0,0,.2); border-bottom:0; }
 .site-header::after { content:""; display:block; height:6px; background:var(--stripes); }
 .header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+.prose a:has(> img[src*="/icons/"]) { text-decoration:none; }
+.prose > p:last-child:has(> a[href*="facebook.com/"]:only-child) { font-size:.625rem; }
 .brand img { display:block; height:72px; width:auto; margin:-6px 0; }
 .nav ul { list-style:none; display:flex; gap:.4rem; margin:0; padding:0; flex-wrap:wrap; }
 .nav a { display:block; color:#fff; text-decoration:none; font-weight:700; font-size:.95rem; padding:.45rem .9rem; border-radius:999px; transition:background .15s; }
@@ -57,7 +59,10 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .latest { padding-bottom:3rem; }
 .news-list { list-style:none; padding:0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
 .news-list li { background:#fff; padding:1.25rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); transition:transform .15s; }
+.news-list li { position:relative; }
 .news-list li:hover { transform:translateY(-3px); }
+.news-list h3 a::after { content:""; position:absolute; inset:0; }
+.news-list h3 a:focus-visible::after { outline:3px solid var(--blue); border-radius:var(--radius); }
 .news-list li:nth-child(3n+2) { border-top-color:var(--sun); }
 .news-list li:nth-child(3n) { border-top-color:var(--blue); }
 .news-list h3 { margin:.25rem 0 .5rem; }
@@ -88,8 +93,12 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .sponsor-role { font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
 .sponsor-profile .sponsor-role { color:var(--blue); margin:1rem 0 .25rem; }
 .sponsor-profile h2 { margin-top:0; }
-.coach-profiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin:2rem 0; }
-.coach-profile { background:#fff; padding:1.25rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); }
+.coach-profiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+.coach-profile { position:relative; background:#fff; padding:1.25rem; border-radius:var(--radius); box-shadow:var(--shadow); border-top:6px solid var(--pink); transition:transform .15s; }
+.coach-profile:hover { transform:translateY(-3px); }
+.coach-profile h2 a::after { content:""; position:absolute; inset:0; }
+.coach-profile h2 a:focus-visible::after { outline:3px solid var(--blue); border-radius:var(--radius); }
+.coach-profiles .coach-profile p { display:-webkit-box; -webkit-line-clamp:4; line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; margin:0; }
 .coach-profile:nth-child(3n+2) { border-top-color:var(--sun); }
 .coach-profile:nth-child(3n) { border-top-color:var(--blue); }
 .coach-photo { display:block; }
@@ -114,6 +123,11 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .prose p:has(> img + br + img), .prose p:has(> img + img) { display:flex; gap:1rem; flex-wrap:wrap; }
 .prose p:has(> img + br + img) br { display:none; }
 .prose p:has(> img + br + img) img, .prose p:has(> img + img) img { flex:1 1 280px; min-width:0; width:calc(50% - .5rem); object-fit:cover; border-radius:var(--radius); }
+.prose p:has(> img[alt^="Facebook photo"]) { display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem; }
+.prose p:has(> img[alt^="Facebook photo"]) > img { display:block; width:100%; height:100%; min-width:0; aspect-ratio:1; object-fit:cover; border-radius:var(--radius); }
+.prose p:has(> img[alt^="Facebook photo"]) > img:only-child { grid-column:1 / -1; aspect-ratio:4 / 3; }
+.prose p:has(> img[alt^="Facebook photo"]) > img:first-child:nth-last-child(3) { grid-column:1 / -1; aspect-ratio:16 / 9; }
+.prose p:has(> img[alt^="Facebook photo"]) > img:last-child:nth-child(odd):nth-child(n+5) { grid-column:1 / -1; aspect-ratio:16 / 9; }
 
 .club-list { list-style:none; padding:0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
 @media (min-width:900px) { .club-list { grid-template-columns:repeat(3,1fr); } }

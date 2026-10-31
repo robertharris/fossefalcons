@@ -5,12 +5,11 @@
   <div class="coach-profiles">
     {{ range .Pages.ByWeight }}
     <section class="coach-profile" aria-labelledby="coach-{{ .Title | urlize }}">
-      <a class="coach-photo" href="{{ .RelPermalink }}">
+      <div class="coach-photo">
         <img src="{{ .Params.photo | relURL }}" alt="{{ .Params.photo_alt }}" width="480" height="480" loading="lazy">
-      </a>
+      </div>
       <h2 id="coach-{{ .Title | urlize }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ .Summary }}
-      <a href="{{ .RelPermalink }}">View {{ .Title }}'s profile</a>
+      <p>{{ .Summary | plainify | truncate 120 }}</p>
     </section>
     {{ end }}
   </div>
