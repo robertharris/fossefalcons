@@ -1,6 +1,7 @@
 ---
 title: "Our U14 girls are back in league action this Sunday as they take on @atlgirlsrugby at @shipstonrfc"
 date: "2026-10-30T09:39:07+0000"
+description: "21 girls in the squad this weekend, with Maggie taking on captain duties as the team looks forward to another great afternoon of rugby Sunday 1st…"
 tags: ["u14"]
 ---
 

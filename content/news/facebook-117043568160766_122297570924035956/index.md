@@ -1,6 +1,7 @@
 ---
 title: "A brilliant effort from our Fosse Falcons U12s on Sunday against Sils Sirens!"
 date: "2026-10-14T16:21:02+0000"
+description: "For a team that only came together this season, with many of the girls having never played rugby before, it’s fantastic to see how far they’ve already…"
 tags: ["u12"]
 ---
 

@@ -27,7 +27,7 @@ ENV = {
 JPEG = b"\xff\xd8\xff" + b"example photo"
 
 
-def post(number="456", message="Match news #website #u12", attachments=None):
+def post(number="456", message="Match news #news #u12", attachments=None):
     value = {
         "id": "123_" + number,
         "message": message,
@@ -104,7 +104,7 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(self.images, [])
 
     def test_conflicting_duplicate_aborts(self):
-        self.feed.append(post(message="Different #website"))
+        self.feed.append(post(message="Different #news"))
         with self.assertRaises(fb.SyncError):
             self.run_sync()
         self.assertEqual({}, self.snapshot())
@@ -112,7 +112,7 @@ class SyncTests(unittest.TestCase):
     def test_source_change_updates_unedited_bundle(self):
         self.run_sync()
         old_hash = self.state()["posts"]["123_456"]["source_hash"]
-        self.feed[0]["message"] = "New result #website #u16"
+        self.feed[0]["message"] = "New result #news #u16"
         self.run_sync()
         self.assertIn("New result", (self.bundle() / "index.md").read_text())
         self.assertNotEqual(old_hash, self.state()["posts"]["123_456"]["source_hash"])
@@ -122,7 +122,7 @@ class SyncTests(unittest.TestCase):
         path = self.bundle() / "index.md"
         path.write_text("An editor's replacement")
         (self.bundle() / "notes.txt").write_text("editor notes")
-        self.feed[0]["message"] = "Changed source #website"
+        self.feed[0]["message"] = "Changed source #news"
         warnings = self.run_sync()
         self.assertIn("local edits preserved", warnings[0])
         self.assertEqual(path.read_text(), "An editor's replacement")
@@ -138,7 +138,7 @@ class SyncTests(unittest.TestCase):
 
     def test_text_neutralizes_shortcodes_html_markdown_and_frontmatter(self):
         self.feed = [post(message=(
-            'A "title": value #website #u14\n'
+            'A "title": value #news #u14\n'
             '{{< youtube "x" >}}\n<script>alert(1)</script>\n'
             '[click](javascript:evil) ![x](https://evil)\n---\n*bold* & raw'
         ))]
@@ -148,14 +148,31 @@ class SyncTests(unittest.TestCase):
         for unsafe in ("{{", "<script", "[click]", "![x]", "*bold*", "\n---"):
             self.assertNotIn(unsafe, body)
         self.assertIn("&#123;&#123;", body)
-        self.assertIn('title: "A \\"title\\": value #website #u14"', text)
+        self.assertIn('title: "A \\"title\\": value #news #u14"', text)
         self.assertIn('tags: ["u14"]', text)
 
     def test_hashtags_become_tags(self):
-        self.feed = [post(message="News #website #U14Rugby #u18 #Community #JoinUs #u123")]
+        self.feed = [post(message="News #news #U14Rugby #u18 #Community #JoinUs #Sponsor #u123")]
         self.run_sync()
         text = (self.bundle() / "index.md").read_text()
-        self.assertIn('tags: ["community", "joinus", "u14", "u18"]', text)
+        self.assertIn('tags: ["community", "joinus", "sponsor", "u14", "u18"]', text)
+
+    def test_description_skips_title_hashtags_and_links_and_truncates(self):
+        self.feed = [post(message="Title line\nFirst & second https://x.example/y\n#news #u12\n" + "word " * 60)]
+        self.run_sync()
+        text = (self.bundle() / "index.md").read_text()
+        desc = [l for l in text.splitlines() if l.startswith("description: ")][0]
+        value = json.loads(desc[len("description: "):])
+        self.assertTrue(value.startswith("First & second word word"))
+        self.assertNotIn("http", value)
+        self.assertNotIn("#", value)
+        self.assertLessEqual(len(value), 155)
+        self.assertTrue(value.endswith("\u2026"))
+
+    def test_description_falls_back_to_title(self):
+        self.feed = [post(message="Only a title #news")]
+        self.run_sync()
+        self.assertIn('description: "Only a title #news"', (self.bundle() / "index.md").read_text())
 
     def test_photo_bundle_and_signed_url_changes_do_not_redownload(self):
         self.feed = [post(attachments=[photo()])]
@@ -186,7 +203,7 @@ class SyncTests(unittest.TestCase):
     def test_replacing_photo_removes_old_generated_file(self):
         self.feed = [post(attachments=[photo()])]
         self.run_sync()
-        self.feed = [post(message="Now text only #website")]
+        self.feed = [post(message="Now text only #news")]
         self.run_sync()
         self.assertFalse((self.bundle() / "photo-1.jpg").exists())
 
@@ -235,7 +252,7 @@ class SyncTests(unittest.TestCase):
         self.run_sync()
         original = (self.bundle() / "index.md").read_bytes()
         source_hash = self.state()["posts"]["123_456"]["source_hash"]
-        self.feed = [post(message="Private source edit #website", attachments=[photo()])]
+        self.feed = [post(message="Private source edit #news", attachments=[photo()])]
         self.feed[0]["privacy"] = {"value": "SELF"}
         self.assertIn("unsupported", self.run_sync()[0])
         self.assertEqual((self.bundle() / "index.md").read_bytes(), original)
@@ -265,7 +282,7 @@ class SyncTests(unittest.TestCase):
     def test_missing_from_feed_can_still_update_by_object_lookup(self):
         self.run_sync()
         self.feed = []
-        self.lookups["123_456"] = post(message="Updated object #website")
+        self.lookups["123_456"] = post(message="Updated object #news")
         self.run_sync()
         self.assertIn("Updated object", (self.bundle() / "index.md").read_text())
         self.assertNotIn("warning", self.state()["posts"]["123_456"])
@@ -339,7 +356,7 @@ class SyncTests(unittest.TestCase):
     def test_late_invalid_photo_keeps_existing_files_and_new_bundle_unwritten(self):
         self.run_sync()
         before = self.snapshot()
-        self.feed = [post(message="New text #website"), post("457", attachments=[photo()])]
+        self.feed = [post(message="New text #news"), post("457", attachments=[photo()])]
         with patch.object(fb, "download_image", side_effect=fb.SyncError("invalid MIME")):
             with self.assertRaises(fb.SyncError):
                 self.run_sync()
@@ -476,7 +493,7 @@ class TransportAndConfigTests(unittest.TestCase):
             with self.subTest(key=key, value=value):
                 with self.assertRaises(fb.SyncError):
                     fb.config(dict(ENV, **{key: value}))
-        self.assertEqual(fb.config(ENV)["marker"], "#website")
+        self.assertEqual(fb.config(ENV)["marker"], "#news")
         self.assertEqual(fb.config(dict(ENV, FACEBOOK_IMPORT_MARKER=""))["marker"], "")
         self.assertEqual(fb.config(dict(ENV, FACEBOOK_IMPORT_SINCE="2026-01-01T02:00:00+02:00"))[
             "since"], "2026-01-01T00:00:00+00:00")

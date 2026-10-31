@@ -1,6 +1,7 @@
 ---
 title: "U14s - Fosse Falcons v Buckingham"
 date: "2026-10-19T14:22:31+0000"
+description: "Another determined performance from our U14s on Sunday, with some strong tackling, great work at the breakdown and plenty of teamwork across the pitch…"
 tags: ["u14"]
 ---
 

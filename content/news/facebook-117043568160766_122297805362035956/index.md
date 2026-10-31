@@ -1,6 +1,7 @@
 ---
 title: "U14s Fosse Falcons 17–17 Sils Sirens 11/10/26"
 date: "2026-10-16T14:00:28+0000"
+description: "A hard fought draw for our U14s on Sunday, with plenty of positives to take from a competitive afternoon of rugby 3 tries from Robyn, Molly and Isla…"
 tags: ["u14"]
 ---
 

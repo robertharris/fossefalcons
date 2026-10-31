@@ -1,6 +1,7 @@
 ---
 title: "13 Falcons County Selected! 🔥"
 date: "2026-10-09T12:30:50+0000"
+description: "We’re incredibly proud to announce that 13 of our Fosse Falcons U16 girls have been selected for the Warwickshire U16 Girls Player Development Group…"
 tags: ["u16"]
 ---
 

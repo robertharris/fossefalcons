@@ -1,6 +1,7 @@
 ---
 title: "Fosse Falcons U14s & Witney RFC"
 date: "2026-10-03T17:50:33+0000"
+description: "Last weekend we joined up with Witney RFC for a joint training session, followed by a short game to finish. It was our first game of the season, and a…"
 tags: ["u14"]
 ---
 

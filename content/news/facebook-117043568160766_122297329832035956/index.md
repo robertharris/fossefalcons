@@ -1,6 +1,7 @@
 ---
 title: "FULL TIME at Kenilworth Road – U16s"
 date: "2026-10-12T20:02:16+0000"
+description: "Fosse Falcons 50–0 Tamworth, Old Sils & Bournville Despite changes to the side (Rosie at hooker, Poppy’s first start at prop, Ella throwing in at the…"
 tags: ["u16"]
 ---
 
