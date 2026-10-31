@@ -1,0 +1,53 @@
+name: Build site preview
+
+on:
+  pull_request:
+  # PRs and pushes made with GITHUB_TOKEN do not trigger pull_request runs,
+  # so also build after each Facebook sync run.
+  workflow_run:
+    workflows: ["Review Facebook news"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch to build
+        default: automation/facebook-news
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number || github.event.inputs.ref || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.168.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'automation/facebook-news' || github.event.inputs.ref || '' }}
+      - name: Build
+        run: hugo --gc --minify --baseURL "http://localhost:1313/"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: public
+          retention-days: 14
+      - name: Explain how to view
+        run: |
+          {
+            echo "### Site preview built"
+            echo "Download the \`site-preview\` artifact, unzip it and run:"
+            echo '```'
+            echo "cd <unzipped folder> && python3 -m http.server 1313"
+            echo '```'
+            echo "Then open http://localhost:1313/."
+          } >> "$GITHUB_STEP_SUMMARY"
