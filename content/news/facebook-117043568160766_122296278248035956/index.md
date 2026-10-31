@@ -1,6 +1,7 @@
 ---
 title: "New kit alert!"
 date: "2026-10-05T16:39:30+0000"
+description: "A big thank you to RPGL for sponsoring our new DRYBONES sub coats for the Fosse Falcons girls! RPGL is a Warwickshire based property development business…"
 tags: ["sponsor"]
 ---
 

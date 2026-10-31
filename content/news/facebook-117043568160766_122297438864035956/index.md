@@ -1,6 +1,7 @@
 ---
 title: "U18s Match Report"
 date: "2026-10-13T16:16:38+0000"
+description: "Fosse/OY Vixens/Kenilworth 31-14 Old Northamptonians The Fosse Falcons girls joined forces with Old Yards Vixens and Kenilworth on Sunday to take on Old…"
 tags: ["u18"]
 ---
 

@@ -125,7 +125,7 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .prose p:has(> img + br + img) img, .prose p:has(> img + img) img { flex:1 1 280px; min-width:0; width:calc(50% - .5rem); object-fit:cover; border-radius:var(--radius); }
 .prose p:has(> img[alt^="Facebook photo"]) { display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem; }
 .prose p:has(> img[alt^="Facebook photo"]) > img { display:block; width:100%; height:100%; min-width:0; aspect-ratio:1; object-fit:cover; border-radius:var(--radius); }
-.prose p:has(> img[alt^="Facebook photo"]) > img:only-child { grid-column:1 / -1; aspect-ratio:4 / 3; }
+.prose p:has(> img[alt^="Facebook photo"]) > img:only-child { grid-column:1 / -1; aspect-ratio:auto; height:auto; max-height:80vh; object-fit:contain; justify-self:center; width:auto; max-width:100%; }
 .prose p:has(> img[alt^="Facebook photo"]) > img:first-child:nth-last-child(3) { grid-column:1 / -1; aspect-ratio:16 / 9; }
 .prose p:has(> img[alt^="Facebook photo"]) > img:last-child:nth-child(odd):nth-child(n+5) { grid-column:1 / -1; aspect-ratio:16 / 9; }
 

@@ -1,6 +1,7 @@
 ---
 title: "A new Fosse Falcons tradition begins 👔"
 date: "2026-09-29T14:30:21+0000"
+description: "A proud moment for our cluster on Sunday as we handed out our first ever Fosse Falcons ties to our U12s, U14s & U16s Designed especially for the Fosse…"
 tags: ["u12", "u14", "u16"]
 ---
 

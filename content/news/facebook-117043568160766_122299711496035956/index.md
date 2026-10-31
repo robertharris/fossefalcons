@@ -1,6 +1,7 @@
 ---
 title: "U16s - Match Day"
 date: "2026-10-31T09:23:10+0000"
+description: "Our U16s are back in action this Sunday as they take on Market Bosworth It might be a friendly, but with two competitive sides going head to head, we’re…"
 tags: []
 ---
 

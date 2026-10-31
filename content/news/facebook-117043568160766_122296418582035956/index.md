@@ -1,6 +1,7 @@
 ---
 title: "U16s…LEAGUE WIN!"
 date: "2026-10-06T14:15:18+0000"
+description: "Fosse welcomed Melkham Girls Rugby to Trinity Guild on Sunday for their first league game of the season Playing 11-a-side against an injury hit Melkham…"
 tags: ["u16"]
 ---
 

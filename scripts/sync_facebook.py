@@ -65,7 +65,7 @@ def config(env):
     return {
         "page": page, "token": token, "version": version,
         "since": cutoff.isoformat(), "cutoff": cutoff,
-        "marker": env.get("FACEBOOK_IMPORT_MARKER", "#website"),
+        "marker": env.get("FACEBOOK_IMPORT_MARKER", "#news"),
     }
 
 
@@ -316,16 +316,29 @@ def escape_text(text):
     return "".join("&#%d;" % ord(c) if c in string.punctuation else c for c in text)
 
 
+def describe(lines, title, limit=155):
+    words = []
+    for line in lines[1:]:
+        tokens = [t for t in line.split() if not t.startswith(("#", "http://", "https://"))]
+        words.extend(tokens)
+    text = " ".join(words) or title
+    if len(text) <= limit:
+        return text
+    cut = text[:limit - 1].rsplit(" ", 1)[0].rstrip(" ,;:-") or text[:limit - 1]
+    return cut + "\u2026"
+
+
 def render(post, url, image_names):
     message = post.get("message", "")
     lines = [line.strip() for line in message.splitlines() if line.strip()]
     title = lines[0][:160] if lines else "Facebook update"
     lowered = message.lower()
     tags = sorted(set(re.findall(r"(?<!\w)#(u12|u14|u16|u18)(?!\d)", lowered))
-                  | {t for t in ("community", "joinus")
+                  | {t for t in ("community", "joinus", "sponsor")
                      if re.search(r"(?<!\w)#" + t + r"\b", lowered)})
     front = ("---\ntitle: " + json.dumps(title, ensure_ascii=False)
              + "\ndate: " + json.dumps(post["created_time"])
+             + "\ndescription: " + json.dumps(describe(lines, title), ensure_ascii=False)
              + "\ntags: " + json.dumps(tags) + "\n---\n\n")
     body = "  \n".join(escape_text(line) for line in message.splitlines())
     images = "\n".join("![Facebook photo %d](%s)" % (i + 1, name)

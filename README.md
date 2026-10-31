@@ -132,7 +132,7 @@ publishes it. The importer uses Python's standard library, with no extra package
 | `FACEBOOK_PAGE_ID` | Numeric Page ID confirmed through Meta. The website currently links to `61551078683239`; verify that this is the Page you manage. |
 | `FACEBOOK_API_VERSION` | An explicitly selected, currently supported Graph API version, in `vN.N` format. |
 | `FACEBOOK_IMPORT_SINCE` | Required inclusive cutoff: `YYYY-MM-DD` or an ISO timestamp with timezone. Set a launch date to avoid importing the full history. |
-| `FACEBOOK_IMPORT_MARKER` | Optional marker, default `#website`. Only matching posts are initially imported. |
+| `FACEBOOK_IMPORT_MARKER` | Optional marker, default `#news`. Only matching posts are initially imported. |
 | `FACEBOOK_IMPORT_ALL` | Set to `true` to import all supported Page-authored posts after the cutoff instead of filtering by marker. |
 
 The source must be a managed **Page**, not a personal profile or private group.
@@ -142,10 +142,13 @@ token. Keep the Page token restricted to the required read permissions.
 ### Review and content handling
 
 - Articles retain the Facebook date, text, source link and a simple first-line
-  title. Hashtags become `tags`: age-group markers starting
-  `#u12`, `#u14`, `#u16` or `#u18` (so `#U14Rugby` also works) become `u12` etc.
-  to associate news with teams, and `#Community` and `#JoinUs` become
-  `community` and `joinus`. A post can have several, e.g. `tags: ["community", "u14"]`.
+  title. Hashtags become `tags`; see [facebook.md](facebook.md) for
+  the recognised hashtags.
+- A `description` (used for the SEO meta description) is generated from the
+  post text: the first line (the title), hashtags and links are dropped and the
+  rest is trimmed to about 155 characters. Edit it in the PR if needed; edits are
+  preserved. News pages without one fall back to a truncated summary at build
+  time (`layouts/baseof.html`).
 - Supported photos are downloaded into the article bundle rather than hotlinked
   using expiring Facebook URLs. Shared posts, videos and other unsupported
   attachment types are skipped; check the workflow output and import state.
@@ -192,6 +195,6 @@ Facebook credentials in this repository, so actual Page access and consent must
 be verified by an administrator.
 
 For local use, supply the same environment variables securely and run
-`python scripts/sync_facebook.py`; an unset marker defaults to `#website`, and an
+`python scripts/sync_facebook.py`; an unset marker defaults to `#news`, and an
 explicitly empty marker imports all supported posts. Run its offline tests with
 `python -m unittest discover -s scripts -p 'test_sync_facebook.py'`.

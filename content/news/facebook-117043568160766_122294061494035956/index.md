@@ -1,6 +1,7 @@
 ---
 title: "Full details to come tomorrow…but…the U16s were on fire today! 💥"
 date: "2026-09-20T17:55:10+0000"
+description: "3 games, 3 wins, 70 points scored, 0 conceded What a start!"
 tags: ["u12"]
 ---
 
