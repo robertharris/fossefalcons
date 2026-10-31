@@ -5,8 +5,6 @@ description: "Another determined performance from our U14s on Sunday, with some 
 tags: ["u14"]
 ---
 
-U14s &#45; Fosse Falcons v Buckingham  
-  
 Another determined performance from our U14s on Sunday&#44; with some strong tackling&#44; great work at the breakdown and plenty of teamwork across the pitch  
   
 Molly crossed the line twice&#44; with Maddy adding another try and a conversion to bring Fosse’s total to 17  

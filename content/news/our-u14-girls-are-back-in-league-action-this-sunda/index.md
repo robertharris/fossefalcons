@@ -5,8 +5,6 @@ description: "21 girls in the squad this weekend, with Maggie taking on captain 
 tags: ["u14"]
 ---
 
-Our U14 girls are back in league action this Sunday as they take on &#64;atlgirlsrugby at &#64;shipstonrfc   
-  
 21 girls in the squad this weekend&#44; with Maggie taking on captain duties as the team looks forward to another great afternoon of rugby  
   
 Sunday 1st November  

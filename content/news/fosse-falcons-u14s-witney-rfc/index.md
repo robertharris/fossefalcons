@@ -5,8 +5,6 @@ description: "Last weekend we joined up with Witney RFC for a joint training ses
 tags: ["u14"]
 ---
 
-Fosse Falcons U14s &#38; Witney RFC   
-  
 Last weekend we joined up with Witney RFC for a joint training session&#44; followed by a short game to finish&#46; It was our first game of the season&#44; and a big welcome to everyone who played their very first game for the U14s&#33;  
   
 Here’s what our captain Flo had to say&#58;  

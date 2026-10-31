@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import string
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlencode, urlsplit
@@ -316,6 +317,25 @@ def escape_text(text):
     return "".join("&#%d;" % ord(c) if c in string.punctuation else c for c in text)
 
 
+def folder_name(post, post_id, news, state):
+    record = state["posts"].get(post_id) or {}
+    known = record.get("dir")
+    if known:
+        return known
+    lines = [l.strip() for l in post.get("message", "").splitlines() if l.strip()]
+    ascii_title = unicodedata.normalize("NFKD", lines[0] if lines else "")
+    ascii_title = ascii_title.encode("ascii", "ignore").decode()
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_title.lower()).strip("-")[:50].strip("-")
+    slug = slug or "update"
+    taken = {r.get("dir") for pid, r in state["posts"].items() if pid != post_id}
+    legacy = "facebook-" + post_id
+    if (news / legacy).exists():
+        return legacy
+    if slug in taken or (news / slug).exists():
+        slug += "-" + post_id.rsplit("_", 1)[-1][-6:]
+    return slug
+
+
 def describe(lines, title, limit=155):
     words = []
     for line in lines[1:]:
@@ -340,7 +360,11 @@ def render(post, url, image_names):
              + "\ndate: " + json.dumps(post["created_time"])
              + "\ndescription: " + json.dumps(describe(lines, title), ensure_ascii=False)
              + "\ntags: " + json.dumps(tags) + "\n---\n\n")
-    body = "  \n".join(escape_text(line) for line in message.splitlines())
+    # The title is rendered as the page heading, so it is not repeated in the body.
+    rest = message.splitlines()
+    while rest and not rest[0].strip():
+        rest.pop(0)
+    body = "  \n".join(escape_text(line) for line in rest[1:]).strip()
     images = "\n".join("![Facebook photo %d](%s)" % (i + 1, name)
                          for i, name in enumerate(image_names))
     return (front + body + "\n\n" + images + "\n\n"
@@ -379,6 +403,8 @@ def load_state(path, cfg):
                 not re.fullmatch(r"[0-9a-f]{64}", record.get(key, ""))
                 for key in ("source_hash", "bundle_hash")
             ):
+                raise SyncError("Invalid state record")
+            if "dir" in record and not re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,80}", str(record["dir"])):
                 raise SyncError("Invalid state record")
         return state
     except (ValueError, KeyError, TypeError):
@@ -432,7 +458,8 @@ def sync(env=None, root=None):
             continue
         url = permalink(post.get("permalink_url"), post_id, cfg["page"])
         source = source_hash(post, specs, url)
-        directory = news / ("facebook-" + post_id)
+        dirname = folder_name(post, post_id, news, state)
+        directory = news / dirname
         existing = local_files(directory)
         current_hash = bundle_hash(existing)
         if record and current_hash != record["bundle_hash"]:
@@ -441,6 +468,7 @@ def sync(env=None, root=None):
             continue
         if record and source == record["source_hash"]:
             record.pop("warning", None)
+            record["dir"] = dirname
             continue
         if not record and existing:
             warnings.append(post_id + ": untracked local bundle preserved")
@@ -457,7 +485,8 @@ def sync(env=None, root=None):
             files["photo-%d.%s" % (i + 1, ext)] = payload
         files["index.md"] = render(post, url, list(files))
         staged[directory] = (existing, files)
-        state["posts"][post_id] = {"source_hash": source, "bundle_hash": bundle_hash(files)}
+        state["posts"][post_id] = {"source_hash": source, "bundle_hash": bundle_hash(files),
+                                   "dir": dirname}
     # No network operations, validation or rendering may happen after this point.
     for directory, (existing, files) in staged.items():
         directory.mkdir(parents=True, exist_ok=True)

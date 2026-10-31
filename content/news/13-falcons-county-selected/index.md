@@ -5,8 +5,6 @@ description: "We’re incredibly proud to announce that 13 of our Fosse Falcons 
 tags: ["u16"]
 ---
 
-13 Falcons County Selected&#33; 🔥  
-  
 We’re incredibly proud to announce that 13 of our Fosse Falcons U16 girls have been selected for the Warwickshire U16 Girls Player Development Group &#40;PDG&#41; for the 2026&#47;27 season&#33;   
   
 A fantastic achievement for each of the girls and a reflection of their hard work&#44; dedication and commitment to rugby  

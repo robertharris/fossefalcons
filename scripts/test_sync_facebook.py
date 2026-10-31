@@ -81,7 +81,10 @@ class SyncTests(unittest.TestCase):
         return fb.sync(self.env, self.root)
 
     def bundle(self, number="456"):
-        return self.root / "content/news" / ("facebook-123_" + number)
+        state_file = self.root / "scripts/facebook-state.json"
+        posts = self.state()["posts"] if state_file.exists() else {}
+        record = posts.get("123_" + number, {})
+        return self.root / "content/news" / record.get("dir", "facebook-123_" + number)
 
     def state(self):
         return json.loads((self.root / "scripts/facebook-state.json").read_text())
@@ -156,6 +159,12 @@ class SyncTests(unittest.TestCase):
         self.run_sync()
         text = (self.bundle() / "index.md").read_text()
         self.assertIn('tags: ["community", "joinus", "sponsor", "u14", "u18"]', text)
+
+    def test_folder_uses_friendly_title_slug(self):
+        self.feed = [post(message="Big Win! \u00c9t\u00e9 #news")]
+        self.run_sync()
+        self.assertEqual(self.bundle().name, "big-win-ete-news")
+        self.assertEqual(self.state()["posts"]["123_456"]["dir"], "big-win-ete-news")
 
     def test_description_skips_title_hashtags_and_links_and_truncates(self):
         self.feed = [post(message="Title line\nFirst & second https://x.example/y\n#news #u12\n" + "word " * 60)]

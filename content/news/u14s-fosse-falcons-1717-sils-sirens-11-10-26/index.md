@@ -5,8 +5,6 @@ description: "A hard fought draw for our U14s on Sunday, with plenty of positive
 tags: ["u14"]
 ---
 
-U14s Fosse Falcons 17–17 Sils Sirens 11&#47;10&#47;26  
-  
 A hard fought draw for our U14s on Sunday&#44; with plenty of positives to take from a competitive afternoon of rugby  
   
 3 tries from Robyn&#44; Molly and Isla&#44; with Amelia adding the conversion&#44; saw Fosse finish level at 17–17  

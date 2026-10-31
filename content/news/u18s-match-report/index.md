@@ -5,8 +5,6 @@ description: "Fosse/OY Vixens/Kenilworth 31-14 Old Northamptonians The Fosse Fal
 tags: ["u18"]
 ---
 
-U18s Match Report   
-  
 Fosse&#47;OY Vixens&#47;Kenilworth 31&#45;14 Old Northamptonians  
   
 The Fosse Falcons girls joined forces with Old Yards Vixens and Kenilworth on Sunday to take on Old Northamptonians&#46; It was a great game against a very strong team&#44; and the girls did brilliantly to take the win&#33;   

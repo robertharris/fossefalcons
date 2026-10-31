@@ -5,8 +5,6 @@ description: "A proud moment for our cluster on Sunday as we handed out our firs
 tags: ["u12", "u14", "u16"]
 ---
 
-A new Fosse Falcons tradition begins 👔  
-  
 A proud moment for our cluster on Sunday as we handed out our first ever Fosse Falcons ties to our U12s&#44; U14s &#38; U16s  
   
 Designed especially for the Fosse Falcons&#44; the tie brings together the colours of all our home clubs and gives our girls something that represents their team &#38; the cluster  

@@ -5,8 +5,6 @@ description: "Fosse welcomed Melkham Girls Rugby to Trinity Guild on Sunday for 
 tags: ["u16"]
 ---
 
-U16s…LEAGUE WIN&#33;   
-  
 Fosse welcomed Melkham Girls Rugby to Trinity Guild on Sunday for their first league game of the season  
   
 Playing 11&#45;a&#45;side against an injury hit Melkham&#44; a fiercely contested first half saw Fosse use their power up front before releasing the backs into space&#44; taking a 29–20 lead at half&#45;time  

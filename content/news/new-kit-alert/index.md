@@ -5,8 +5,6 @@ description: "A big thank you to RPGL for sponsoring our new DRYBONES sub coats 
 tags: ["sponsor"]
 ---
 
-New kit alert&#33;   
-  
 A big thank you to RPGL for sponsoring our new DRYBONES sub coats for the Fosse Falcons girls&#33;  
   
 RPGL is a Warwickshire based property development business delivering residential led developments alongside projects across the hotel and student accommodation sectors&#46; We’re really pleased to have the support of another local business backing grassroots girls’ rugby  
