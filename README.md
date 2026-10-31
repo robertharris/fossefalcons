@@ -161,7 +161,9 @@ token. Keep the Page token restricted to the required read permissions.
 - Only posts explicitly reported by Meta as published, not hidden and public
   (`EVERYONE`) are eligible. Missing visibility information fails closed.
 - `scripts/facebook-state.json` tracks source IDs, generated-file hashes and
-  review warnings. Commit it with the articles and do not delete it to retry:
+  review warnings, plus each article's folder (`dir`), which is a short slug of the
+  post's first line (the folder, and so the URL, may be renamed if `dir` is updated
+  to match). Commit it with the articles and do not delete it to retry:
   it prevents duplicate imports and protects editorial changes.
   State is bound to the Page ID and cutoff: changing either requires a deliberate
   state migration while the workflow is paused, not simply deleting the file.

@@ -5,8 +5,6 @@ description: "3 games, 3 wins, 70 points scored, 0 conceded What a start!"
 tags: ["u12"]
 ---
 
-Full details to come tomorrow…but…the U16s were on fire today&#33; 💥  
-  
 3 games&#44; 3 wins&#44; 70 points scored&#44; 0 conceded  
   
 What a start&#33;

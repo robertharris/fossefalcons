@@ -5,7 +5,6 @@ description: "Fosse Falcons 50–0 Tamworth, Old Sils & Bournville Despite chang
 tags: ["u16"]
 ---
 
-FULL TIME at Kenilworth Road – U16s   
 Fosse Falcons 50–0 Tamworth&#44; Old Sils &#38; Bournville  
   
 Despite changes to the side &#40;Rosie at hooker&#44; Poppy’s first start at prop&#44; Ella throwing in at the lineout&#41;&#44; the Fosse girls started strongly&#46; Big defence from Hope&#44; Lilly&#44; Ella&#44; Eliza and Rosie gave the backs a platform&#44; and Skylar&#44; Ines&#44; Izzy and Katie made big ground&#46; The visitors made us work to the final whistle&#44; so the scoreline doesn’t tell the full story&#46;  

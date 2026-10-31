@@ -5,8 +5,6 @@ description: "Our U16s are back in action this Sunday as they take on Market Bos
 tags: []
 ---
 
-U16s &#45; Match Day   
-  
 Our U16s are back in action this Sunday as they take on Market Bosworth  
   
 It might be a friendly&#44; but with two competitive sides going head to head&#44; we’re expecting a great afternoon of rugby&#33;  
