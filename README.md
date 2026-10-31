@@ -142,8 +142,10 @@ token. Keep the Page token restricted to the required read permissions.
 ### Review and content handling
 
 - Articles retain the Facebook date, text, source link and a simple first-line
-  title. Age-group markers `#u12`, `#u14` and `#u16` become `tags` (e.g.
-  `tags: ["u12"]`) that associate news with teams.
+  title. Hashtags become `tags`: age-group markers starting
+  `#u12`, `#u14`, `#u16` or `#u18` (so `#U14Rugby` also works) become `u12` etc.
+  to associate news with teams, and `#Community` and `#JoinUs` become
+  `community` and `joinus`. A post can have several, e.g. `tags: ["community", "u14"]`.
 - Supported photos are downloaded into the article bundle rather than hotlinked
   using expiring Facebook URLs. Shared posts, videos and other unsupported
   attachment types are skipped; check the workflow output and import state.

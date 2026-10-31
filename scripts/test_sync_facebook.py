@@ -151,6 +151,12 @@ class SyncTests(unittest.TestCase):
         self.assertIn('title: "A \\"title\\": value #website #u14"', text)
         self.assertIn('tags: ["u14"]', text)
 
+    def test_hashtags_become_tags(self):
+        self.feed = [post(message="News #website #U14Rugby #u18 #Community #JoinUs #u123")]
+        self.run_sync()
+        text = (self.bundle() / "index.md").read_text()
+        self.assertIn('tags: ["community", "joinus", "u14", "u18"]', text)
+
     def test_photo_bundle_and_signed_url_changes_do_not_redownload(self):
         self.feed = [post(attachments=[photo()])]
         self.run_sync()
