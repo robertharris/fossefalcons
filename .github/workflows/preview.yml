@@ -1,12 +1,23 @@
 name: Build site preview
 
+# Automatic runs are currently DISABLED; run manually from
+# Actions > Build site preview > Run workflow (pick a branch and set "ref").
+#
+# To reinstate the automatic behaviour, replace the `on:` block below with:
+#
+#   on:
+#     pull_request:
+#     # PRs and pushes made with GITHUB_TOKEN do not trigger pull_request runs,
+#     # so also build after each Facebook sync run.
+#     workflow_run:
+#       workflows: ["Review Facebook news"]
+#       types: [completed]
+#     workflow_dispatch:
+#       inputs:
+#         ref:
+#           description: Branch to build
+#           default: automation/facebook-news
 on:
-  pull_request:
-  # PRs and pushes made with GITHUB_TOKEN do not trigger pull_request runs,
-  # so also build after each Facebook sync run.
-  workflow_run:
-    workflows: ["Review Facebook news"]
-    types: [completed]
   workflow_dispatch:
     inputs:
       ref:
