@@ -3,132 +3,161 @@
   "posts": {
     "117043568160766_122293860392035956": {
       "bundle_hash": "eb9ed2fc33b28c5f7cfff1f27417b09ee37314b6d4f814e0c10b43093e5781e1",
-      "source_hash": "5731c1afbae147e447f797b564af9788d721083322e8992841f5ba9593534b71"
+      "source_hash": "5731c1afbae147e447f797b564af9788d721083322e8992841f5ba9593534b71",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122294057768035956": {
       "bundle_hash": "f994c7873c050e389461af5fc051f18ded55d8933aa621aa651b300358d60f6f",
-      "source_hash": "9df54f49522c890ef7cc4ef73b8174eab78efa2670eae13c5d1b98993b214a2c"
+      "source_hash": "9df54f49522c890ef7cc4ef73b8174eab78efa2670eae13c5d1b98993b214a2c",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122294061494035956": {
       "bundle_hash": "cc476d6088916fa58c7a74c8edb5713338d24d6d64f63beb52d7d4660ac10ad0",
       "dir": "full-details-to-come-tomorrow-but-the-u16s-were-on",
-      "source_hash": "0d5474b7dbab9b62592102d53a3ac80a2e849554cd4cc0976da45e5be9694a69"
+      "source_hash": "0d5474b7dbab9b62592102d53a3ac80a2e849554cd4cc0976da45e5be9694a69",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122294615864035956": {
       "bundle_hash": "0ae70c36fe4b0d2c596ba020d300204a413b1a7989fc6e6c93848f00da452b30",
-      "source_hash": "bbbd692f00989e6794549bce09152afd04d868a9c47930e9c490f1f67d337e09"
+      "source_hash": "bbbd692f00989e6794549bce09152afd04d868a9c47930e9c490f1f67d337e09",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295019484035956": {
       "bundle_hash": "f4adf172eee22a4828f8c3a69bff452ae9066687377ca39a978a1b071139ca9a",
-      "source_hash": "b8b4b63e7035af012390edf8aed241e39ca7e84e63ebd3516c3ea2476030c334"
+      "source_hash": "b8b4b63e7035af012390edf8aed241e39ca7e84e63ebd3516c3ea2476030c334",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295214298035956": {
       "bundle_hash": "77d4543deccd29e2acb43121aa2201e2d4d4bc72b12d570dd9f5707919fbf771",
-      "source_hash": "f58b7bfbae5cb51c30f043fc763450901df66b1f95f723489b30f8783d8b2d67"
+      "source_hash": "f58b7bfbae5cb51c30f043fc763450901df66b1f95f723489b30f8783d8b2d67",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295394598035956": {
       "bundle_hash": "25e32ce3db2242648f87c7b5a0a765bcb46bd7ecca0be07d04c19f62bd7e0345",
       "dir": "a-new-fosse-falcons-tradition-begins",
-      "source_hash": "42ec42268829624acb19d9646b9784e1ea03f5f2579fb1fb07b54710f0519150"
+      "source_hash": "42ec42268829624acb19d9646b9784e1ea03f5f2579fb1fb07b54710f0519150",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295946778035956": {
       "bundle_hash": "847e7868fad6616b4fc65133c58bdc98e29349cf65eb2fc7789ff8f6ae102700",
-      "source_hash": "e369bd53b0ca1ef12a52c42227719189f260126d9eb995d22c0205ae44b4d6c1"
+      "source_hash": "e369bd53b0ca1ef12a52c42227719189f260126d9eb995d22c0205ae44b4d6c1",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295953258035956": {
       "bundle_hash": "e201ce521a2502db0dc957d5d7fa17406eccf599eb498deab49f19d1cc34c241",
-      "source_hash": "da3fce62a43727de2f4ad216bc257a1cfdf51818e7389eae6a130bcea5f3befd"
+      "source_hash": "da3fce62a43727de2f4ad216bc257a1cfdf51818e7389eae6a130bcea5f3befd",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122295994016035956": {
       "bundle_hash": "1984356b2efc8275fbfca2d71fe42746e5929085a15d2e844f3c58257068b59c",
       "dir": "fosse-falcons-u14s-witney-rfc",
-      "source_hash": "ec79dbc16c27195ea04335b6dff5a1bb9077b87c19e48211bc3cd01dd67207c2"
+      "source_hash": "ec79dbc16c27195ea04335b6dff5a1bb9077b87c19e48211bc3cd01dd67207c2",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296278248035956": {
       "bundle_hash": "80b78fe1408ef8f3fd0ca50fbd0769a3c8f38d4eeb57ffbfb5dfaff5a8fd99b2",
       "dir": "new-kit-alert",
-      "source_hash": "8a48067a534e750dad4c8b492b1c108c149f4dc833b53fe7cc64b4c0aba562f0"
+      "source_hash": "8a48067a534e750dad4c8b492b1c108c149f4dc833b53fe7cc64b4c0aba562f0",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296418582035956": {
       "bundle_hash": "95db225c75d0e1ac7360c51392aebaf539d75d0a53bcb9453bf269a762d9350a",
       "dir": "u16s-league-win",
-      "source_hash": "6e0fe039c6975147bd01218eb33e247bc7033779e8343769e75ef2ad6d4a947d"
+      "source_hash": "6e0fe039c6975147bd01218eb33e247bc7033779e8343769e75ef2ad6d4a947d",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296694102035956": {
       "bundle_hash": "4f10f74d47611c79c92920373f9d5d828124956e14396501747fcf960df03661",
-      "source_hash": "f0635df46ded852447c0a28153e37732a0839ba1658e56062355bb6937fcb1e3"
+      "source_hash": "f0635df46ded852447c0a28153e37732a0839ba1658e56062355bb6937fcb1e3",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296795634035956": {
       "bundle_hash": "109e6b9077c2074fc8728b6f0bdb5ede445a2343de26eceb3ea37227f25bb275",
-      "source_hash": "452731c16180d84f7022b1cf8c693474d5bc8e2b799e23da54fbaeb97d555f51"
+      "source_hash": "452731c16180d84f7022b1cf8c693474d5bc8e2b799e23da54fbaeb97d555f51",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296835426035956": {
       "bundle_hash": "ad6e71f1eb69cc440f66299797e2c8929b644a13211182cfca7fcede73246250",
       "dir": "13-falcons-county-selected",
-      "source_hash": "82c76625baa3eed6e4548524ec06584019b8fe4c6c20896c191c3bf96768e7bd"
+      "source_hash": "82c76625baa3eed6e4548524ec06584019b8fe4c6c20896c191c3bf96768e7bd",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296897844035956": {
       "bundle_hash": "667af873e068581637f8d800906329b07df2c16043cc9ff3b89a419ba2ca0bfb",
-      "source_hash": "c8f87fa36baecd70d59165b97bcee4f13514ec4da7c2ec0d6e15e1c8dcc3b75c"
+      "source_hash": "c8f87fa36baecd70d59165b97bcee4f13514ec4da7c2ec0d6e15e1c8dcc3b75c",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122296960496035956": {
       "bundle_hash": "727f80e5f2135396b3a03a406365f892502ef592694e9968060fd3ed45e6e50d",
-      "source_hash": "7c90e57b407070b9a240c4fb1a065e74f0c1bd79132b31fde70974d251d61f38"
+      "source_hash": "7c90e57b407070b9a240c4fb1a065e74f0c1bd79132b31fde70974d251d61f38",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297329832035956": {
       "bundle_hash": "ef3199ddf572f180a110141c3f923d7788e5609a60f3c38a2e1d43714937ad3e",
       "dir": "full-time-at-kenilworth-road-u16s",
-      "source_hash": "5055c35744c696ba6f406316cec08dd92079ba37ca33ee24123c10ad2961a14a"
+      "source_hash": "5055c35744c696ba6f406316cec08dd92079ba37ca33ee24123c10ad2961a14a",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297438864035956": {
       "bundle_hash": "e89183a32d37326ceeb2a8b551a3350b61f07b57c6bda37d7024eb3e38354935",
       "dir": "u18s-match-report",
-      "source_hash": "87ce6eb14cbe6f2ec9ac391a97529be565f7ad98a8f40959e54b180954905241"
+      "source_hash": "87ce6eb14cbe6f2ec9ac391a97529be565f7ad98a8f40959e54b180954905241",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297570924035956": {
       "bundle_hash": "7516c72eddfb3a48f3502f810edbf2b2c2a88d6c7a03cc1a9266165940be5f44",
       "dir": "a-brilliant-effort-from-our-fosse-falcons-u12s-on",
-      "source_hash": "b420a06d43ff2117b9d511257cf30b3a2fe5ba02bd8b0d1a5468eee67103c47c"
+      "source_hash": "b420a06d43ff2117b9d511257cf30b3a2fe5ba02bd8b0d1a5468eee67103c47c",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297725424035956": {
       "bundle_hash": "066e2f8214127256f8e1129c7bb895a6c23513695f89a86b39ab4022865c1bfc",
-      "source_hash": "fa843b06bcf99df719f89656c6c9631d1d0aec1491e1e7727cab2578fb9aaf3e"
+      "source_hash": "fa843b06bcf99df719f89656c6c9631d1d0aec1491e1e7727cab2578fb9aaf3e",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297779244035956": {
       "bundle_hash": "ba6d9a84779e663814e029fce75dfeeb5058fc4a3a1dbff4f557e408a482b82d",
-      "source_hash": "68398d7d023788b77de6bd6e8fd077ba3f6f003e057c3137bdf162d081440b1f"
+      "source_hash": "68398d7d023788b77de6bd6e8fd077ba3f6f003e057c3137bdf162d081440b1f",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297805362035956": {
       "bundle_hash": "5b7fc0f7aac7c73b22f4946d424235fb4863117ee4c464b5c653309adac9b396",
       "dir": "u14s-fosse-falcons-1717-sils-sirens-11-10-26",
-      "source_hash": "7f36ecd89e6913a3bd7b763d725ed15792e67dcc77e9bf456dfbfc11ae4df81d"
+      "source_hash": "7f36ecd89e6913a3bd7b763d725ed15792e67dcc77e9bf456dfbfc11ae4df81d",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122297897402035956": {
       "bundle_hash": "83999fe834fde760653ebd6de127df00f9eed3d30d80787dbe107d6f06626a73",
-      "source_hash": "925e22ba30c8e38e05b3fb313876a6f474652f9478669d5811506dc19f5c1094"
+      "source_hash": "925e22ba30c8e38e05b3fb313876a6f474652f9478669d5811506dc19f5c1094",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122298213362035956": {
       "bundle_hash": "cdb0cd5c346781fe3c40d08a07ebf35b4756c581e6676f1fea5456744e4385ba",
       "dir": "u14s-fosse-falcons-v-buckingham",
-      "source_hash": "b8e49f24745fe7dd735e9ac9e60ce01c8b2b53477e58a9d11c0a386c61784a90"
+      "source_hash": "b8e49f24745fe7dd735e9ac9e60ce01c8b2b53477e58a9d11c0a386c61784a90",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122299224950035956": {
       "bundle_hash": "fd1498e5f85f3380bf21a1c26cc13d4460807632ed7ea7c5db2227740a30eab7",
-      "source_hash": "f60c40d94b420ef4218a1bf9b9a15500f0b55e578cb677578f580e5d64cd944b"
+      "source_hash": "f60c40d94b420ef4218a1bf9b9a15500f0b55e578cb677578f580e5d64cd944b",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122299225238035956": {
       "bundle_hash": "1c4a7ce4ce7f95ff2b453ae51826a3682a7332d7e8bb2e57084451e21d55be47",
-      "source_hash": "1b1f53b75418b16edb8bf4e6f008930ec720b68be55070932ebc06502a250f0b"
+      "source_hash": "1b1f53b75418b16edb8bf4e6f008930ec720b68be55070932ebc06502a250f0b",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122299577468035956": {
       "bundle_hash": "569c3aacd5f2230d3f807f2eb63d5b4d632c74c0536851ae1af3fb1ac6de7b8b",
       "dir": "our-u14-girls-are-back-in-league-action-this-sunda",
-      "source_hash": "9e87c3205bca9a9b5e7244d90448b472c0f7bad23c81cf32149d6cef70d844d5"
+      "source_hash": "9e87c3205bca9a9b5e7244d90448b472c0f7bad23c81cf32149d6cef70d844d5",
+      "warning": "unsupported or no longer selected: review; retained locally"
     },
     "117043568160766_122299711496035956": {
       "bundle_hash": "e56faa017b5e341f67a6f4d05a722738e0229d81ebf53061e0243b2fd1b52e86",
       "dir": "u16s-match-day",
-      "source_hash": "1034abf7d08db59dfecb829c868647a184cc6f738f070cde07e0e7be4b0a3a00"
+      "source_hash": "1034abf7d08db59dfecb829c868647a184cc6f738f070cde07e0e7be4b0a3a00",
+      "warning": "unsupported or no longer selected: review; retained locally"
     }
   },
   "since": "2026-09-19T00:00:00+00:00",
