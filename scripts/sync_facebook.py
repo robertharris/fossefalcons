@@ -61,7 +61,16 @@ def config(env):
     if (not re.fullmatch(r"[0-9]+", page)
             or not re.fullmatch(r"v[0-9]+\.[0-9]+", version)
             or not token.strip() or any(c.isspace() for c in token)):
-        raise SyncError("Invalid Facebook configuration")
+        problems = []
+        if not re.fullmatch(r"[0-9]+", page):
+            problems.append("FACEBOOK_PAGE_ID must be numeric")
+        if not re.fullmatch(r"v[0-9]+\.[0-9]+", version):
+            problems.append("FACEBOOK_API_VERSION must look like v21.0")
+        if not token.strip():
+            problems.append("FACEBOOK_PAGE_ACCESS_TOKEN is empty or missing")
+        elif any(c.isspace() for c in token):
+            problems.append("FACEBOOK_PAGE_ACCESS_TOKEN contains whitespace/newline")
+        raise SyncError("Invalid Facebook configuration: " + "; ".join(problems))
     cutoff = timestamp(since)
     return {
         "page": page, "token": token, "version": version,
@@ -118,10 +127,10 @@ def request_bytes(url, *, token=None, image=False):
         response = opener.open(Request(url, headers=headers), timeout=TIMEOUT)
     except HTTPError as error:
         if image:
-            raise SyncError("Image request failed") from None
+            raise SyncError("Image request failed: HTTP %s" % error.code) from None
         response = error
-    except (URLError, OSError, ValueError):
-        raise SyncError("Network request failed") from None
+    except (URLError, OSError, ValueError) as error:
+        raise SyncError("Network request failed: " + type(error).__name__) from None
     with response:
         payload = response.read(limit + 1)
         if len(payload) > limit:
@@ -149,9 +158,14 @@ class Graph:
         if error:
             if isinstance(error, dict) and error.get("code") == 100 and lookup:
                 raise Unavailable("Tracked post unavailable")
-            raise SyncError("Graph request failed")
+            details = ""
+            if isinstance(error, dict):
+                details = ": " + ", ".join(
+                    "%s=%s" % (k, error[k]) for k in ("type", "code", "error_subcode", "fbtrace_id")
+                    if isinstance(error.get(k), (str, int)))
+            raise SyncError("Graph request failed (HTTP %s)%s" % (status, details))
         if status != 200:
-            raise SyncError("Graph request failed")
+            raise SyncError("Graph request failed (HTTP %s)" % status)
         return data
 
     def posts(self):
@@ -504,10 +518,19 @@ def sync(env=None, root=None):
 def main():
     try:
         warnings = sync()
-    except Exception:
-        # urllib/JSON/filesystem exceptions can contain signed URLs or tokens.
-        print("Facebook sync failed. Check configuration, API access and input limits; no secrets logged.",
-              file=sys.stderr)
+    except SyncError as error:
+        # SyncError messages are written to be free of tokens and URLs.
+        print("Facebook sync failed: %s" % error, file=sys.stderr)
+        return 1
+    except Exception as error:
+        # urllib/JSON/filesystem exceptions can contain signed URLs or tokens,
+        # so log only the type and where it was raised.
+        tb = error.__traceback__
+        while tb.tb_next:
+            tb = tb.tb_next
+        print("Facebook sync failed: unexpected %s at %s:%s (message withheld)" % (
+            type(error).__name__, Path(tb.tb_frame.f_code.co_filename).name, tb.tb_lineno),
+            file=sys.stderr)
         return 1
     for warning in warnings:
         print("Warning: " + warning)
