@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-30T20:28:16+00:00",
+  "updated": "2026-11-01T14:47:01+00:00",
   "groups": {
     "u12": {
       "fixture": {
-        "title": "Witney  \u2013 Fosse U12 2026-27",
-        "start": "2026-11-01T11:45:00+00:00",
-        "end": "2026-11-01T13:45:00+00:00",
-        "location": "Witney Rugby Football Club, Hailey Road, Witney",
-        "opponent": "Witney ",
-        "home": false
+        "title": "Fosse U12 2026-27 \u2013 Kenilworth ",
+        "start": "2026-12-06T13:00:00+00:00",
+        "end": "2026-12-06T14:00:00+00:00",
+        "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+        "opponent": "Kenilworth ",
+        "home": true
       },
       "training": [
         {
@@ -31,12 +31,12 @@
     },
     "u14": {
       "fixture": {
-        "title": "Fosse U14 2026-27 \u2013 ATL ",
-        "start": "2026-11-01T13:00:00+00:00",
-        "end": "2026-11-01T14:00:00+00:00",
-        "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
-        "opponent": "ATL ",
-        "home": true
+        "title": "Milton Keynes  \u2013 Fosse U14 2026-27",
+        "start": "2026-11-15T13:00:00+00:00",
+        "end": "2026-11-15T14:00:00+00:00",
+        "location": null,
+        "opponent": "Milton Keynes ",
+        "home": false
       },
       "training": [
         {
@@ -59,11 +59,11 @@
     },
     "u16": {
       "fixture": {
-        "title": "Fosse U16  \u2013 Market Bosworth ",
-        "start": "2026-11-01T13:30:00+00:00",
-        "end": "2026-11-01T15:30:00+00:00",
-        "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
-        "opponent": "Market Bosworth ",
+        "title": "Fosse U16  \u2013 Lichfield ",
+        "start": "2026-11-15T13:00:00+00:00",
+        "end": "2026-11-15T15:00:00+00:00",
+        "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
+        "opponent": "Lichfield ",
         "home": true
       },
       "training": [
