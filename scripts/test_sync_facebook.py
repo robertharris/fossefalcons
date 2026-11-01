@@ -330,16 +330,18 @@ class SyncTests(unittest.TestCase):
                 self.run_sync()
         self.assertEqual(self.snapshot(), {})
 
-    def test_state_is_bound_to_page_and_cutoff(self):
+    def test_state_is_bound_to_page(self):
         self.run_sync()
         before = self.snapshot()
-        for key, value in (("FACEBOOK_PAGE_ID", "999"),
-                           ("FACEBOOK_IMPORT_SINCE", "2026-02-01")):
-            with self.subTest(key=key):
-                self.env = dict(ENV, **{key: value})
-                with self.assertRaises(fb.SyncError):
-                    self.run_sync()
-                self.assertEqual(before, self.snapshot())
+        self.env = dict(ENV, FACEBOOK_PAGE_ID="999")
+        with self.assertRaises(fb.SyncError):
+            self.run_sync()
+        self.assertEqual(before, self.snapshot())
+
+    def test_changing_cutoff_keeps_state(self):
+        self.run_sync()
+        self.env = dict(ENV, FACEBOOK_IMPORT_SINCE="2026-02-01")
+        self.run_sync()
 
     def test_invalid_identity_and_permalink_abort_without_writes(self):
         for key, value in (

@@ -407,7 +407,7 @@ def load_state(path, cfg):
     try:
         state = json.loads(path.read_text(encoding="utf-8"))
         if (state["version"] != 1 or state["page_id"] != cfg["page"]
-                or state["since"] != cfg["since"] or not isinstance(state["posts"], dict)):
+                or not isinstance(state["posts"], dict)):
             raise SyncError("State identity does not match configuration")
         if len(state["posts"]) > MAX_POSTS:
             raise SyncError("Tracked post limit exceeded")
