@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $now := now }}
+  {{ range $key := slice "u12" "u14" "u16" }}
+  {{ $g := index hugo.Data.spond.groups $key | default dict }}
+  {{ $list := $g.season | default slice }}
+  <h2>{{ upper $key }}</h2>
+  {{ if $list }}
+  <table class="fixtures">
+    <thead><tr><th>Date</th><th>Opponent</th><th>H/A</th><th>Venue</th><th>Result</th></tr></thead>
+    <tbody>
+    {{ range $list }}
+      {{ $t := time.AsTime .start }}
+      <tr>
+        <td>{{ $t.Format "Mon 2 Jan" }}, {{ $t.Format "3:04pm" }}</td>
+        <td>{{ with .opponent }}{{ trim . " " }}{{ else }}{{ .title }}{{ end }}</td>
+        <td>{{ if eq .home true }}H{{ else if eq .home false }}A{{ else }}–{{ end }}</td>
+        <td>{{ with .location }}{{ . }}{{ else }}–{{ end }}</td>
+        <td>
+          {{ if and (ne .team_score nil) (ne .opponent_score nil) }}
+            {{ $r := "Draw" }}{{ if gt .team_score .opponent_score }}{{ $r = "Win" }}{{ else if lt .team_score .opponent_score }}{{ $r = "Loss" }}{{ end }}
+            <strong>{{ $r }}</strong> {{ .team_score }}–{{ .opponent_score }}
+          {{ else if lt $t.Unix $now.Unix }}Result TBC{{ else }}–{{ end }}
+        </td>
+      </tr>
+    {{ end }}
+    </tbody>
+  </table>
+  {{ else }}<p>No fixtures published yet.</p>{{ end }}
+  {{ end }}
+  {{ with hugo.Data.spond.updated }}<p class="meta">Updated from Spond {{ (time.AsTime .).Format "2 Jan 15:04" }}</p>{{ end }}
+</div>
+{{ end }}

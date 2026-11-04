@@ -87,7 +87,7 @@ Run consent behaviour checks with `node --test scripts/analytics-consent.test.cj
 
 ## Spond sync
 
-`.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture + next 2 training sessions per age group), then triggers the deploy.
+`.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture, next 2 training sessions and the whole-season fixtures with scores per age group), then triggers the deploy.
 
 - Add repo secrets `SPOND_USERNAME` and `SPOND_PASSWORD` (use a dedicated Spond account that is a member of the three groups).
 - Fixtures are Spond events marked as a match; training is any non-match event whose title contains "train".

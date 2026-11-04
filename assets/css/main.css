@@ -139,3 +139,7 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .club-logo { display:flex; align-items:center; justify-content:center; height:110px; }
 .club-logo img { max-width:100%; max-height:110px; object-fit:contain; }
 .club-initials { display:flex; align-items:center; justify-content:center; width:100px; height:100px; border-radius:50%; background:var(--plum); color:#fff; font-size:1.75rem; }
+
+.fixtures { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.fixtures th, .fixtures td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+@media (max-width: 700px) { .fixtures { display: block; overflow-x: auto; } }
