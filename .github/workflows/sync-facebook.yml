@@ -3,6 +3,8 @@ name: Review Facebook news
 on:
   schedule:
     - cron: "23 * * * *"
+    # Redundant offset: GitHub often drops or delays scheduled runs
+    - cron: "53 * * * *"
   workflow_dispatch:
 
 permissions:
