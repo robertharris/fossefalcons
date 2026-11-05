@@ -91,6 +91,7 @@ Run consent behaviour checks with `node --test scripts/analytics-consent.test.cj
 
 - Add repo secrets `SPOND_USERNAME` and `SPOND_PASSWORD` (use a dedicated Spond account that is a member of the three groups).
 - Fixtures are Spond events marked as a match; training is any non-match event whose title contains "train".
+- The Fixtures page combines U12, U14 and U16 by date, with opponent, H/A and results (U14/U16 only). Venues are omitted; missing results show a dash, while dates without a fixture for an age group have blank cells. Multiple games on the same date are retained.
 - Tag news posts for an age group with `tags: [u12]` (or `u14`, `u16`) in front matter.
 - Local run: `pip install -r scripts/requirements.txt && SPOND_USERNAME=… SPOND_PASSWORD=… python scripts/sync_spond.py`
 
