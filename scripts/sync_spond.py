@@ -1,7 +1,7 @@
 """Pull next fixture and next training sessions per age group from Spond.
 
 Writes data/spond.json. Only whitelisted public fields are written
-(title, start/end, location, opponent, home/away) - never member data.
+(title, start/end, location, opponent, home/away, score) - never member data.
 Exits non-zero without touching the file if anything goes wrong.
 """
 import asyncio
@@ -50,6 +50,28 @@ def simplify(event):
         "opponent": info.get("opponentName"),
         "home": {"HOME": True, "AWAY": False}.get(info.get("type")),
     }
+
+
+def with_result(event):
+    """Fixture dict plus score, only when Spond has a published score."""
+    out = simplify(event)
+    info = event.get("matchInfo") or {}
+    team, opp = info.get("teamScore"), info.get("opponentScore")
+    out["team_score"] = team if info.get("scoresSet") or team is not None else None
+    out["opponent_score"] = opp if info.get("scoresSet") or opp is not None else None
+    if out["team_score"] is None or out["opponent_score"] is None:
+        out["team_score"] = out["opponent_score"] = None
+    return out
+
+
+def season_bounds(now):
+    """Season runs 1 Sep - 31 Aug (UK time)."""
+    local = now.astimezone(LONDON)
+    year = local.year if local.month >= 9 else local.year - 1
+    return (
+        datetime(year, 9, 1, tzinfo=LONDON).astimezone(timezone.utc),
+        datetime(year + 1, 8, 31, 23, 59, tzinfo=LONDON).astimezone(timezone.utc),
+    )
 
 
 def is_fixture(event):
@@ -109,6 +131,20 @@ async def main():
                         break
             # Some Spond groups keep upcoming fixtures/meetings as hidden events, even
             # though they are valid and should still be displayed on the website.
+            season_start, season_end = season_bounds(now)
+            season_events = await client.get_events(
+                group_id=group_id,
+                include_scheduled=True,
+                include_hidden=True,
+                min_start=season_start,
+                max_start=season_end,
+                max_events=500,
+            ) or []
+            season = sorted(
+                (e for e in season_events
+                 if is_fixture(e) and not e.get("cancelled") and e.get("startTimestamp")),
+                key=lambda e: e["startTimestamp"],
+            )
             events = [
                 e for e in events
                 if not e.get("cancelled") and e.get("startTimestamp")
@@ -120,6 +156,7 @@ async def main():
             result["groups"][key] = {
                 "fixture": fixtures[0] if fixtures else None,
                 "training": training[:TRAINING_COUNT],
+                "season": [with_result(e) for e in season],
             }
     finally:
         await client.clientsession.close()

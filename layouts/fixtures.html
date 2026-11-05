@@ -1,0 +1,84 @@
+{{ define "main" }}
+<div class="container prose fixtures-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $groups := slice "u12" "u14" "u16" }}
+  {{ $fixtures := slice }}
+  {{ $dates := slice }}
+  {{ range $key := $groups }}
+    {{ $g := index hugo.Data.spond.groups $key | default dict }}
+    {{ range $g.season }}
+      {{ $t := time.AsTime .start "Europe/London" }}
+      {{ $day := $t.Format "2006-01-02" }}
+      {{ $dates = $dates | append $day }}
+      {{ $fixtures = $fixtures | append (dict "day" $day "group" $key "start" $t.Unix "event" .) }}
+    {{ end }}
+  {{ end }}
+  {{ $fixtures = sort $fixtures "start" }}
+  {{ if $fixtures }}
+  <div class="fixtures-scroll" role="region" aria-label="Season fixtures by date and age group" tabindex="0">
+  <table class="fixtures">
+    <caption>Season fixtures and results for U12, U14 and U16</caption>
+    <colgroup span="1"></colgroup>
+    <colgroup span="2"></colgroup>
+    <colgroup span="3"></colgroup>
+    <colgroup span="3"></colgroup>
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Date</th>
+        {{ range $groups }}
+        <th scope="colgroup" colspan="{{ if eq . "u12" }}2{{ else }}3{{ end }}" class="fixture-group">{{ upper . }}</th>
+        {{ end }}
+      </tr>
+      <tr>
+        {{ range $groups }}
+        <th scope="col" class="fixture-group">Opponent</th><th scope="col">H/A</th>{{ if ne . "u12" }}<th scope="col">Result</th>{{ end }}
+        {{ end }}
+      </tr>
+    </thead>
+    {{ range sort (uniq $dates) }}
+      {{ $day := . }}
+      {{ $dayFixtures := where $fixtures "day" $day }}
+      {{ $rows := 1 }}
+      {{ range $groups }}
+        {{ $rows = math.Max $rows (len (where $dayFixtures "group" .)) }}
+      {{ end }}
+    <tbody>
+      {{ range seq (int $rows) }}
+      {{ $row := sub . 1 }}
+      <tr>
+        {{ if eq $row 0 }}
+        <th scope="rowgroup" rowspan="{{ int $rows }}" class="fixture-date">{{ (time.AsTime $day).Format "Mon 2 Jan 2006" }}</th>
+        {{ end }}
+        {{ range $key := $groups }}
+        {{ $matches := where $dayFixtures "group" $key }}
+        {{ $event := dict }}
+        {{ if lt $row (len $matches) }}{{ $event = (index $matches $row).event }}{{ end }}
+        <td class="fixture-group">
+          {{ if $event }}
+          {{ with $event.opponent }}{{ trim . " " }}{{ else }}{{ $event.title | default "–" }}{{ end }}
+          {{ with $event.start }}<span class="fixture-time">{{ (time.AsTime . "Europe/London").Format "3:04pm" }}</span>{{ end }}
+          {{ end }}
+        </td>
+        <td>{{ if $event }}{{ if eq $event.home true }}H{{ else if eq $event.home false }}A{{ else }}–{{ end }}{{ end }}</td>
+        {{ if ne $key "u12" }}
+        <td>
+          {{ if $event }}
+          {{ if and (ne $event.team_score nil) (ne $event.opponent_score nil) }}
+            {{ $r := "Draw" }}{{ if gt $event.team_score $event.opponent_score }}{{ $r = "Win" }}{{ else if lt $event.team_score $event.opponent_score }}{{ $r = "Loss" }}{{ end }}
+            <strong>{{ $r }}</strong> {{ $event.team_score }}–{{ $event.opponent_score }}
+          {{ else }}–{{ end }}
+          {{ end }}
+        </td>
+        {{ end }}
+        {{ end }}
+      </tr>
+      {{ end }}
+    </tbody>
+    {{ end }}
+  </table>
+  </div>
+  {{ else }}<p>No fixtures published yet.</p>{{ end }}
+  {{ with hugo.Data.spond.updated }}<p class="meta">Updated from Spond {{ (time.AsTime .).Format "2 Jan 15:04" }}</p>{{ end }}
+</div>
+{{ end }}

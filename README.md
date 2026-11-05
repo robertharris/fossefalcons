@@ -52,7 +52,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
 - **Edit coach profiles:** update the profile bundles in `content/coaches/` and replace `static/images/coaches/profile-placeholder.svg` with approved coach photos. Change each profile's `photo` and `photo_alt` fields to match its image, replace its placeholder biography, and set `age_group_id` to the matching age-group `group` ID. Age-group coach lists are generated from these IDs; set `head_coach` to a listed coach's profile slug.
 - **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
-- **Change the menu or contact email:** edit `hugo.toml`.
+- **Change the menu or contact email:** edit `hugo.toml`. The main menu has On the Pitch (Age Groups, Coaches, Training), Fixtures, News, Our Cluster (About Us, Community, Sponsors, Documents), and Join Us. Set a menu entry's `parent` to `on-the-pitch` or `our-cluster` to put it in that dropdown. The logo links home. Dropdowns open by click, tap or keyboard, and close with Escape or a click outside; on mobile they expand within the menu.
 - **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).
 - **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can have several tags, e.g. `tags: [sponsor, u12]`.
 
@@ -87,10 +87,11 @@ Run consent behaviour checks with `node --test scripts/analytics-consent.test.cj
 
 ## Spond sync
 
-`.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture + next 2 training sessions per age group), then triggers the deploy.
+`.github/workflows/sync-spond.yml` runs every 4 hours, runs `scripts/sync_spond.py` and commits `data/spond.json` (next fixture, next 2 training sessions and the whole-season fixtures with scores per age group), then triggers the deploy.
 
 - Add repo secrets `SPOND_USERNAME` and `SPOND_PASSWORD` (use a dedicated Spond account that is a member of the three groups).
 - Fixtures are Spond events marked as a match; training is any non-match event whose title contains "train".
+- The Fixtures page combines U12, U14 and U16 by date, with opponent, H/A and results (U14/U16 only). Venues are omitted; missing results show a dash, while dates without a fixture for an age group have blank cells. Multiple games on the same date are retained.
 - Tag news posts for an age group with `tags: [u12]` (or `u14`, `u16`) in front matter.
 - Local run: `pip install -r scripts/requirements.txt && SPOND_USERNAME=… SPOND_PASSWORD=… python scripts/sync_spond.py`
 
