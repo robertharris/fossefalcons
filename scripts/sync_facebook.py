@@ -15,7 +15,7 @@ import sys
 import unicodedata
 from datetime import datetime, timezone
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qs, urlencode, urlsplit
+from urllib.parse import parse_qs, quote, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 
@@ -328,7 +328,33 @@ def local_files(directory):
 def escape_text(text):
     # Numeric entities survive Markdown as literal text and neutralize Hugo's
     # shortcode parser as well as HTML, links, images and Markdown directives.
-    return "".join("&#%d;" % ord(c) if c in string.punctuation else c for c in text)
+    def escape_plain(value):
+        return "".join("&#%d;" % ord(c) if c in string.punctuation else c for c in value)
+
+    result = []
+    start = 0
+    for match in re.finditer(r"https?://[^\s<>]+", text, re.IGNORECASE):
+        url = match.group()
+        while url and url[-1] in ".,!?;:":
+            url = url[:-1]
+        while url.endswith(")") and url.count(")") > url.count("("):
+            url = url[:-1]
+        try:
+            parts = urlsplit(url)
+            valid = (parts.scheme.lower() in ("http", "https") and parts.hostname
+                     and parts.username is None and parts.password is None)
+            parts.port
+        except ValueError:
+            valid = False
+        if not valid:
+            continue
+        end = match.start() + len(url)
+        result.append(escape_plain(text[start:match.start()]))
+        result.append("[%s](<%s>)" % (
+            escape_plain(url), quote(url, safe=":/?#[]@!$&'()*+,;=%-._~")))
+        start = end
+    result.append(escape_plain(text[start:]))
+    return "".join(result)
 
 
 def folder_name(post, post_id, news, state):
