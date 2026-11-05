@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T19:27:29+00:00",
+  "updated": "2026-11-05T08:37:36+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -26,6 +26,98 @@
           "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
+        }
+      ],
+      "season": [
+        {
+          "title": "Fosse U12 2026-27 \u2013 Witney friendly match ",
+          "start": "2026-09-27T12:30:00+01:00",
+          "end": "2026-09-27T14:30:00+01:00",
+          "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
+          "opponent": "Witney friendly match ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u12 2026-27 \u2013 Old Sils ",
+          "start": "2026-10-11T13:00:00+01:00",
+          "end": "2026-10-11T15:00:00+01:00",
+          "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
+          "opponent": "Old Sils ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Witney  \u2013 Fosse U12 2026-27",
+          "start": "2026-11-01T11:45:00+00:00",
+          "end": "2026-11-01T13:45:00+00:00",
+          "location": "Witney Rugby Football Club, Hailey Road, Witney",
+          "opponent": "Witney ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U12 2026-27 \u2013 Kenilworth ",
+          "start": "2026-12-06T13:00:00+00:00",
+          "end": "2026-12-06T14:00:00+00:00",
+          "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "opponent": "Kenilworth ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Northampton BBOB  \u2013 Fosse U12 2026-27",
+          "start": "2027-01-24T13:00:00+00:00",
+          "end": "2027-01-24T14:00:00+00:00",
+          "location": null,
+          "opponent": "Northampton BBOB ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U12 2026-27 \u2013 Barkers Butts",
+          "start": "2027-03-05T18:30:00+00:00",
+          "end": "2027-03-05T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": "Barkers Butts",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse/Trinity/Old Leams U16  \u2013 Festival ",
+          "start": "2027-03-20T10:00:00+00:00",
+          "end": "2027-03-20T15:00:00+00:00",
+          "location": "Old Silhillians Association, Warwick Road, Knowle, Solihull",
+          "opponent": "Festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u12 2026-27 \u2013 Barkers 1 day festival ",
+          "start": "2027-04-18T10:00:00+01:00",
+          "end": "2027-04-18T15:00:00+01:00",
+          "location": "Barkers Butts RFC, The Bob Coward Memorial Ground, Pickford Grange Ln, Coventry",
+          "opponent": "Barkers 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u12s 2026-27 \u2013 Banbury 1 day festival ",
+          "start": "2027-04-25T10:00:00+01:00",
+          "end": "2027-04-25T15:00:00+01:00",
+          "location": "Banbury RUFC, Oxford Road, Bodicote, Banbury",
+          "opponent": "Banbury 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
         }
       ]
     },
@@ -55,6 +147,188 @@
           "opponent": null,
           "home": null
         }
+      ],
+      "season": [
+        {
+          "title": "Fosse U14 2026-27 \u2013 Witney joint training",
+          "start": "2026-09-27T12:30:00+01:00",
+          "end": "2026-09-27T14:30:00+01:00",
+          "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
+          "opponent": "Witney joint training",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 Old Sils ",
+          "start": "2026-10-11T13:00:00+01:00",
+          "end": "2026-10-11T15:00:00+01:00",
+          "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
+          "opponent": "Old Sils ",
+          "home": true,
+          "team_score": 17,
+          "opponent_score": 17
+        },
+        {
+          "title": "Buckingham \u2013 Fosse U14 2026-27",
+          "start": "2026-10-18T12:45:00+01:00",
+          "end": "2026-10-18T13:45:00+01:00",
+          "location": "Floyd Field,  Maids Moreton, Buckingham,  MK18 1RF",
+          "opponent": "Buckingham",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 ATL ",
+          "start": "2026-11-01T13:00:00+00:00",
+          "end": "2026-11-01T14:00:00+00:00",
+          "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
+          "opponent": "ATL ",
+          "home": true,
+          "team_score": 24,
+          "opponent_score": 24
+        },
+        {
+          "title": "Milton Keynes  \u2013 Fosse U14 2026-27",
+          "start": "2026-11-15T13:00:00+00:00",
+          "end": "2026-11-15T14:00:00+00:00",
+          "location": null,
+          "opponent": "Milton Keynes ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Witney  \u2013 Fosse U14 2026-27",
+          "start": "2026-11-29T13:00:00+00:00",
+          "end": "2026-11-29T14:00:00+00:00",
+          "location": null,
+          "opponent": "Witney ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Ampthill  \u2013 Fosse U14 2026-27",
+          "start": "2026-12-06T13:00:00+00:00",
+          "end": "2026-12-06T14:00:00+00:00",
+          "location": null,
+          "opponent": "Ampthill ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Northampton BBOB  \u2013 Fosse U14 2026-27",
+          "start": "2027-01-24T13:00:00+00:00",
+          "end": "2027-01-24T14:00:00+00:00",
+          "location": null,
+          "opponent": "Northampton BBOB ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013  Chinor",
+          "start": "2027-02-07T13:00:00+00:00",
+          "end": "2027-02-07T14:00:00+00:00",
+          "location": null,
+          "opponent": " Chinor",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Brackley \u2013 Fosse U14 2026-27",
+          "start": "2027-02-21T13:00:00+00:00",
+          "end": "2027-02-21T14:00:00+00:00",
+          "location": null,
+          "opponent": "Brackley",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 Banbury",
+          "start": "2027-02-28T13:00:00+00:00",
+          "end": "2027-02-28T14:00:00+00:00",
+          "location": null,
+          "opponent": "Banbury ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u14 2026-27 \u2013 Barkers Butts",
+          "start": "2027-03-05T18:30:00+00:00",
+          "end": "2027-03-05T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": "Barkers Butts",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 DNQ",
+          "start": "2027-03-14T13:00:00+00:00",
+          "end": "2027-03-14T14:00:00+00:00",
+          "location": null,
+          "opponent": "DNQ ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 Old Northamptionians",
+          "start": "2027-03-21T13:00:00+00:00",
+          "end": "2027-03-21T14:00:00+00:00",
+          "location": null,
+          "opponent": "Old Northamptionians",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Chesham \u2013 Fosse U14 2026-27",
+          "start": "2027-04-04T13:00:00+01:00",
+          "end": "2027-04-04T14:00:00+01:00",
+          "location": null,
+          "opponent": "Chesham",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "FINALS - opponent tbc \u2013 Fosse U14 2026-27",
+          "start": "2027-04-11T13:00:00+01:00",
+          "end": "2027-04-11T14:00:00+01:00",
+          "location": null,
+          "opponent": "FINALS - opponent tbc",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 Barkers 1 day festival ",
+          "start": "2027-04-18T10:00:00+01:00",
+          "end": "2027-04-18T15:00:00+01:00",
+          "location": "Barkers Butts RFC, The Bob Coward Memorial Ground, Pickford Grange Ln, Coventry",
+          "opponent": "Barkers 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U14 2026-27 \u2013 Banbury 1 day festival ",
+          "start": "2027-04-25T10:00:00+01:00",
+          "end": "2027-04-25T15:00:00+01:00",
+          "location": "Banbury RUFC, Oxford Road, Bodicote, Banbury",
+          "opponent": "Banbury 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        }
       ]
     },
     "u16": {
@@ -82,6 +356,168 @@
           "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
+        }
+      ],
+      "season": [
+        {
+          "title": "Fosse U16 \u2013 Loughborough",
+          "start": "2026-09-20T13:00:00+01:00",
+          "end": "2026-09-20T14:00:00+01:00",
+          "location": "Loughborough Rugby Football Club, Cotton Way, Hathern, Loughborough",
+          "opponent": "Loughborough",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16 \u2013 Witney/Banbury friendly",
+          "start": "2026-09-27T12:30:00+01:00",
+          "end": "2026-09-27T14:30:00+01:00",
+          "location": "Shipston-On-Stour Rugby Football Union Club, Shipston-on-Stour",
+          "opponent": "Witney/Banbury friendly",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16  \u2013 Melkham ",
+          "start": "2026-10-04T14:00:00+01:00",
+          "end": "2026-10-04T15:30:00+01:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": "Melkham ",
+          "home": true,
+          "team_score": 41,
+          "opponent_score": 32
+        },
+        {
+          "title": "Fosse U16  \u2013 Tamworth ",
+          "start": "2026-10-11T11:00:00+01:00",
+          "end": "2026-10-11T14:00:00+01:00",
+          "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
+          "opponent": "Tamworth ",
+          "home": true,
+          "team_score": 50,
+          "opponent_score": 0
+        },
+        {
+          "title": "Fosse U16  \u2013 Market Bosworth ",
+          "start": "2026-11-01T13:30:00+00:00",
+          "end": "2026-11-01T15:30:00+00:00",
+          "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "opponent": "Market Bosworth ",
+          "home": true,
+          "team_score": 39,
+          "opponent_score": 17
+        },
+        {
+          "title": "Fosse U16  \u2013 Lichfield ",
+          "start": "2026-11-15T13:00:00+00:00",
+          "end": "2026-11-15T15:00:00+00:00",
+          "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
+          "opponent": "Lichfield ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16  \u2013 Loughborough ",
+          "start": "2026-11-22T13:00:00+00:00",
+          "end": "2026-11-22T15:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": "Loughborough ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16  \u2013 Leicester Forest ",
+          "start": "2026-11-29T13:00:00+00:00",
+          "end": "2026-11-29T14:00:00+00:00",
+          "location": null,
+          "opponent": "Leicester Forest ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Lutterworth  \u2013 Fosse U16 ",
+          "start": "2026-12-06T13:00:00+00:00",
+          "end": "2026-12-06T14:00:00+00:00",
+          "location": "Lutterworth RFC, Ashby Lane, Lutterworth",
+          "opponent": "Lutterworth ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16  \u2013 Bugbrooke ",
+          "start": "2026-12-20T13:00:00+00:00",
+          "end": "2026-12-20T15:00:00+00:00",
+          "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "opponent": "Bugbrooke ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16  \u2013 Market Bosworth ",
+          "start": "2027-01-10T13:00:00+00:00",
+          "end": "2027-01-10T14:00:00+00:00",
+          "location": null,
+          "opponent": "Market Bosworth ",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Market Harborough  \u2013 Fosse U16 ",
+          "start": "2027-01-24T13:00:00+00:00",
+          "end": "2027-01-24T14:00:00+00:00",
+          "location": "Market Harborough Rugby Union Football Club, Northampton Road, Market Harborough",
+          "opponent": "Market Harborough ",
+          "home": false,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u16 2026-27 \u2013 Barkers Butts",
+          "start": "2027-03-05T18:30:00+00:00",
+          "end": "2027-03-05T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+          "opponent": "Barkers Butts",
+          "home": true,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse/Trinity/Old Leams U16  \u2013 Festival ",
+          "start": "2027-03-20T10:00:00+00:00",
+          "end": "2027-03-20T15:00:00+00:00",
+          "location": "Old Silhillians Association, Warwick Road, Knowle, Solihull",
+          "opponent": "Festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse u16s 2026-27 \u2013 Barkers 1 day festival ",
+          "start": "2027-04-17T10:00:00+01:00",
+          "end": "2027-04-17T15:00:00+01:00",
+          "location": "Barkers Butts RFC, The Bob Coward Memorial Ground, Pickford Grange Ln, Coventry",
+          "opponent": "Barkers 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
+        },
+        {
+          "title": "Fosse U16 2026-27 \u2013 Banbury 1 day festival ",
+          "start": "2027-04-25T10:00:00+01:00",
+          "end": "2027-04-25T15:00:00+01:00",
+          "location": "Banbury RUFC, Oxford Road, Bodicote, Banbury",
+          "opponent": "Banbury 1 day festival ",
+          "home": null,
+          "team_score": null,
+          "opponent_score": null
         }
       ]
     }
