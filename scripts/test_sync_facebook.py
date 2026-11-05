@@ -154,6 +154,20 @@ class SyncTests(unittest.TestCase):
         self.assertIn('title: "A \\"title\\": value #news #u14"', text)
         self.assertIn('tags: ["u14"]', text)
 
+    def test_text_preserves_http_hyperlinks(self):
+        self.feed = [post(message=(
+            "Title #news\nVisit https://example.org/path?a=1&b=2. "
+            "javascript://evil.example"
+        ))]
+        self.run_sync()
+        body = (self.bundle() / "index.md").read_text().split("---\n", 2)[2]
+        self.assertIn(
+            "[https&#58;&#47;&#47;example&#46;org&#47;path&#63;a&#61;1&#38;b&#61;2]"
+            "(<https://example.org/path?a=1&b=2>)",
+            body,
+        )
+        self.assertIn("&#46; javascript&#58;&#47;&#47;evil&#46;example", body)
+
     def test_hashtags_become_tags(self):
         self.feed = [post(message="News #news #U14Rugby #u18 #Community #JoinUs #Sponsor #u123")]
         self.run_sync()
