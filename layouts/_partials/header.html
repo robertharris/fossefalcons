@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="{{ site.Home.RelPermalink }}">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Fosse Falcons home">
       <img src="{{ "images/logo-transparent.png" | relURL }}" alt="Fosse Falcons Girls Rugby logo" height="64">
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
@@ -9,9 +9,25 @@
       <ul>
         {{ $current := . }}
         {{ range site.Menus.main }}
-        <li><a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        <li>
+          {{ if .HasChildren }}
+          <details class="nav-group" name="main-navigation">
+            <summary{{ if $current.HasMenuCurrent "main" . }} class="nav-current"{{ end }}>{{ .Name }}</summary>
+            <ul class="nav-submenu">
+              {{ range .Children }}
+              <li><a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </details>
+          {{ else }}
+          <a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+          {{ end }}
+        </li>
         {{ end }}
       </ul>
     </nav>
   </div>
 </header>
+{{ with resources.Get "js/navigation.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}

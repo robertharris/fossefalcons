@@ -13,42 +13,57 @@ enableRobotsTXT = true
   facebook = "https://www.facebook.com/profile.php?id=61551078683239"
 
 [[menus.main]]
-  name = "Home"
-  pageRef = "/"
+  name = "On the Pitch"
+  identifier = "on-the-pitch"
   weight = 1
 [[menus.main]]
   name = "Age Groups"
   pageRef = "/age-groups"
-  weight = 2
+  parent = "on-the-pitch"
+  weight = 1
 [[menus.main]]
   name = "Coaches"
   pageRef = "/coaches"
-  weight = 3
+  parent = "on-the-pitch"
+  weight = 2
 [[menus.main]]
   name = "Training"
   pageRef = "/training"
-  weight = 4
+  parent = "on-the-pitch"
+  weight = 3
 [[menus.main]]
   name = "Fixtures"
   pageRef = "/fixtures"
-  weight = 4
+  weight = 2
 [[menus.main]]
   name = "News"
   pageRef = "/news"
-  weight = 5
+  weight = 3
 [[menus.main]]
-  name = "Sponsors"
-  pageRef = "/sponsors"
-  weight = 6
-[[menus.main]]
-  name = "Community"
-  pageRef = "/community"
-  weight = 7
+  name = "Our Cluster"
+  identifier = "our-cluster"
+  weight = 4
 [[menus.main]]
   name = "About Us"
   pageRef = "/about"
-  weight = 8
+  parent = "our-cluster"
+  weight = 1
+[[menus.main]]
+  name = "Community"
+  pageRef = "/community"
+  parent = "our-cluster"
+  weight = 2
+[[menus.main]]
+  name = "Sponsors"
+  pageRef = "/sponsors"
+  parent = "our-cluster"
+  weight = 3
+[[menus.main]]
+  name = "Documents"
+  pageRef = "/documents"
+  parent = "our-cluster"
+  weight = 4
 [[menus.main]]
   name = "Join Us"
   pageRef = "/join"
-  weight = 9
+  weight = 5
