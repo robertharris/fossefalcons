@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:37:36+00:00",
+  "updated": "2026-11-07T14:43:28+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -132,18 +132,18 @@
       },
       "training": [
         {
-          "title": "Training ",
-          "start": "2026-11-08T13:00:00+00:00",
-          "end": "2026-11-08T15:00:00+00:00",
+          "title": "Bespoke kicking 30 mins pre-Training ",
+          "start": "2026-11-08T12:30:00+00:00",
+          "end": "2026-11-08T13:00:00+00:00",
           "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
           "opponent": null,
           "home": null
         },
         {
-          "title": "Mid week training - Old Leams",
-          "start": "2026-11-11T18:30:00+00:00",
-          "end": "2026-11-11T19:30:00+00:00",
-          "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "title": "Training ",
+          "start": "2026-11-08T13:00:00+00:00",
+          "end": "2026-11-08T15:00:00+00:00",
+          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
           "opponent": null,
           "home": null
         }
