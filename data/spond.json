@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T14:43:28+00:00",
+  "updated": "2026-11-08T14:49:16+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -12,18 +12,18 @@
       },
       "training": [
         {
-          "title": "Training",
-          "start": "2026-11-08T13:00:00+00:00",
-          "end": "2026-11-08T15:00:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
-          "opponent": null,
-          "home": null
-        },
-        {
           "title": "Mid week training - Old Leams",
           "start": "2026-11-11T18:30:00+00:00",
           "end": "2026-11-11T19:30:00+00:00",
           "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Mid week training - Trinty ",
+          "start": "2026-11-18T18:30:00+00:00",
+          "end": "2026-11-18T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": null,
           "home": null
         }
@@ -132,18 +132,18 @@
       },
       "training": [
         {
-          "title": "Bespoke kicking 30 mins pre-Training ",
-          "start": "2026-11-08T12:30:00+00:00",
-          "end": "2026-11-08T13:00:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "title": "Mid week training - Old Leams",
+          "start": "2026-11-11T18:30:00+00:00",
+          "end": "2026-11-11T19:30:00+00:00",
+          "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
         },
         {
-          "title": "Training ",
-          "start": "2026-11-08T13:00:00+00:00",
-          "end": "2026-11-08T15:00:00+00:00",
-          "location": "Stratford upon Avon Rugby Club, Loxley Road, Stratford-upon-Avon",
+          "title": "Mid week training - Trinty ",
+          "start": "2026-11-18T18:30:00+00:00",
+          "end": "2026-11-18T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": null,
           "home": null
         }
@@ -342,18 +342,18 @@
       },
       "training": [
         {
-          "title": "Sunday Morning Training",
-          "start": "2026-11-08T10:30:00+00:00",
-          "end": "2026-11-08T12:00:00+00:00",
-          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
-          "opponent": null,
-          "home": null
-        },
-        {
           "title": "Mid week training - Old Leams",
           "start": "2026-11-11T18:30:00+00:00",
           "end": "2026-11-11T19:30:00+00:00",
           "location": "Old Leamingtonians Rugby Football Club, Blackdown, Leamington Spa",
+          "opponent": null,
+          "home": null
+        },
+        {
+          "title": "Mid week training - Trinty ",
+          "start": "2026-11-18T18:30:00+00:00",
+          "end": "2026-11-18T20:00:00+00:00",
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": null,
           "home": null
         }
