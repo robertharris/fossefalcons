@@ -65,6 +65,7 @@ jobs:
           sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
           hugo --gc --minify
       - name: Propose changes for human review
+        id: propose
         run: |
           git add content/news scripts/facebook-state.json
           if ! git diff --cached --quiet; then
@@ -72,8 +73,10 @@ jobs:
           fi
           if git diff --quiet origin/master HEAD; then
             echo "No Facebook changes to review"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
           git push origin "HEAD:refs/heads/$IMPORT_BRANCH"
           pr="$(gh pr list --base master --head "$IMPORT_BRANCH" --state open --json number --jq '.[0].number // empty')"
           if test -z "$pr"; then
@@ -85,3 +88,28 @@ jobs:
 
           Merging publishes through the existing Hugo workflow. Do not add credentials or personal information to this PR."
           fi
+      - name: Build preview
+        if: steps.propose.outputs.changed == 'true'
+        run: hugo --gc --minify --baseURL "/"
+      - name: Deploy preview to Azure Static Web Apps
+        id: preview
+        if: steps.propose.outputs.changed == 'true'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          deployment_environment: facebook-news
+          skip_app_build: true
+          skip_api_build: true
+          app_location: public
+      - name: Link preview from the pull request
+        if: steps.propose.outputs.changed == 'true'
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.static_web_app_url }}
+        run: |
+          pr="$(gh pr list --base master --head "$IMPORT_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          test -n "$pr" || exit 0
+          gh pr comment "$pr" --edit-last --create-if-none \
+            --body "Preview of this branch (updated on each import): $PREVIEW_URL
+
+          This URL is publicly reachable on the free Azure plan. It is replaced on every import and is not the production site."

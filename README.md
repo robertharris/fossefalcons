@@ -75,6 +75,10 @@ You can also run the workflow manually from **Actions → Deploy Hugo site to Az
 5. Add the custom domain under **Azure → Custom domains → Add**, choosing `www.fossefalcons.co.uk`. Change the `www` DNS `CNAME` from `robertharris.github.io` to the `*.azurestaticapps.net` hostname. Azure issues the HTTPS certificate automatically.
 6. Once the domain works, disable GitHub Pages (**Settings → Pages**) so it no longer serves the old site.
 
+### Facebook news preview
+
+When the Facebook importer finds changes, `sync-facebook.yml` deploys the `automation/facebook-news` branch to an Azure Static Web Apps staging environment named `facebook-news` and comments the preview URL on the review pull request. Review the preview, then merge the PR to publish to production. The same environment is overwritten on each import, so it uses one of the free plan's 3 staging slots. Preview URLs are publicly reachable on the free plan (password protection needs the Standard plan). It uses the same `AZURE_STATIC_WEB_APPS_API_TOKEN` secret. To remove the environment, delete it under **Azure → Environments**.
+
 ### Legacy URLs
 
 Hugo aliases preserve the original Google Sites URLs: `/home/` redirects to `/`, `/welcome/` to `/join/`, and `/contact/` to `/about/`. These are generated HTML pages with immediate meta-refresh redirects and canonical links, not HTTP 301 redirects. The aliases are defined in the destination pages' front matter and take effect when the Hugo site is deployed on the custom domain.
