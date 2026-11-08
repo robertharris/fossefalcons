@@ -1,0 +1,21 @@
+# Approximate coordinates - please verify each pin on the live map.
+- name: Trinity Guild RFC
+  address: Segro Park, Samaritan Way, Coventry
+  lat: 52.3935
+  lng: -1.4400
+- name: Leamington RFC
+  address: Kenilworth Road, Blackdown, Leamington Spa
+  lat: 52.3085
+  lng: -1.5300
+- name: Old Leamingtonians RFC
+  address: Blackdown, Leamington Spa
+  lat: 52.3078
+  lng: -1.5290
+- name: Stratford upon Avon RFC
+  address: Loxley Road, Stratford-upon-Avon
+  lat: 52.1850
+  lng: -1.7100
+- name: Shipston-on-Stour RFC
+  address: Shipston-on-Stour
+  lat: 52.0620
+  lng: -1.6250
