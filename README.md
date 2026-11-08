@@ -1,6 +1,6 @@
 # Fosse Falcons Girls Rugby website
 
-Static site built with [Hugo](https://gohugo.io/) and hosted on GitHub Pages at <https://www.fossefalcons.co.uk/>.
+Static site built with [Hugo](https://gohugo.io/) and hosted on Azure Static Web Apps at <https://www.fossefalcons.co.uk/>.
 
 ## Project layout
 
@@ -58,18 +58,22 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
 ## Publishing
 
-Publishing is automatic. Pushing to the `master` branch runs the **Deploy Hugo site to GitHub Pages** workflow, which builds the site and deploys it.
+The site is hosted on the free tier of Azure Static Web Apps. Pushing to the `master` branch runs the **Deploy Hugo site to Azure Static Web Apps** workflow, which builds the site with Hugo and uploads `public/` to Azure.
 
 1. Make your changes on a branch and open a pull request.
 2. Merge the pull request into `master`.
 3. Watch progress under the repository's **Actions** tab. The site updates in a minute or two.
 
-You can also run the workflow manually from **Actions → Deploy Hugo site to GitHub Pages → Run workflow**.
+You can also run the workflow manually from **Actions → Deploy Hugo site to Azure Static Web Apps → Run workflow**.
 
 ### One-time setup
 
-- In **Settings → Pages**, set **Source** to **GitHub Actions**.
-- For the custom domain, set `www.fossefalcons.co.uk` under **Settings → Pages → Custom domain** and point a `CNAME` DNS record for `www` at `robertharris.github.io`. Enable **Enforce HTTPS** once the certificate is issued.
+1. In the Azure portal, create a **Static Web App** with the **Free** plan and deployment source **Other** (the workflow in this repo does the deployment).
+2. In the new resource, choose **Overview → Manage deployment token** and copy the token.
+3. In GitHub, go to **Settings → Secrets and variables → Actions** and add a repository secret named `AZURE_STATIC_WEB_APPS_API_TOKEN` with that token.
+4. Run the deploy workflow and check the `*.azurestaticapps.net` URL shows the site.
+5. Add the custom domain under **Azure → Custom domains → Add**, choosing `www.fossefalcons.co.uk`. Change the `www` DNS `CNAME` from `robertharris.github.io` to the `*.azurestaticapps.net` hostname. Azure issues the HTTPS certificate automatically.
+6. Once the domain works, disable GitHub Pages (**Settings → Pages**) so it no longer serves the old site.
 
 ### Legacy URLs
 
