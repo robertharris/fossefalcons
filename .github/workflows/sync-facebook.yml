@@ -6,6 +6,19 @@ on:
     # Redundant offset: GitHub often drops or delays scheduled runs
     - cron: "53 * * * *"
   workflow_dispatch:
+    inputs:
+      list:
+        description: "Only list recent untracked posts with IDs and why they were skipped (imports nothing)"
+        type: boolean
+        default: false
+      list_since:
+        description: "With list: look back to this date (YYYY-MM-DD); defaults to the import cutoff"
+        required: false
+        default: ""
+      posts:
+        description: "Skipped posts to import regardless of #news marker/cutoff: IDs or facebook.com/<page id>/posts/<n> URLs, comma-separated"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -30,7 +43,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: List skipped posts
+        if: inputs.list == true
+        env:
+          FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
+          FACEBOOK_API_VERSION: ${{ vars.FACEBOOK_API_VERSION }}
+          FACEBOOK_IMPORT_SINCE: ${{ inputs.list_since || vars.FACEBOOK_IMPORT_SINCE }}
+          FACEBOOK_IMPORT_MARKER: ${{ vars.FACEBOOK_IMPORT_MARKER || '#news' }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: python scripts/sync_facebook.py --list
       - name: Prepare review branch
+        if: inputs.list != true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -43,13 +66,16 @@ jobs:
             git checkout -b "$IMPORT_BRANCH"
           fi
       - name: Test importer
+        if: inputs.list != true
         run: python -m unittest discover -s scripts -p 'test_sync_facebook.py'
       - name: Import Page posts
+        if: inputs.list != true
         env:
           FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
           FACEBOOK_API_VERSION: ${{ vars.FACEBOOK_API_VERSION }}
           FACEBOOK_IMPORT_SINCE: ${{ vars.FACEBOOK_IMPORT_SINCE }}
           FACEBOOK_IMPORT_MARKER: ${{ vars.FACEBOOK_IMPORT_MARKER || '#news' }}
+          FACEBOOK_IMPORT_POSTS: ${{ inputs.posts }}
           FACEBOOK_IMPORT_ALL: ${{ vars.FACEBOOK_IMPORT_ALL }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
         run: |
@@ -58,6 +84,7 @@ jobs:
           fi
           python scripts/sync_facebook.py
       - name: Validate Hugo site
+        if: inputs.list != true
         env:
           HUGO_VERSION: 0.168.0
         run: |
@@ -65,6 +92,7 @@ jobs:
           sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
           hugo --gc --minify
       - name: Propose changes for human review
+        if: inputs.list != true
         run: |
           git add content/news scripts/facebook-state.json
           if ! git diff --cached --quiet; then
