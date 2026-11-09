@@ -72,7 +72,19 @@ def config(env):
             problems.append("FACEBOOK_PAGE_ACCESS_TOKEN contains whitespace/newline")
         raise SyncError("Invalid Facebook configuration: " + "; ".join(problems))
     cutoff = timestamp(since)
+    forced = []
+    for item in re.split(r"[,\s]+", env.get("FACEBOOK_IMPORT_POSTS", "").strip()):
+        if not item:
+            continue
+        match = re.fullmatch(
+            r"(?:" + page + r"_)?([0-9]+)|https://(?:www\.|m\.)?facebook\.com/"
+            + page + r"/posts/([0-9]+)/?(?:\?.*)?", item)
+        if not match:
+            raise SyncError("FACEBOOK_IMPORT_POSTS entries must be post IDs or "
+                            "facebook.com/<page id>/posts/<number> URLs")
+        forced.append(page + "_" + (match.group(1) or match.group(2)))
     return {
+        "forced": forced,
         "page": page, "token": token, "version": version,
         "since": cutoff.isoformat(), "cutoff": cutoff,
         "marker": env.get("FACEBOOK_IMPORT_MARKER", "#news"),
@@ -464,6 +476,15 @@ def sync(env=None, root=None):
     graph = Graph(cfg)
     posts = graph.posts()
     warnings = []
+    forced = set(cfg["forced"])
+    for post_id in sorted(forced - set(posts)):
+        try:
+            post = graph.post(post_id)
+        except Unavailable:
+            raise SyncError("Requested post %s was not found or is not accessible" % post_id) from None
+        if post.get("id") != post_id:
+            raise SyncError("Mismatched requested post")
+        posts[post_id] = post
     for post_id in sorted(set(state["posts"]) - set(posts)):
         try:
             post = graph.post(post_id)
@@ -488,8 +509,8 @@ def sync(env=None, root=None):
         privacy = post.get("privacy")
         public = (post.get("is_published") is True and post.get("is_hidden") is False
                   and isinstance(privacy, dict) and privacy.get("value") == "EVERYONE")
-        eligible = public and created >= cfg["cutoff"] and (
-            not cfg["marker"] or cfg["marker"].casefold() in message.casefold())
+        eligible = public and (post_id in forced or (created >= cfg["cutoff"] and (
+            not cfg["marker"] or cfg["marker"].casefold() in message.casefold())))
         specs = photos(post) if eligible else None
         if specs is None or (not message.strip() and not specs):
             if record:
@@ -541,7 +562,46 @@ def sync(env=None, root=None):
     return warnings
 
 
+def skipped_posts(env=None):
+    """Read-only: describe recent Page posts the importer would not import."""
+    cfg = config(os.environ if env is None else env)
+    state = load_state(ROOT / "scripts/facebook-state.json", cfg)
+    rows = []
+    for post_id, post in sorted(Graph(cfg).posts().items()):
+        if post_id in state["posts"]:
+            continue
+        created = timestamp(post.get("created_time"))
+        message = post.get("message", "")
+        message = message if isinstance(message, str) else ""
+        privacy = post.get("privacy")
+        reasons = []
+        if not (post.get("is_published") is True and post.get("is_hidden") is False
+                and isinstance(privacy, dict) and privacy.get("value") == "EVERYONE"):
+            reasons.append("not public")
+        if cfg["marker"] and cfg["marker"].casefold() not in message.casefold():
+            reasons.append("missing " + cfg["marker"])
+        if photos(post) is None:
+            reasons.append("unsupported attachment")
+        elif not message.strip() and not photos(post):
+            reasons.append("empty")
+        snippet = " ".join(message.split())[:80]
+        rows.append("%s | %s | %s | %s" % (
+            post_id, created.date().isoformat(), "; ".join(reasons) or "importable",
+            snippet))
+    return rows
+
+
 def main():
+    if "--list" in sys.argv[1:]:
+        try:
+            rows = skipped_posts()
+        except SyncError as error:
+            print("Facebook list failed: %s" % error, file=sys.stderr)
+            return 1
+        print("post id | date | why not imported | text")
+        print("\n".join(rows) or "No untracked posts found.")
+        print("Copy an ID into the 'posts' input to import it.")
+        return 0
     try:
         warnings = sync()
     except SyncError as error:

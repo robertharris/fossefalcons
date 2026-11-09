@@ -290,6 +290,38 @@ class SyncTests(unittest.TestCase):
         self.run_sync()
         self.assertEqual(list(self.state()["posts"]), ["123_458"])
 
+    def test_requested_post_bypasses_marker_and_cutoff(self):
+        skipped = post("789", message="No marker")
+        skipped["created_time"] = "2025-01-01T00:00:00Z"
+        self.lookups["123_789"] = skipped
+        self.env["FACEBOOK_IMPORT_POSTS"] = "789, https://www.facebook.com/123/posts/789"
+        self.run_sync()
+        self.assertEqual(sorted(self.state()["posts"]), ["123_456", "123_789"])
+
+    def test_requested_post_must_be_public_and_valid(self):
+        hidden = post("789")
+        hidden["is_hidden"] = True
+        self.lookups["123_789"] = hidden
+        self.env["FACEBOOK_IMPORT_POSTS"] = "123_789"
+        self.run_sync()
+        self.assertNotIn("123_789", self.state()["posts"])
+        self.env["FACEBOOK_IMPORT_POSTS"] = "123_999"
+        with self.assertRaises(fb.SyncError):
+            self.run_sync()
+        self.env["FACEBOOK_IMPORT_POSTS"] = "https://evil.example/123/posts/1"
+        with self.assertRaises(fb.SyncError):
+            self.run_sync()
+
+    def test_list_reports_skipped_posts_without_writing(self):
+        self.feed = [post("457", message="No marker here"), post("458")]
+        before = self.snapshot()
+        with patch.object(fb, "ROOT", self.root):
+            rows = fb.skipped_posts(self.env)
+        self.assertEqual(before, self.snapshot())
+        self.assertEqual(len(rows), 2)
+        self.assertIn("123_457 | 2026-06-01 | missing #news | No marker here", rows[0])
+        self.assertIn("importable", rows[1])
+
     def test_missing_tracked_post_is_rechecked_and_not_deleted(self):
         self.run_sync()
         original = (self.bundle() / "index.md").read_bytes()
