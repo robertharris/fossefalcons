@@ -8,6 +8,8 @@ description: "Find out about Fosse Falcons girls rugby training across our Warwi
 Training takes place on Wednesday evenings with fixtures and training on Sundays. Training rotates around our clubs. We use the [Spond App](https://spond.com/landing/login/) to organise ourselves for training and match availability.
 
 
+{{< training-map >}}
+
 ## What to bring
 
 - Gum shield
