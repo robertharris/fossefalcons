@@ -1,21 +1,21 @@
 # Approximate coordinates - please verify each pin on the live map.
-- name: Trinity Guild RFC
-  address: Segro Park, Samaritan Way, Coventry
-  lat: 52.3935
-  lng: -1.4400
-- name: Leamington RFC
-  address: Kenilworth Road, Blackdown, Leamington Spa
-  lat: 52.3085
-  lng: -1.5300
-- name: Old Leamingtonians RFC
-  address: Blackdown, Leamington Spa
-  lat: 52.3078
-  lng: -1.5290
-- name: Stratford upon Avon RFC
-  address: Loxley Road, Stratford-upon-Avon
-  lat: 52.1850
-  lng: -1.7100
-- name: Shipston-on-Stour RFC
-  address: Shipston-on-Stour
-  lat: 52.0620
-  lng: -1.6250
+- name: Trinity Guild Rugby Football Club
+  address: Segro Park, Samaritan Way, Coventry CV8 3EE
+  lat: 52.361405052060014
+  lng: -1.4714846283697265
+- name: Leamington Rugby Football Club
+  address: Kenilworth Rd, Blackdown, Leamington Spa CV32 6RG
+  lat: 52.318709544659065
+  lng: -1.5429842451231701
+- name: Old Leamingtonians Rugby Football Club
+  address: Bericote Road, Blackdown, Leamington Spa CV32 6QP
+  lat: 52.32030866935712
+  lng: -1.5334850286487103
+- name: Stratford upon Avon Rugby Club
+  address: 67 Loxley Rd, Stratford-upon-Avon CV37 7DP
+  lat: 52.19273044740931
+  lng: -1.6926385439952574
+- name: Shipston Rugby Football Club
+  address: Mayo Road, Shipston-on-Stour CV36 4BH
+  lat: 52.06985149237344
+  lng: -1.6239263574929648
