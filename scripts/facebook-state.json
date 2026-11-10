@@ -14,7 +14,8 @@
     "117043568160766_122301199394035956": {
       "bundle_hash": "65057e1455503ee5833caacb1fe8eb5ac914101cb4a226667cce489adef380d2",
       "dir": "u16s-fosse-falcons-3917-market-bosworth",
-      "source_hash": "87a28a015b2eedf5602e66da9f0b43c986fd8ffa9580a9b53667ed68134f9a2c"
+      "source_hash": "87a28a015b2eedf5602e66da9f0b43c986fd8ffa9580a9b53667ed68134f9a2c",
+      "warning": "unsupported or no longer selected: review; retained locally"
     }
   },
   "since": "2026-09-19T00:00:00+00:00",
