@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T14:49:16+00:00",
+  "updated": "2026-11-10T12:13:09+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -124,9 +124,9 @@
     "u14": {
       "fixture": {
         "title": "Milton Keynes  \u2013 Fosse U14 2026-27",
-        "start": "2026-11-15T13:00:00+00:00",
-        "end": "2026-11-15T14:00:00+00:00",
-        "location": null,
+        "start": "2026-11-15T11:30:00+00:00",
+        "end": "2026-11-15T12:30:00+00:00",
+        "location": "Emerson Valley Sports Pavilion, Bowland Dr, Emerson Valley, Milton Keynes MK4 2DN",
         "opponent": "Milton Keynes ",
         "home": false
       },
@@ -191,9 +191,9 @@
         },
         {
           "title": "Milton Keynes  \u2013 Fosse U14 2026-27",
-          "start": "2026-11-15T13:00:00+00:00",
-          "end": "2026-11-15T14:00:00+00:00",
-          "location": null,
+          "start": "2026-11-15T11:30:00+00:00",
+          "end": "2026-11-15T12:30:00+00:00",
+          "location": "Emerson Valley Sports Pavilion, Bowland Dr, Emerson Valley, Milton Keynes MK4 2DN",
           "opponent": "Milton Keynes ",
           "home": false,
           "team_score": null,
