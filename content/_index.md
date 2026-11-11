@@ -11,7 +11,7 @@ Fosse Falcons is a friendly, inclusive girls’ rugby union team where players o
 
 Established in 2021, we bring together girls from clubs across Warwickshire, creating opportunities to play and develop in a girls-only environment. By working together as a cluster, we can offer teams and playing opportunities that individual clubs may not be able to provide on their own.
 
-Today, over 120 girls train and play with Fosse Falcons across the U12 to U18 age groups, all while remaining connected to the wider rugby community.
+Today, over 80 girls train and play with Fosse Falcons across the U12 to U18 age groups, all while remaining connected to the wider rugby community.
 
 New to rugby? No experience is needed! Come along to a session, meet the team and give it a try.
 
