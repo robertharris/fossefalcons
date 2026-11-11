@@ -5,7 +5,7 @@ description: "Find out how to join Fosse Falcons girls rugby in Warwickshire. Be
 aliases: ["/welcome/"]
 ---
 
-We'd love to see you at a session. New players can usually try rugby for free before joining.
+We'd love to see you at a session. New players can try rugby for free before joining.
 
 ## How to join
 
