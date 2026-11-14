@@ -42,6 +42,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
   Or run `hugo new content news/match-report.md`.
 - **Add images:** put them in `static/images/` and reference them as `/images/your-file.jpg`.
+- **Add gallery photos:** put them in `assets/gallery/` (use a subfolder per photographer to credit them once). The Gallery page at `/gallery/` shows them in a grid with a full-screen viewer. See [GALLERY.md](GALLERY.md) for details.
 - **Add documents:** put each file in `static/files/`, then add its title, path, and description to `data/documents.yaml`. The Documents page is available at `/documents/`, and each title links directly to its file. For example:
 
   ```yaml
@@ -52,7 +53,7 @@ Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-o
 
 - **Edit coach profiles:** update the profile bundles in `content/coaches/` and replace `static/images/coaches/profile-placeholder.svg` with approved coach photos. Change each profile's `photo` and `photo_alt` fields to match its image, replace its placeholder biography, and set `age_group_id` to the matching age-group `group` ID. Age-group coach lists are generated from these IDs; set `head_coach` to a listed coach's profile slug.
 - **Favicon:** `static/images/favicon.png` is a square, opaque white image with the falcon and text in black. It is separate from `logo-transparent.png`, which is still used in the header and home page.
-- **Change the menu or contact email:** edit `hugo.toml`. The main menu has On the Pitch (Age Groups, Coaches, Training), Fixtures, News, Our Cluster (About Us, Community, Sponsors, Documents), and Join Us. Set a menu entry's `parent` to `on-the-pitch` or `our-cluster` to put it in that dropdown. The logo links home. Dropdowns open by click, tap or keyboard, and close with Escape or a click outside; on mobile they expand within the menu.
+- **Change the menu or contact email:** edit `hugo.toml`. The main menu has On the Pitch (Age Groups, Coaches, Training), Fixtures, News, Gallery, Our Cluster (About Us, Community, Sponsors, Documents), and Join Us. Set a menu entry's `parent` to `on-the-pitch` or `our-cluster` to put it in that dropdown. The logo links home. Dropdowns open by click, tap or keyboard, and close with Escape or a click outside; on mobile they expand within the menu.
 - **Edit sponsors:** update `data/sponsors.yaml` to change sponsor descriptions, website links and logos. The footer shows linked logos and sponsor roles; descriptions appear only on the Sponsors page. Keep the headline sponsor first with `headline: true`. Logos are stored locally in `static/images/sponsors/`, sourced from the sponsors' official websites: [Jewson](https://www.jewson.co.uk/) and [RPGL](https://rpgl.co.uk/).
 - **Add sponsor news:** add `tags: [sponsor]` to a news post's front matter. It will appear on the Sponsors page, newest first, as well as in the usual news listings. Posts can have several tags, e.g. `tags: [sponsor, u12]`.
 
