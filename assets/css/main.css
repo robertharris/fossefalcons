@@ -170,3 +170,31 @@ tbody tr:nth-child(even) { background:var(--pink-soft); }
 .faq-answer { padding:0 1.1rem 1rem; }
 .faq-answer > :first-child { margin-top:0; }
 .faq-answer > :last-child { margin-bottom:0; }
+
+.gallery-page { max-width:1200px; }
+.gallery-grid { list-style:none; margin:1rem 0; padding:0; columns:3 260px; column-gap:.75rem; }
+.gallery-grid li { break-inside:avoid; margin:0 0 .75rem; }
+.gallery-grid a { display:block; position:relative; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); line-height:0; }
+.gallery-grid img { display:block; width:100%; height:auto; transition:transform .25s; }
+.gallery-grid a:hover img { transform:scale(1.04); }
+.gallery-grid a:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
+.gallery-credit { position:absolute; left:0; right:0; bottom:0; padding:.4rem .6rem; font-size:.8rem; line-height:1.3; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.7)); opacity:0; transition:opacity .2s; }
+.gallery-grid a:hover .gallery-credit, .gallery-grid a:focus-visible .gallery-credit { opacity:1; }
+@media (hover:none) { .gallery-credit { opacity:1; } }
+
+.lightbox { position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.92); }
+.lightbox[hidden] { display:none; }
+.lightbox figure { margin:0; max-width:100%; max-height:100%; display:flex; flex-direction:column; align-items:center; padding:3rem 4rem; }
+.lightbox img { max-width:100%; max-height:calc(100dvh - 9rem); object-fit:contain; }
+.lightbox figcaption { color:#fff; text-align:center; font-size:.95rem; line-height:1.4; margin-top:.75rem; }
+.lightbox figcaption:empty { display:none; }
+.lb-credit { display:block; color:#ccc; font-size:.85rem; }
+.lb-credit a { color:var(--sun); }
+.lightbox button { position:absolute; background:rgba(255,255,255,.12); color:#fff; border:0; border-radius:50%; width:2.75rem; height:2.75rem; font-size:2rem; line-height:1; cursor:pointer; }
+.lightbox button:hover { background:rgba(255,255,255,.3); }
+.lightbox button:focus-visible { outline:3px solid var(--sun); }
+.lb-close { top:.75rem; right:.75rem; }
+.lb-prev, .lb-next { top:50%; transform:translateY(-50%); }
+.lb-prev { left:.75rem; }
+.lb-next { right:.75rem; }
+@media (max-width:600px) { .lightbox figure { padding:3rem .5rem; } .lb-prev, .lb-next { top:auto; bottom:.75rem; transform:none; } }
