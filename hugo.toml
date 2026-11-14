@@ -66,9 +66,8 @@ enableRobotsTXT = true
 [[menus.main]]
   name = "FAQ"
   pageRef = "/faq"
-  parent = "our-cluster"
   weight = 5
 [[menus.main]]
   name = "Join Us"
   pageRef = "/join"
-  weight = 5
+  weight = 6
