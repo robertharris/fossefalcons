@@ -1,0 +1,101 @@
+# One entry per section. Section headings are always visible;
+# each question is collapsible. Answers and `text` support Markdown.
+- title: "Getting Started"
+  questions:
+    - question: "Does my daughter need to have played rugby before?"
+      answer: "Not at all! We welcome complete beginners as well as experienced players. Our coaches help girls learn the game, develop their skills and build confidence at their own pace."
+    - question: "Can my daughter try rugby before joining?"
+      answer: "Yes! New players are welcome to come along and try a training session. Please contact us beforehand so we can confirm the location, time and appropriate age group."
+    - question: "What ages can join Fosse Falcons?"
+      answer: |
+        We have four age groups:
+
+        - Under 12s
+        - Under 14s
+        - Under 16s
+        - Under 18s
+
+        We welcome girls aged 10–18, with age groups determined by RFU eligibility rules for each season.
+    - question: "What if my daughter doesn't know anyone?"
+      answer: "That's absolutely fine! Many girls join without knowing anyone. Our coaches and players help newcomers settle in, make friends and feel part of the team."
+    - question: "Does my daughter need to be particularly sporty or fit?"
+      answer: "No! Rugby is a sport for all shapes, sizes and abilities. There are different positions and roles to suit different strengths, and fitness and skills develop through regular training."
+    - question: "Can my daughter bring a friend?"
+      answer: "Absolutely! Friends are welcome to come along and give rugby a try together. Just get in touch beforehand so we can make the appropriate arrangements."
+
+- title: "Training and Matches"
+  questions:
+    - question: "When do you train?"
+      answer: "We train on Wednesday evenings, with additional training sessions and matches taking place on Sundays."
+    - question: "Where does training take place?"
+      answer: "Training rotates between our participating rugby clubs across Warwickshire. We use the Spond app to communicate training locations, times and fixtures."
+    - question: "What equipment will my daughter need?"
+      answer: |
+        For regular training, players should bring:
+
+        - Rugby boots with suitable studs
+        - Gum shield
+        - Water bottle
+        - Warm and waterproof clothing
+
+        If you're attending for the first time and don't have everything, please contact us beforehand. We'll advise you on what's needed for your first session.
+    - question: "Will my daughter have to play matches straight away?"
+      answer: "No. We encourage girls to develop their skills and confidence through training before progressing into matches when they're ready and eligible."
+    - question: "Where are matches played?"
+      answer: "We play both home and away fixtures against girls' rugby teams from across the region. Home matches take place at our participating clubs, while away fixtures involve travelling to other rugby clubs."
+    - question: "Do parents need to stay at training and matches?"
+      answer: |
+        Yes. We ask parents or carers to remain at training sessions and matches.
+
+        If you're unable to stay, please let the coach know beforehand who the designated adult will be. This ensures someone is available and responsible for your daughter should any issues or injuries arise.
+    - question: "How do parents find out about training and fixtures?"
+      answer: "We use **Spond**, a team management app, to share training information, fixtures, locations and player availability. Parents are given the information they need to join once their daughter becomes part of Fosse Falcons."
+
+- title: "Joining Fosse Falcons and Our Clubs"
+  questions:
+    - question: "Is Fosse Falcons a rugby club?"
+      answer: |
+        Fosse Falcons is a girls' rugby cluster rather than a standalone rugby club.
+
+        We bring together girls from seven rugby clubs across Warwickshire, allowing them to train and compete together across our age groups.
+    - question: "Why do girls play for Fosse Falcons rather than their own rugby club?"
+      answer: "Not every individual rugby club has enough girls in each age group to field its own team. By joining together as Fosse Falcons, girls have the opportunity to enjoy regular training, competitive matches and the friendships that come from being part of a team. Importantly, every girl remains a member of her home rugby club while representing Fosse Falcons. Working together also helps our clubs grow girls' rugby and develop opportunities for future generations of players."
+    - question: "Which rugby club will my daughter belong to?"
+      answer: "Players are registered with one of our seven participating rugby clubs and remain members of their home club while playing for Fosse Falcons. We can help new families understand the registration process and find a suitable home club."
+    - question: "How much does it cost to join?"
+      answer: "Membership fees are managed through each player's home rugby club and may vary depending on the club. Please contact us for current membership information."
+    - question: "Can my daughter join partway through the season?"
+      answer: "Yes! New players are welcome throughout the season. You don't need to wait until September to get involved."
+    - question: "Can girls from outside Warwickshire join?"
+      answer: "Please get in touch! We can discuss your circumstances and advise on membership and eligibility."
+
+- title: "Safety and Wellbeing"
+  questions:
+    - question: "Is girls' rugby safe?"
+      answer: "Rugby is a contact sport and, like all contact sports, carries some risk of injury. Our qualified coaches follow RFU guidance, with age-appropriate training and a strong focus on developing safe techniques, confidence and understanding of the game."
+    - question: "Will my daughter have to tackle straight away?"
+      answer: "No. Beginners are introduced to rugby skills progressively, with coaches helping them develop the techniques and confidence needed before taking part in contact activities."
+    - question: "Are your coaches qualified?"
+      answer: "Yes. Our sessions are led by qualified, DBS-checked coaches who follow RFU coaching and safeguarding guidance."
+    - question: "What if my daughter has additional needs or requires extra support?"
+      answer: "We want every girl to feel welcome and supported. If your daughter has additional needs, a disability, anxiety or anything else you'd like us to be aware of, please speak to our coaches. We can discuss how best to support her participation."
+    - question: "Who should I contact about a safeguarding concern?"
+      answer: |
+        Player welfare is a priority at Fosse Falcons.
+
+        If you have any safeguarding concerns, please contact the safeguarding or welfare officer using the contact details provided on our website.
+
+- title: "Getting Involved and Keeping in Touch"
+  questions:
+    - question: "Can parents help out?"
+      answer: "Absolutely! Like all grassroots rugby, Fosse Falcons relies on volunteers. Whether it's helping with matchday refreshments, organising events, photography, fundraising or general support, there's always something you can do. You don't need any rugby experience to make a difference."
+    - question: "Can businesses sponsor Fosse Falcons?"
+      answer: |
+        Yes! We're always keen to build relationships with local businesses that want to support girls' rugby.
+
+        Sponsorship helps us provide opportunities, equipment and experiences for our players. Please contact us to discuss how your business could get involved.
+    - question: "How can we keep up with Fosse Falcons news?"
+      answer: "Follow us on Instagram, Facebook and TikTok for match updates, photographs, achievements and a behind-the-scenes look at life with Fosse Falcons."
+
+- title: "Ready to Give Rugby a Try?"
+  text: "Whether you're a complete beginner or already love the game, we'd love to welcome you to Fosse Falcons. Get in touch and come along to a training session! Email: [info@fossefalcons.co.uk](mailto:info@fossefalcons.co.uk)"
