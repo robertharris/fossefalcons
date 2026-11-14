@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="container prose faq">
+  <h1>{{ .Title }}</h1>
+  {{ range hugo.Data.faq }}
+  <section class="faq-section">
+    <h2>{{ .title }}</h2>
+    {{ with .text }}{{ . | markdownify }}{{ end }}
+    {{ range .questions }}
+    <details class="faq-item">
+      <summary>{{ .question }}</summary>
+      <div class="faq-answer">{{ .answer | markdownify }}</div>
+    </details>
+    {{ end }}
+  </section>
+  {{ else }}
+  <p>No questions have been added yet.</p>
+  {{ end }}
+</article>
+{{ end }}
