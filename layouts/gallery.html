@@ -1,0 +1,36 @@
+{{ define "main" }}
+<article class="container gallery-page">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ $photos := resources.Match "gallery/**.{jpg,jpeg,png,webp,JPG,JPEG,PNG}" }}
+  {{ $photographers := hugo.Data.gallery.photographers | default dict }}
+  {{ $overrides := hugo.Data.gallery.photos | default dict }}
+  {{ if $photos }}
+  <ul class="gallery-grid" data-gallery>
+    {{ range $photos }}
+    {{ $rel := strings.TrimPrefix "/gallery/" .Name }}
+    {{ $folder := path.Dir $rel }}
+    {{ $meta := dict }}
+    {{ if ne $folder "." }}{{ $meta = index $photographers $folder | default dict }}{{ end }}
+    {{ $meta = merge $meta (index $overrides $rel | default dict) }}
+    {{ $full := .Resize "1800x webp q80" }}
+    {{ $thumb := .Resize "600x webp q75" }}
+    <li>
+      <a href="{{ $full.RelPermalink }}"
+         data-caption="{{ $meta.caption }}"
+         data-credit="{{ $meta.credit }}"
+         data-credit-url="{{ $meta.credit_url }}">
+        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $meta.alt | default $meta.caption }}" loading="lazy">
+        {{ with $meta.credit }}<span class="gallery-credit">Photo: {{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p>No photos have been added yet.</p>
+  {{ end }}
+</article>
+{{ with resources.Get "js/gallery.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
+{{ end }}

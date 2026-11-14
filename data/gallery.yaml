@@ -1,0 +1,20 @@
+# Photos live in assets/gallery/ and appear automatically.
+#
+# To credit one photographer for many photos, put their photos in a subfolder
+# (assets/gallery/studio-spicer/) and add the folder name under "photographers".
+# Photos placed directly in assets/gallery/ get no credit unless listed under "photos".
+
+photographers:
+  tim-hearn:
+    credit: "Tim Hearn"
+    credit_url: "https://www.timhearn.uk"
+  # studio-spicer:
+  #   credit: "Studio Spicer"
+  #   credit_url: "https://studiospicer.com"
+
+# Optional per-photo details (and overrides), keyed by path inside assets/gallery/.
+photos:
+  # "studio-spicer/IMG_0001.jpg":
+  #   alt: "Falcons U13s lining up for a scrum"
+  #   caption: "U13s v Leicester Lionesses"
+  #   credit: "Someone else"   # overrides the folder's credit

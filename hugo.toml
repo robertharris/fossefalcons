@@ -40,9 +40,13 @@ enableRobotsTXT = true
   pageRef = "/news"
   weight = 3
 [[menus.main]]
+  name = "Gallery"
+  pageRef = "/gallery"
+  weight = 4
+[[menus.main]]
   name = "Our Cluster"
   identifier = "our-cluster"
-  weight = 4
+  weight = 5
 [[menus.main]]
   name = "About Us"
   pageRef = "/about"
@@ -66,8 +70,8 @@ enableRobotsTXT = true
 [[menus.main]]
   name = "FAQ"
   pageRef = "/faq"
-  weight = 5
+  weight = 6
 [[menus.main]]
   name = "Join Us"
   pageRef = "/join"
-  weight = 6
+  weight = 7
