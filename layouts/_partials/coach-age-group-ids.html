@@ -1,0 +1,8 @@
+{{- $ids := .Params.age_group_id -}}
+{{- if not $ids -}}
+  {{- return (slice) -}}
+{{- end -}}
+{{- if reflect.IsSlice $ids -}}
+  {{- return $ids -}}
+{{- end -}}
+{{- return (slice $ids) -}}

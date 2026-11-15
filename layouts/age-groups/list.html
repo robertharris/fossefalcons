@@ -7,7 +7,13 @@
     {{ $ageGroup := . }}
     <li><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
       <p>{{ $ageGroup.Params.school_years }}</p>
-      {{ $coaches := where (where site.RegularPages "Section" "coaches") "Params.age_group_id" $ageGroup.Params.group }}
+      {{ $coaches := slice }}
+      {{ range where site.RegularPages "Section" "coaches" }}
+        {{ $coachAgeGroupIDs := partial "coach-age-group-ids.html" . }}
+        {{ if in $coachAgeGroupIDs $ageGroup.Params.group }}
+          {{ $coaches = $coaches | append . }}
+        {{ end }}
+      {{ end }}
       {{ with $coaches }}
       <ul class="age-group-coaches">
         {{ range .ByWeight }}

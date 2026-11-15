@@ -3,7 +3,13 @@
   <h1>{{ .Title }}</h1>
   {{ with .Params.school_years }}<p class="meta">{{ . }}</p>{{ end }}
   {{ .Content }}
-  {{ $coaches := where (where site.RegularPages "Section" "coaches") "Params.age_group_id" .Params.group }}
+  {{ $coaches := slice }}
+  {{ range where site.RegularPages "Section" "coaches" }}
+    {{ $coachAgeGroupIDs := partial "coach-age-group-ids.html" . }}
+    {{ if in $coachAgeGroupIDs $.Params.group }}
+      {{ $coaches = $coaches | append . }}
+    {{ end }}
+  {{ end }}
   {{ with $coaches }}
   <h2>Coaches</h2>
   <ul class="age-group-coaches">
