@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T22:30:24+00:00",
+  "updated": "2026-11-15T15:25:16+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -133,11 +133,11 @@
     },
     "u14": {
       "fixture": {
-        "title": "Milton Keynes  \u2013 Fosse U14 2026-27",
-        "start": "2026-11-15T11:30:00+00:00",
-        "end": "2026-11-15T12:30:00+00:00",
-        "location": "Emerson Valley Sports Pavilion, Bowland Dr, Emerson Valley, Milton Keynes MK4 2DN",
-        "opponent": "Milton Keynes ",
+        "title": "Witney  \u2013 Fosse U14 2026-27",
+        "start": "2026-11-29T13:00:00+00:00",
+        "end": "2026-11-29T14:00:00+00:00",
+        "location": null,
+        "opponent": "Witney ",
         "home": false
       },
       "training": [
@@ -186,8 +186,8 @@
           "location": "Floyd Field,  Maids Moreton, Buckingham,  MK18 1RF",
           "opponent": "Buckingham",
           "home": false,
-          "team_score": null,
-          "opponent_score": null
+          "team_score": 17,
+          "opponent_score": 17
         },
         {
           "title": "Fosse U14 2026-27 \u2013 ATL ",
@@ -343,11 +343,11 @@
     },
     "u16": {
       "fixture": {
-        "title": "Fosse U16  \u2013 Lichfield ",
-        "start": "2026-11-15T13:00:00+00:00",
-        "end": "2026-11-15T15:00:00+00:00",
-        "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
-        "opponent": "Lichfield ",
+        "title": "Fosse U16  \u2013 Loughborough ",
+        "start": "2026-11-22T13:00:00+00:00",
+        "end": "2026-11-22T15:00:00+00:00",
+        "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
+        "opponent": "Loughborough ",
         "home": true
       },
       "training": [
