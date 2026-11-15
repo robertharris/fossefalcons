@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T15:25:16+00:00",
+  "updated": "2026-11-15T17:43:45+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -206,8 +206,8 @@
           "location": "Emerson Valley Sports Pavilion, Bowland Dr, Emerson Valley, Milton Keynes MK4 2DN",
           "opponent": "Milton Keynes ",
           "home": false,
-          "team_score": null,
-          "opponent_score": null
+          "team_score": 42,
+          "opponent_score": 0
         },
         {
           "title": "Witney  \u2013 Fosse U14 2026-27",
@@ -426,8 +426,8 @@
           "location": "Leamington Rugby Football Club, Kenilworth Road, Blackdown, Leamington Spa",
           "opponent": "Lichfield ",
           "home": true,
-          "team_score": null,
-          "opponent_score": null
+          "team_score": 5,
+          "opponent_score": 14
         },
         {
           "title": "Fosse U16  \u2013 Loughborough ",
