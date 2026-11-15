@@ -60,6 +60,6 @@ jobs:
           git commit -m "chore: sync Spond fixtures and training"
           git push
           # pushes made with GITHUB_TOKEN don't trigger other workflows
-          gh workflow run hugo.yml --ref master
+          gh workflow run azure-static-web-apps-lively-ocean-0932dd710.yml --ref master
         env:
           GH_TOKEN: ${{ github.token }}
