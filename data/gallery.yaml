@@ -8,9 +8,9 @@ photographers:
   tim-hearn:
     credit: "Tim Hearn"
     credit_url: "https://www.timhearn.uk"
-  # studio-spicer:
-  #   credit: "Studio Spicer"
-  #   credit_url: "https://studiospicer.com"
+  ken-pinfold:
+    credit: "Ken Pinfold"
+    credit_url: ""
 
 # Optional per-photo details (and overrides), keyed by path inside assets/gallery/.
 photos:
