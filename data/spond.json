@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T12:50:10+00:00",
+  "updated": "2026-11-17T23:22:51+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -12,10 +12,10 @@
       },
       "training": [
         {
-          "title": "Mid week training - Shipston  ",
+          "title": "Mid week training - Leamington   ",
           "start": "2026-11-18T18:30:00+00:00",
-          "end": "2026-11-18T20:00:00+00:00",
-          "location": "Shipston Rugby Football Club, Shipston-on-Stour",
+          "end": "2026-11-18T19:45:00+00:00",
+          "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
         },
@@ -142,10 +142,10 @@
       },
       "training": [
         {
-          "title": "Mid week training - Shipston ",
+          "title": "Mid week training - Leamington  ",
           "start": "2026-11-18T18:30:00+00:00",
-          "end": "2026-11-18T20:00:00+00:00",
-          "location": "Shipston Rugby Football Club, Shipston-on-Stour",
+          "end": "2026-11-18T19:45:00+00:00",
+          "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
         },
@@ -362,10 +362,10 @@
       },
       "training": [
         {
-          "title": "Mid week training - Shipston  ",
+          "title": "Mid week training - Leamington   ",
           "start": "2026-11-18T18:30:00+00:00",
           "end": "2026-11-18T20:00:00+00:00",
-          "location": "Shipston Rugby Football Club, Shipston-on-Stour",
+          "location": "Leamington Rugby Club, Kenilworth Ave, Blackdown, Leamington Spa",
           "opponent": null,
           "home": null
         },
