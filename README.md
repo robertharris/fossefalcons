@@ -25,6 +25,10 @@ hugo server
 
 Open <http://localhost:1313/>. The page reloads as you edit files. To do a one-off production build into `public/`, run `hugo --gc --minify`.
 
+Hugo generates `public/sitemap.xml` from published pages. `public/robots.txt`
+allows search crawlers and points them to the sitemap; canonical and social
+sharing metadata are generated from each page's title and description.
+
 ## Editing content
 
 - **Edit a page:** change the matching file in `content/`. Each file starts with a front matter block (`title: ...`) followed by Markdown text. Include a unique `description` summarising the page; the site uses it as the page's meta description for search engines.
