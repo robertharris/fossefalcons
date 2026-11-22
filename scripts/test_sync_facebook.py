@@ -342,21 +342,42 @@ class SyncTests(unittest.TestCase):
         self.assertIn("Updated object", (self.bundle() / "index.md").read_text())
         self.assertNotIn("warning", self.state()["posts"]["123_456"])
 
-    def test_tracked_unsupported_post_warns_and_keeps_bundle(self):
+    def test_tracked_shared_post_warns_and_keeps_bundle(self):
         self.run_sync()
         original = (self.bundle() / "index.md").read_bytes()
-        self.feed[0]["attachments"] = {"data": [{"type": "video", "media_type": "video"}]}
+        self.feed[0]["attachments"] = {"data": [{"type": "share", "media_type": "link"}]}
         self.run_sync()
         self.assertEqual((self.bundle() / "index.md").read_bytes(), original)
         self.assertIn("unsupported", self.state()["posts"]["123_456"]["warning"])
 
-    def test_shared_video_and_links_are_skipped_without_downloads(self):
+    def test_video_attachments_are_ignored(self):
+        self.feed = [
+            post("456", attachments=[
+                {"type": "video", "media_type": "video"}, photo(),
+            ]),
+            post("457", attachments=[{"type": "video", "media_type": "video"}]),
+            post("458", attachments=[{
+                "type": "album", "media_type": "album",
+                "subattachments": {"data": [
+                    photo(), {"type": "video", "media_type": "video"},
+                ]},
+            }]),
+        ]
+        self.assertEqual(self.run_sync(), [])
+        self.assertEqual(sorted(self.state()["posts"]), [
+            "123_456", "123_457", "123_458",
+        ])
+        self.assertEqual(len(self.images), 2)
+        self.assertIn("photo-1.jpg", (self.bundle("456") / "index.md").read_text())
+        self.assertNotIn("photo-", (self.bundle("457") / "index.md").read_text())
+        self.assertIn("photo-1.jpg", (self.bundle("458") / "index.md").read_text())
+
+    def test_shared_and_link_attachments_are_skipped_without_downloads(self):
         self.feed = [
             post("456", attachments=[{"type": "share", "media_type": "photo"}]),
-            post("457", attachments=[{"type": "video", "media_type": "video"}]),
             post("458", attachments=[{"type": "share", "media_type": "link"}]),
         ]
-        self.assertEqual(len(self.run_sync()), 3)
+        self.assertEqual(len(self.run_sync()), 2)
         self.assertEqual(self.state()["posts"], {})
         self.assertEqual(self.images, [])
 
