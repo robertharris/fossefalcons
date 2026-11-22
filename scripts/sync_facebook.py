@@ -263,7 +263,7 @@ def attachment_rows(container):
 
 
 def photos(post):
-    """Return image specs, or None for a shared/link/video/unknown post."""
+    """Return image specs, or None for a shared/link/unknown post."""
     if "attachments" not in post:
         return []
     result = []
@@ -276,10 +276,16 @@ def photos(post):
             children = attachment_rows(attachment.get("subattachments"))
         elif kind == "photo" and media_type == "photo":
             children = [attachment]
+        elif kind == "video" and media_type == "video":
+            continue
         else:
             return None
         for child in children:
-            if (not isinstance(child, dict) or child.get("type") != "photo"
+            if not isinstance(child, dict):
+                return None
+            if child.get("type") == "video" and child.get("media_type") == "video":
+                continue
+            if (child.get("type") != "photo"
                     or child.get("media_type", "photo") != "photo"):
                 return None
             try:

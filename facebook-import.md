@@ -26,8 +26,9 @@ A post is imported only if **all** of these hold:
 - Dated on or after `FACEBOOK_IMPORT_SINCE`.
 - Contains the marker (`FACEBOOK_IMPORT_MARKER`, default `#news`), unless
   `FACEBOOK_IMPORT_ALL` is `true`.
-- Has text and/or only supported photo attachments. Videos, shared links and
-  other attachment types are skipped. Posts with neither text nor photos are skipped.
+- Has text and/or supported photo attachments. Video attachments are ignored;
+  shared links and other unsupported attachment types are skipped. Posts with
+  neither text nor photos are skipped.
 
 Posts named explicitly with the `posts` input (below) skip the date and marker
 checks only; the public and attachment checks still apply.
