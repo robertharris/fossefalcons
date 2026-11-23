@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T07:04:10+00:00",
+  "updated": "2026-11-23T19:54:44+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -134,8 +134,8 @@
     "u14": {
       "fixture": {
         "title": "Witney  \u2013 Fosse U14 2026-27",
-        "start": "2026-11-29T13:00:00+00:00",
-        "end": "2026-11-29T14:00:00+00:00",
+        "start": "2026-11-29T12:00:00+00:00",
+        "end": "2026-11-29T13:00:00+00:00",
         "location": null,
         "opponent": "Witney ",
         "home": false
@@ -221,8 +221,8 @@
         },
         {
           "title": "Witney  \u2013 Fosse U14 2026-27",
-          "start": "2026-11-29T13:00:00+00:00",
-          "end": "2026-11-29T14:00:00+00:00",
+          "start": "2026-11-29T12:00:00+00:00",
+          "end": "2026-11-29T13:00:00+00:00",
           "location": null,
           "opponent": "Witney ",
           "home": false,
@@ -356,7 +356,7 @@
         "title": "Fosse U16  \u2013 Leicester Forest ",
         "start": "2026-11-29T13:00:00+00:00",
         "end": "2026-11-29T14:00:00+00:00",
-        "location": null,
+        "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
         "opponent": "Leicester Forest ",
         "home": true
       },
@@ -446,14 +446,14 @@
           "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": "Loughborough ",
           "home": true,
-          "team_score": null,
-          "opponent_score": null
+          "team_score": 34,
+          "opponent_score": 27
         },
         {
           "title": "Fosse U16  \u2013 Leicester Forest ",
           "start": "2026-11-29T13:00:00+00:00",
           "end": "2026-11-29T14:00:00+00:00",
-          "location": null,
+          "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": "Leicester Forest ",
           "home": true,
           "team_score": null,
