@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T15:59:13+00:00",
+  "updated": "2026-11-23T07:04:10+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -216,8 +216,8 @@
           "location": "Trinity Guild Rugby Football Club, Segro Park, Samaritan Way, Coventry",
           "opponent": "Loughborough ",
           "home": true,
-          "team_score": null,
-          "opponent_score": null
+          "team_score": 21,
+          "opponent_score": 47
         },
         {
           "title": "Witney  \u2013 Fosse U14 2026-27",
