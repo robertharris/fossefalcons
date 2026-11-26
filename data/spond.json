@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T00:00:56+00:00",
+  "updated": "2026-11-26T13:36:21+00:00",
   "groups": {
     "u12": {
       "fixture": {
@@ -15,7 +15,7 @@
           "title": "U12 training only ",
           "start": "2026-11-29T13:00:00+00:00",
           "end": "2026-11-29T14:30:00+00:00",
-          "location": null,
+          "location": "Shipston-on-Stour Rugby Football Club, Shipston-on-Stour",
           "opponent": null,
           "home": null
         },
