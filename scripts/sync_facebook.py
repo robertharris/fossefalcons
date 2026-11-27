@@ -234,6 +234,9 @@ def permalink(url, post_id, page):
         if path_match:
             target = path_match.group(1)
             valid = valid and (target == suffix or re.fullmatch(r"pfbid[A-Za-z0-9]+", target))
+        elif re.fullmatch(r"/(?:[A-Za-z0-9.]+/videos|reel|watch)/[0-9]+/?", parts.path):
+            # Video/reel permalinks use the video id, not the post id suffix.
+            path_match = True
         elif parts.path in ("/permalink.php", "/story.php"):
             query = parse_qs(parts.query)
             targets = query.get("story_fbid", [])
