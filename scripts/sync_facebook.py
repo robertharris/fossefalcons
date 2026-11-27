@@ -253,6 +253,11 @@ def permalink(url, post_id, page):
             + urlencode({"story_fbid": targets[0], "id": page}))
 
 
+# Graph API reports uploaded Page videos as video_inline/video_autoplay etc.;
+# shared third-party videos (video_share_*) stay unsupported.
+VIDEO_TYPES = {"video", "video_inline", "video_autoplay", "video_direct_response"}
+
+
 def attachment_rows(container):
     if not isinstance(container, dict) or not isinstance(container.get("data"), list):
         raise SyncError("Invalid attachments")
@@ -276,14 +281,14 @@ def photos(post):
             children = attachment_rows(attachment.get("subattachments"))
         elif kind == "photo" and media_type == "photo":
             children = [attachment]
-        elif kind == "video" and media_type == "video":
+        elif kind in VIDEO_TYPES and media_type == "video":
             continue
         else:
             return None
         for child in children:
             if not isinstance(child, dict):
                 return None
-            if child.get("type") == "video" and child.get("media_type") == "video":
+            if child.get("type") in VIDEO_TYPES and child.get("media_type") == "video":
                 continue
             if (child.get("type") != "photo"
                     or child.get("media_type", "photo") != "photo"):

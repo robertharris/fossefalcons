@@ -355,7 +355,7 @@ class SyncTests(unittest.TestCase):
             post("456", attachments=[
                 {"type": "video", "media_type": "video"}, photo(),
             ]),
-            post("457", attachments=[{"type": "video", "media_type": "video"}]),
+            post("457", attachments=[{"type": "video_inline", "media_type": "video"}]),
             post("458", attachments=[{
                 "type": "album", "media_type": "album",
                 "subattachments": {"data": [
