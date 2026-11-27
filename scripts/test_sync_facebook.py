@@ -372,6 +372,28 @@ class SyncTests(unittest.TestCase):
         self.assertNotIn("photo-", (self.bundle("457") / "index.md").read_text())
         self.assertIn("photo-1.jpg", (self.bundle("458") / "index.md").read_text())
 
+    def test_uploaded_video_types_import_with_video_permalinks(self):
+        video = {"type": "video_inline", "media_type": "video"}
+        urls = {
+            "456": "https://www.facebook.com/fosse/videos/987654321/",
+            "457": "https://www.facebook.com/reel/987654321",
+            "458": "https://www.facebook.com/watch/987654321",
+        }
+        self.feed = [dict(post(n, attachments=[video]), permalink_url=u)
+                     for n, u in urls.items()]
+        self.assertEqual(self.run_sync(), [])
+        for number, url in urls.items():
+            self.assertIn(urlsplit(url).path.rstrip("/"),
+                          (self.bundle(number) / "index.md").read_text())
+
+    def test_video_share_remains_unsupported_and_bad_video_permalink_aborts(self):
+        self.feed = [post("456", attachments=[
+            {"type": "video_share_youtube", "media_type": "video"}])]
+        self.assertIn("skipped", self.run_sync()[0])
+        self.feed = [dict(post("457"), permalink_url="https://www.facebook.com/reel/abc")]
+        with self.assertRaises(fb.SyncError):
+            self.run_sync()
+
     def test_shared_and_link_attachments_are_skipped_without_downloads(self):
         self.feed = [
             post("456", attachments=[{"type": "share", "media_type": "photo"}]),
